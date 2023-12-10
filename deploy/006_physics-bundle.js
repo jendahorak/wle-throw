@@ -57303,6 +57303,7 @@ engine.registerComponent(EasyTuneToolComponent);
 engine.registerComponent(GamepadMeshAnimatorComponent);
 engine.registerComponent(GrabbableComponent);
 engine.registerComponent(GrabberHandComponent);
+engine.registerComponent(InputManagerComponent);
 engine.registerComponent(PPGatewayComponent);
 engine.registerComponent(PlayerLocomotionComponent);
 engine.registerComponent(SetHandLocalTransformComponent);

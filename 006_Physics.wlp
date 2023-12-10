@@ -87,6 +87,9 @@
                         "_myStartFlying": false,
                         "_mySwitchLocomotionTypeShortcutEnabled": true
                     }
+                },
+                {
+                    "type": "pp-input-manager"
                 }
             ]
         },
@@ -333,8 +336,17 @@
                 {
                     "type": "pp-tool-cursor",
                     "pp-tool-cursor": {
-                        "_myHandedness": "Right"
-                    }
+                        "_myHandedness": "Right",
+                        "_myPulseOnHover": true
+                    },
+                    "active": false
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "ray right"
+                    },
+                    "active": false
                 }
             ],
             "translation": [
