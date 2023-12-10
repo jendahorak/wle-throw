@@ -1,0 +1,1502 @@
+{
+    "objects": {
+        "18": {
+            "name": "Scene",
+            "components": [
+                {
+                    "type": "pp-gateway",
+                    "pp-gateway": {
+                        "_myPlayer": "19",
+                        "_myReferenceSpace": "20",
+                        "_myCameraNonXR": "21",
+                        "_myEyeLeft": "26",
+                        "_myEyeRight": "27",
+                        "_myHead": "74",
+                        "_myHandRight": "107",
+                        "_myHandLeft": "99",
+                        "_myPlane": "p0",
+                        "_myCube": "p1",
+                        "_mySphere": "p2",
+                        "_myCone": "p3",
+                        "_myCylinder": "p4",
+                        "_myCircle": "p5",
+                        "_myFlatOpaque": "31",
+                        "_myFlatTransparentNoDepth": "90",
+                        "_myPhongOpaque": "32",
+                        "_myText": "110",
+                        "_myScene": "18"
+                    }
+                }
+            ]
+        },
+        "19": {
+            "name": "Player",
+            "parent": "18",
+            "translation": [
+                0.0,
+                0.6830161,
+                -0.8533003
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "20": {
+            "name": "Reference Space",
+            "parent": "19",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ]
+        },
+        "21": {
+            "name": "Camera Non XR",
+            "parent": "72",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "wasd-controls",
+                    "wasd-controls": {
+                        "headObject": "74"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "mouse-look"
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "translation": [
+                -1.176643493749907e-7,
+                0.0,
+                2.0418401902588812e-7
+            ],
+            "scaling": [
+                0.9999945,
+                1.0,
+                0.9999945
+            ]
+        },
+        "22": {
+            "name": "Eyes",
+            "parent": "72"
+        },
+        "23": {
+            "name": "Hands Left",
+            "parent": "75",
+            "components": [
+                {
+                    "type": "pp-switch-hand-object",
+                    "pp-switch-hand-object": {
+                        "_myGamepad": "102",
+                        "_myTrackedHand": "105"
+                    }
+                }
+            ]
+        },
+        "24": {
+            "name": "Hands Right",
+            "parent": "75",
+            "components": [
+                {
+                    "type": "pp-switch-hand-object",
+                    "pp-switch-hand-object": {
+                        "_myHandedness": "Right",
+                        "_myGamepad": "106",
+                        "_myTrackedHand": "108"
+                    }
+                }
+            ]
+        },
+        "26": {
+            "name": "Eye Left",
+            "parent": "22",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye left"
+                    }
+                }
+            ]
+        },
+        "27": {
+            "name": "Eye Right",
+            "parent": "22",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye right"
+                    }
+                }
+            ]
+        },
+        "28": {
+            "name": "Lights",
+            "parent": "18"
+        },
+        "72": {
+            "name": "Cameras",
+            "parent": "20"
+        },
+        "73": {
+            "name": "Heads",
+            "parent": "20"
+        },
+        "74": {
+            "name": "Head",
+            "parent": "73",
+            "components": [
+                {
+                    "type": "pp-set-head-local-transform"
+                },
+                {
+                    "type": "pp-spatial-audio-listener"
+                }
+            ]
+        },
+        "75": {
+            "name": "Hands",
+            "parent": "20"
+        },
+        "99": {
+            "name": "Hand Left",
+            "parent": "23",
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform"
+                }
+            ]
+        },
+        "102": {
+            "name": "Gamepad Left",
+            "parent": "23",
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform"
+                },
+                {
+                    "type": "pp-gamepad-mesh-animator",
+                    "pp-gamepad-mesh-animator": {
+                        "_mySelect": "132",
+                        "_mySqueeze": "133",
+                        "_myThumbstick": "134",
+                        "_myTopButton": "135",
+                        "_myBottomButton": "130",
+                        "_myUsePressForSqueeze": true
+                    }
+                }
+            ],
+            "translation": [
+                -0.1,
+                0.0,
+                0.0
+            ]
+        },
+        "104": {
+            "name": "Tool Hand Left",
+            "parent": "23",
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform"
+                },
+                {
+                    "type": "pp-console-vr-tool",
+                    "pp-console-vr-tool": {
+                        "_myHandedness": "Left"
+                    }
+                },
+                {
+                    "type": "pp-easy-tune-tool",
+                    "pp-easy-tune-tool": {
+                        "_myHandedness": "Left"
+                    }
+                }
+            ]
+        },
+        "105": {
+            "name": "Tracked Hand Left",
+            "parent": "23",
+            "components": [
+                {
+                    "type": "pp-tracked-hand-draw-all-joints",
+                    "pp-tracked-hand-draw-all-joints": {
+                        "_myJointMesh": "p1",
+                        "_myJointMaterial": "144"
+                    }
+                }
+            ]
+        },
+        "106": {
+            "name": "Gamepad Right",
+            "parent": "24",
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform",
+                    "pp-set-hand-local-transform": {
+                        "_myHandedness": "Right"
+                    }
+                },
+                {
+                    "type": "pp-gamepad-mesh-animator",
+                    "pp-gamepad-mesh-animator": {
+                        "_mySelect": "140",
+                        "_mySqueeze": "141",
+                        "_myThumbstick": "142",
+                        "_myTopButton": "143",
+                        "_myBottomButton": "138",
+                        "_myUsePressForSqueeze": true,
+                        "_myHandedness": "Right"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "static": false,
+                        "trigger": true,
+                        "allowSimulation": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.1
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabber-hand",
+                    "pp-grabber-hand": {
+                        "_myHandedness": "Right",
+                        "_myGrabButton": "Squeeze"
+                    }
+                }
+            ],
+            "translation": [
+                0.1,
+                0.0,
+                0.0
+            ]
+        },
+        "107": {
+            "name": "Hand Right",
+            "parent": "24",
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform",
+                    "pp-set-hand-local-transform": {
+                        "_myHandedness": "Right"
+                    }
+                }
+            ]
+        },
+        "108": {
+            "name": "Tracked Hand Right",
+            "parent": "24",
+            "components": [
+                {
+                    "type": "pp-tracked-hand-draw-all-joints",
+                    "pp-tracked-hand-draw-all-joints": {
+                        "_myJointMesh": "p1",
+                        "_myJointMaterial": "144",
+                        "_myHandedness": "Right"
+                    }
+                }
+            ]
+        },
+        "109": {
+            "name": "Tool Hand Right",
+            "parent": "24",
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform",
+                    "pp-set-hand-local-transform": {
+                        "_myHandedness": "Right"
+                    }
+                },
+                {
+                    "type": "pp-tool-cursor",
+                    "pp-tool-cursor": {
+                        "_myHandedness": "Right"
+                    }
+                }
+            ]
+        },
+        "128": {
+            "link": {
+                "name": "Gamepad Left<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "102",
+            "name": "Gamepad Left Mesh",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "129": {
+            "link": {
+                "name": "Gamepad Body Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "128"
+        },
+        "130": {
+            "link": {
+                "name": "Gamepad Bottom Button Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "128"
+        },
+        "131": {
+            "link": {
+                "name": "Gamepad Option Button Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "128"
+        },
+        "132": {
+            "link": {
+                "name": "Gamepad Select Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "128"
+        },
+        "133": {
+            "link": {
+                "name": "Gamepad Squeeze Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "128"
+        },
+        "134": {
+            "link": {
+                "name": "Gamepad Thumbstick Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "128"
+        },
+        "135": {
+            "link": {
+                "name": "Gamepad Top Button Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "128"
+        },
+        "136": {
+            "link": {
+                "name": "Gamepad Right<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "106",
+            "name": "Gamepad Right Mesh",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "137": {
+            "link": {
+                "name": "Gamepad Body Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "136"
+        },
+        "138": {
+            "link": {
+                "name": "Gamepad Bottom Button Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "136"
+        },
+        "139": {
+            "link": {
+                "name": "Gamepad Option Button Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "136"
+        },
+        "140": {
+            "link": {
+                "name": "Gamepad Select Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "136"
+        },
+        "141": {
+            "link": {
+                "name": "Gamepad Squeeze Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "136"
+        },
+        "142": {
+            "link": {
+                "name": "Gamepad Thumbstick Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "136"
+        },
+        "143": {
+            "link": {
+                "name": "Gamepad Top Button Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "136"
+        },
+        "165": {
+            "name": "Ground",
+            "parent": "171",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "166"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                10.0,
+                                0.2,
+                                10.0
+                            ]
+                        },
+                        "static": true
+                    }
+                }
+            ],
+            "scaling": [
+                10.0,
+                0.2,
+                10.0
+            ],
+            "translation": [
+                -0.0005548,
+                -0.0002516,
+                -0.0000724
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "171": {
+            "name": "World",
+            "parent": "18"
+        },
+        "172": {
+            "name": "Table",
+            "parent": "171",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "170"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.2,
+                                1.0
+                            ]
+                        },
+                        "static": true,
+                        "groups": 255,
+                        "block": 255,
+                        "allowQuery": false,
+                        "trigger": false,
+                        "allowSimulation": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.3623555,
+                1.4780209
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                0.2,
+                1.0
+            ]
+        },
+        "173": {
+            "name": "Light",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "intensity": 0.001,
+                        "shadows": false
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                -2.0,
+                1.8442788,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "174": {
+            "name": "Light",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "intensity": 3.0,
+                        "shadows": false
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                2.0,
+                2.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "176": {
+            "name": "sun1",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "type": "sun"
+                    }
+                }
+            ],
+            "translation": [
+                8.0,
+                5.0000033,
+                8.0000171
+            ],
+            "rotation": [
+                0.0904793,
+                -0.4293807,
+                -0.4343161,
+                0.786648
+            ],
+            "scaling": [
+                0.9999993,
+                0.9999991,
+                0.9999991
+            ]
+        },
+        "177": {
+            "name": "sun2",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "type": "sun",
+                        "shadows": false
+                    }
+                }
+            ],
+            "translation": [
+                -8.0000028,
+                5.0000143,
+                -8.0000009
+            ],
+            "rotation": [
+                -0.0914733,
+                -0.423076,
+                0.4096059,
+                0.8030332
+            ],
+            "scaling": [
+                0.9999995,
+                0.9999984,
+                0.9999993
+            ]
+        },
+        "178": {
+            "name": "Throwing_cube",
+            "parent": "171",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "167"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "groups": 255,
+                        "block": 6,
+                        "kinematic": false,
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "linearDamping": 1.0,
+                        "bounciness": 1.2,
+                        "trigger": false,
+                        "allowSimulation": true
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "Scene"
+                    }
+                }
+            ],
+            "scaling": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "translation": [
+                0.0,
+                0.9010766,
+                0.8955334
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "179": {
+            "name": "Throwing_target",
+            "parent": "171",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "168"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "groups": 6,
+                        "block": 6,
+                        "kinematic": false,
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.3,
+                                1.0,
+                                0.1
+                            ]
+                        },
+                        "linearDamping": 1.0,
+                        "bounciness": 0.2,
+                        "mass": 2.0
+                    }
+                }
+            ],
+            "scaling": [
+                0.3,
+                1.0,
+                0.1
+            ],
+            "translation": [
+                0.0,
+                1.2215422,
+                2.6430778
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        }
+    },
+    "meshes": {
+        "p0": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            }
+        },
+        "p1": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            }
+        },
+        "p2": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "p3": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "p4": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "p5": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        },
+        "113": {
+            "link": {
+                "name": "Gamepad Body Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "114": {
+            "link": {
+                "name": "Gamepad Bottom Button Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "115": {
+            "link": {
+                "name": "Gamepad Option Button Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "116": {
+            "link": {
+                "name": "Gamepad Select Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "117": {
+            "link": {
+                "name": "Gamepad Squeeze Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "118": {
+            "link": {
+                "name": "Gamepad Thumbstick Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "119": {
+            "link": {
+                "name": "Gamepad Top Button Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "120": {
+            "link": {
+                "name": "Gamepad Body Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "121": {
+            "link": {
+                "name": "Gamepad Bottom Button Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "122": {
+            "link": {
+                "name": "Gamepad Option Button Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "123": {
+            "link": {
+                "name": "Gamepad Select Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "124": {
+            "link": {
+                "name": "Gamepad Squeeze Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "125": {
+            "link": {
+                "name": "Gamepad Thumbstick Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "126": {
+            "link": {
+                "name": "Gamepad Top Button Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        }
+    },
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "147"
+            }
+        },
+        "31": {
+            "name": "Flat Opaque",
+            "pipeline": "7"
+        },
+        "32": {
+            "name": "Phong Opaque",
+            "pipeline": "13",
+            "Phong": {
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "90": {
+            "name": "Flat Transparent No Depth",
+            "pipeline": "89"
+        },
+        "110": {
+            "name": "Text",
+            "pipeline": "82",
+            "Text": {
+                "font": "147"
+            }
+        },
+        "111": {
+            "link": {
+                "name": "Gamepad Body",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "Phong": {
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.0784313,
+                    0.0784313,
+                    0.0784313,
+                    1.0
+                ]
+            }
+        },
+        "112": {
+            "link": {
+                "name": "Gamepad Button",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "Phong": {
+                "shininess": 2,
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.9411764,
+                    0.9411764,
+                    0.9411764,
+                    1.0
+                ]
+            }
+        },
+        "144": {
+            "name": "Tracked Hand Joint",
+            "Phong": {
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.0784,
+                    0.0784,
+                    0.0784,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "fogColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            }
+        },
+        "166": {
+            "name": "charcoal",
+            "Phong": {
+                "diffuseColor": [
+                    0.1372549,
+                    0.2392156,
+                    0.3019607,
+                    1.0
+                ]
+            }
+        },
+        "167": {
+            "name": "pumpkin",
+            "Phong": {
+                "diffuseColor": [
+                    0.9960784,
+                    0.4980392,
+                    0.1764705,
+                    1.0
+                ]
+            }
+        },
+        "168": {
+            "name": "sunglow",
+            "Phong": {
+                "diffuseColor": [
+                    0.9882352,
+                    0.7921568,
+                    0.2745098,
+                    1.0
+                ]
+            }
+        },
+        "169": {
+            "name": "olivine",
+            "Phong": {
+                "diffuseColor": [
+                    0.6313725,
+                    0.7568627,
+                    0.5058823,
+                    1.0
+                ]
+            }
+        },
+        "170": {
+            "name": "zomp",
+            "Phong": {
+                "diffuseColor": [
+                    0.3803921,
+                    0.6078431,
+                    0.5411764,
+                    1.0
+                ]
+            },
+            "pipeline": "13"
+        },
+        "175": {
+            "name": "sky",
+            "pipeline": "85"
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        },
+        "76": {
+            "link": {
+                "name": "Physical.frag",
+                "file": "default"
+            }
+        },
+        "79": {
+            "link": {
+                "name": "Sky.frag",
+                "file": "default"
+            }
+        },
+        "80": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "81": {
+            "link": {
+                "name": "Text.frag",
+                "file": "default"
+            }
+        },
+        "83": {
+            "link": {
+                "name": "Text.vert",
+                "file": "default"
+            }
+        },
+        "84": {
+            "link": {
+                "name": "TileFeedback.frag",
+                "file": "default"
+            }
+        },
+        "87": {
+            "link": {
+                "name": "Background.frag",
+                "file": "default"
+            }
+        },
+        "88": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "148": {
+            "link": {
+                "name": "lib\\Color.glsl",
+                "file": "default"
+            }
+        },
+        "149": {
+            "link": {
+                "name": "lib\\Compatibility.frag",
+                "file": "default"
+            }
+        },
+        "150": {
+            "link": {
+                "name": "lib\\CoordinateSystems.glsl",
+                "file": "default"
+            }
+        },
+        "151": {
+            "link": {
+                "name": "lib\\GI.frag",
+                "file": "default"
+            }
+        },
+        "152": {
+            "link": {
+                "name": "lib\\Inputs.frag",
+                "file": "default"
+            }
+        },
+        "153": {
+            "link": {
+                "name": "lib\\Lights.frag",
+                "file": "default"
+            }
+        },
+        "154": {
+            "link": {
+                "name": "lib\\Materials.frag",
+                "file": "default"
+            }
+        },
+        "155": {
+            "link": {
+                "name": "lib\\Math.glsl",
+                "file": "default"
+            }
+        },
+        "156": {
+            "link": {
+                "name": "lib\\Packing.frag",
+                "file": "default"
+            }
+        },
+        "157": {
+            "link": {
+                "name": "lib\\Quaternion.glsl",
+                "file": "default"
+            }
+        },
+        "158": {
+            "link": {
+                "name": "lib\\Slug.frag",
+                "file": "default"
+            }
+        },
+        "159": {
+            "link": {
+                "name": "lib\\Slug.vert",
+                "file": "default"
+            }
+        },
+        "160": {
+            "link": {
+                "name": "lib\\Surface.frag",
+                "file": "default"
+            }
+        },
+        "161": {
+            "link": {
+                "name": "lib\\Textures.frag",
+                "file": "default"
+            }
+        },
+        "163": {
+            "link": {
+                "name": "lib\\Uniforms.glsl",
+                "file": "default"
+            }
+        }
+    },
+    "settings": {
+        "project": {
+            "name": "006_physics",
+            "version": [
+                1,
+                1,
+                4
+            ]
+        },
+        "rendering": {
+            "clearColor": [
+                1.0,
+                0.9149953,
+                0.6905829,
+                1.0
+            ],
+            "sky": {
+                "enabled": false,
+                "material": "175"
+            }
+        },
+        "runtime": {
+            "xrButtonColor": "black",
+            "webxr": {
+                "optionalFeatures": {
+                    "hand-tracking": true
+                }
+            },
+            "viewObject": "21"
+        },
+        "scripting": {
+            "sourcePaths": [
+                "js"
+            ],
+            "bundlingType": "esbuild",
+            "libraryPaths": [
+                "/js/lib/"
+            ]
+        },
+        "vr": {
+            "leftEyeObject": "26",
+            "rightEyeObject": "27"
+        },
+        "editor": {
+            "camera": {
+                "near": 0.0099999,
+                "far": 10000.0
+            }
+        },
+        "physx": {
+            "enable": true,
+            "groupNames": {
+                "0": "Player",
+                "1": "Solid",
+                "2": "Interactable",
+                "3": "Group 3",
+                "4": "Group 4",
+                "5": "Group 5",
+                "6": "Group 6",
+                "7": "Group 7"
+            }
+        }
+    },
+    "animations": {},
+    "skins": {},
+    "pipelines": {
+        "2": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "ALPHA_MASKED": true
+            }
+        },
+        "10": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "ALPHA_MASKED": true
+            }
+        },
+        "16": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "77": {
+            "link": {
+                "name": "Physical Opaque",
+                "file": "default"
+            }
+        },
+        "78": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "ALPHA_MASKED": true
+            }
+        },
+        "82": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "85": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            }
+        },
+        "145": {
+            "link": {
+                "name": "Phong Normalmapped",
+                "file": "default"
+            }
+        },
+        "146": {
+            "link": {
+                "name": "Phong Lightmapped",
+                "file": "default"
+            }
+        },
+        "162": {
+            "link": {
+                "name": "TileFeedback",
+                "file": "default"
+            }
+        },
+        "89": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            },
+            "name": "Flat Transparent No Depth",
+            "depthTest": false,
+            "depthFunction": "always",
+            "blending": true,
+            "blendSrcRgb": "source alpha",
+            "blendSrcAlpha": "one minus destination alpha",
+            "blendDestRgb": "one minus source alpha",
+            "blendDestAlpha": "one"
+        }
+    },
+    "textures": {},
+    "images": {},
+    "files": {
+        "164": {
+            "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
+            "importerName": "AssimpImporter"
+        }
+    },
+    "fonts": {
+        "147": {
+            "link": {
+                "name": "DejaVuSans.ttf",
+                "file": "default"
+            }
+        }
+    },
+    "languages": {}
+}
