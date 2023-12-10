@@ -57151,6 +57151,109 @@ __publicField(ButtonComponent, "Properties", {
   buttonTargetObejct: Property.object()
 });
 
+// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/toggle-button.js
+function hapticFeedback2(object, strength, duration) {
+  const input = object.getComponent(InputComponent);
+  if (input && input.xrInputSource) {
+    const gamepad = input.xrInputSource.gamepad;
+    if (gamepad && gamepad.hapticActuators)
+      gamepad.hapticActuators[0].pulse(strength, duration);
+  }
+}
+var ButtonComponent2 = class extends Component {
+  static onRegister(engine2) {
+    engine2.registerComponent(HowlerAudioSource);
+    engine2.registerComponent(CursorTarget);
+  }
+  /* Position to return to when "unpressing" the button */
+  returnPos = new Float32Array(3);
+  start() {
+    this.mesh = this.buttonMeshObject.getComponent(MeshComponent);
+    this.defaultMaterial = this.mesh.material;
+    this.buttonMeshObject.getTranslationLocal(this.returnPos);
+    this.target = this.object.getComponent(CursorTarget) || this.object.addComponent(CursorTarget);
+    this.soundClick = this.object.addComponent(HowlerAudioSource, {
+      src: "sfx/click.wav",
+      spatial: true
+    });
+    this.soundUnClick = this.object.addComponent(HowlerAudioSource, {
+      src: "sfx/unclick.wav",
+      spatial: true
+    });
+    this.targetMesh = this.buttonTargetObejct.getComponent(MeshComponent);
+    this.defaultTargetMaterial = this.targetMesh.material;
+    console.log("This is target object mesh component: ", this.targetMesh);
+    console.log("This is material of button: ", this.defaultMaterial);
+    console.log("This is curr material of target: ", this.targetMesh.material);
+    console.log("This is initial target material: ", this.defaultTargetMaterial);
+    this.toggled = false;
+  }
+  onActivate() {
+    this.target.onHover.add(this.onHover);
+    this.target.onUnhover.add(this.onUnhover);
+    this.target.onDown.add(this.onDown);
+  }
+  onDeactivate() {
+    this.target.onHover.remove(this.onHover);
+    this.target.onUnhover.remove(this.onUnhover);
+    this.target.onDown.remove(this.onDown);
+  }
+  /* Called by 'cursor-target' */
+  onHover = (_, cursor) => {
+    this.mesh.material = this.hoverMaterial;
+    if (cursor.type === "finger-cursor") {
+      this.onDown(_, cursor);
+    }
+    hapticFeedback2(cursor.object, 0.5, 50);
+  };
+  /* Called by 'cursor-target' */
+  onDown = (_, cursor) => {
+    this.toggled = !this.toggled;
+    if (this.toggled) {
+      console.log("Toggle");
+      this.targetMesh.material = this.hoverMaterial;
+      this.soundClick.play();
+      this.buttonMeshObject.translate([0, -0.01, 0]);
+      hapticFeedback2(cursor.object, 1, 20);
+      this.mesh.material = this.toggleMaterial;
+    } else {
+      console.log("Untoggle");
+      this.targetMesh.material = this.defaultTargetMaterial;
+      this.soundUnClick.play();
+      this.buttonMeshObject.setTranslationLocal(this.returnPos);
+      hapticFeedback2(cursor.object, 0.7, 20);
+    }
+  };
+  //   /* Called by 'cursor-target' */
+  //   onUp = (_, cursor) => {
+  //     console.log('onUp called');
+  //     this.soundUnClick.play();
+  //     this.buttonMeshObject.setTranslationLocal(this.returnPos);
+  //     hapticFeedback(cursor.object, 0.7, 20);
+  //   };
+  /* Called by 'cursor-target' */
+  onUnhover = (_, cursor) => {
+    if (this.toggled) {
+      this.mesh.material = this.toggleMaterial;
+    } else {
+      this.mesh.material = this.defaultMaterial;
+    }
+    if (cursor.type === "finger-cursor") {
+      this.onUp(_, cursor);
+    }
+    hapticFeedback2(cursor.object, 0.3, 50);
+  };
+};
+__publicField(ButtonComponent2, "TypeName", "toggle-button");
+__publicField(ButtonComponent2, "Properties", {
+  /** Object that has the button's mesh attached */
+  buttonMeshObject: Property.object(),
+  /** Material to apply when the user hovers the button */
+  hoverMaterial: Property.material(),
+  buttonTargetObejct: Property.object(),
+  toggleMaterial: Property.material()
+});
+
 // D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/index.js
 var RuntimeOptions = {
   physx: true,
@@ -57192,6 +57295,7 @@ if (document.readyState === "loading") {
 }
 engine.registerComponent(CursorTarget);
 engine.registerComponent(FixedFoveation);
+engine.registerComponent(MouseLookComponent);
 engine.registerComponent(TargetFramerate);
 engine.registerComponent(ConsoleVRToolComponent);
 engine.registerComponent(EasyScaleComponent);
@@ -57209,6 +57313,7 @@ engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(ButtonComponent);
+engine.registerComponent(ButtonComponent2);
 var loadDelaySeconds = 0;
 if (loadDelaySeconds > 0) {
   setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), loadDelaySeconds * 1e3);

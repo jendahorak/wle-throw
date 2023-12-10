@@ -14,6 +14,7 @@
 /* wle:auto-imports:start */
 import {CursorTarget} from '@wonderlandengine/components';
 import {FixedFoveation} from '@wonderlandengine/components';
+import {MouseLookComponent} from '@wonderlandengine/components';
 import {TargetFramerate} from '@wonderlandengine/components';
 import {ConsoleVRToolComponent} from 'wle-pp';
 import {EasyScaleComponent} from 'wle-pp';
@@ -31,6 +32,7 @@ import {SwitchHandObjectComponent} from 'wle-pp';
 import {ToolCursorComponent} from 'wle-pp';
 import {TrackedHandDrawAllJointsComponent} from 'wle-pp';
 import {ButtonComponent} from './button.js';
+import {ButtonComponent as ButtonComponent1} from './toggle-button.js';
 /* wle:auto-imports:end */
 
 import { loadRuntime } from '@wonderlandengine/api';
@@ -88,6 +90,7 @@ if (document.readyState === 'loading') {
 /* wle:auto-register:start */
 engine.registerComponent(CursorTarget);
 engine.registerComponent(FixedFoveation);
+engine.registerComponent(MouseLookComponent);
 engine.registerComponent(TargetFramerate);
 engine.registerComponent(ConsoleVRToolComponent);
 engine.registerComponent(EasyScaleComponent);
@@ -105,6 +108,7 @@ engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(ButtonComponent);
+engine.registerComponent(ButtonComponent1);
 /* wle:auto-register:end */
 
 let loadDelaySeconds = 0;

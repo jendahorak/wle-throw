@@ -106,6 +106,12 @@
             "components": [
                 {
                     "type": "view"
+                },
+                {
+                    "type": "mouse-look",
+                    "mouse-look": {
+                        "requireMouseDown": true
+                    }
                 }
             ],
             "rotation": [
@@ -965,7 +971,8 @@
                         "buttonMeshObject": "192",
                         "hoverMaterial": "198",
                         "buttonTargetObejct": "178"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "collision",
@@ -978,6 +985,15 @@
                                 0.05
                             ]
                         }
+                    }
+                },
+                {
+                    "type": "toggle-button",
+                    "toggle-button": {
+                        "buttonMeshObject": "192",
+                        "hoverMaterial": "198",
+                        "buttonTargetObejct": "178",
+                        "toggleMaterial": "197"
                     }
                 }
             ],
@@ -1395,7 +1411,21 @@
             "pipeline": "14"
         },
         "197": {
-            "name": "material"
+            "name": "toggle-material",
+            "Phong": {
+                "diffuseColor": [
+                    0.4932735,
+                    0.4932735,
+                    0.4932735,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.1793721,
+                    0.1793721,
+                    0.1793721,
+                    1.0
+                ]
+            }
         },
         "198": {
             "name": "zomp-bright",
