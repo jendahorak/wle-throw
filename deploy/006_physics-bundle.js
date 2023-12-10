@@ -57058,127 +57058,6 @@ __publicField(EasyTransformComponent, "Properties", {
   // Edit all scale values together
 });
 
-// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/node_modules/@wonderlandengine/community-components/dist/components/controller.js
-var SmoothLocomotion = class extends Component {
-  init() {
-    this.justSnapped = false;
-    this.snapDeadzone = 0.8;
-    this.collider = this.object.getComponent("collision");
-    this.grabControls = this.object.getComponent("grabbing-controls");
-    this.min = -4;
-    this.max = 4;
-  }
-  start() {
-  }
-  update(dt) {
-    let s = this.engine.xrSession;
-    if (!s)
-      return;
-    for (let i = 0; i < s.inputSources.length; ++i) {
-      let input = s.inputSources[i];
-      if (input.handedness == ["left", "right"][this.handedness]) {
-        let gamepad = input.gamepad;
-        if (!gamepad)
-          continue;
-        let xAxis = this.controlSource == "thumbstick" ? gamepad.axes[0] : gamepad.axes[2];
-        let yAxis = this.controlSource == "thumbstick" ? gamepad.axes[1] : gamepad.axes[3];
-        let gripped = gamepad.buttons[1].pressed;
-        if (this.controlType == 0) {
-          this.move(xAxis, yAxis, dt);
-        } else if (this.controlType == 1)
-          this.rotate(xAxis, dt);
-        if (!this.grabControls)
-          continue;
-        if (gripped) {
-          this.grabControls.grab();
-        } else {
-          this.grabControls.drop();
-        }
-      }
-    }
-  }
-  move(xAxis, yAxis, dt) {
-    let direction2 = [xAxis, 0, yAxis];
-    vec3_exports.normalize(direction2, direction2);
-    vec3_exports.scale(direction2, direction2, dt * this.moveSpeed);
-    vec3_exports.transformQuat(direction2, direction2, this.head.transformWorld);
-    if (!this.allowFly)
-      direction2[1] = 0;
-    this.player.translate(direction2);
-  }
-  rotate(xAxis, dt) {
-    if (this.rotationType == 0) {
-      if (Math.abs(xAxis) == 1 && !this.justSnapped) {
-        let lastHeadPos = [0, 0, 0];
-        this.head.transformWorld;
-        this.head.getTranslationWorld(lastHeadPos);
-        this.player.rotateAxisAngleDeg([0, 1, 0], this.snapDegrees * -xAxis);
-        this.justSnapped = true;
-        this.head2.transformWorld;
-        let currentHeadPos = [0, 0, 0];
-        this.head.getTranslationWorld(currentHeadPos);
-        let newPos = [0, 0, 0];
-        vec3_exports.sub(newPos, lastHeadPos, currentHeadPos);
-        this.player.translate(newPos);
-      } else if (Math.abs(xAxis) < 0.8) {
-        this.justSnapped = false;
-      }
-    } else if (this.rotationType == 1) {
-    }
-  }
-  getHeadPos() {
-    let left = [0, 0, 0];
-    this.head.getTranslationWorld(left);
-    let right = [0, 0, 0];
-    this.head2.getTranslationWorld(right);
-    let center = [0, 0, 0];
-    vec3_exports.add(center, left, right);
-    vec3_exports.scale(center, center, 0.5);
-    return center;
-  }
-  clamp(input, min4, max4) {
-    return input < min4 ? min4 : input > max4 ? max4 : input;
-  }
-  grab() {
-    if (this.currentInteractable.parent) {
-      const invParent = quat2_exports.create();
-      quat2_exports.invert(invParent, this.currentInteractable.parent.transformWorld);
-      quat2_exports.multiply(this.currentInteractable.transformLocal, invParent, this.object.transformWorld);
-    } else {
-      this.currentInteractable.transformLocal.set(this.object.transformWorld);
-    }
-    this.currentInteractable.setDirty();
-    return;
-  }
-};
-__publicField(SmoothLocomotion, "TypeName", "smooth-locomotion");
-__publicField(SmoothLocomotion, "Properties", {
-  /** Handedness for VR cursors to accept input only from respective controller */
-  handedness: { type: Type.Enum, values: ["left", "right"], default: "left" },
-  /** Whether this controller rotates or moves the character */
-  controlType: { type: Type.Enum, values: ["move", "rotate"], default: "move" },
-  /** Whether to use thumbstick or touchpad for input */
-  controlSource: {
-    type: Type.Enum,
-    values: ["thumbstick", "touchpad"],
-    default: "thumbstick"
-  },
-  /** Player object which is moved */
-  player: { type: Type.Object, default: null },
-  /** Head/Left eye object from which to get movement direction */
-  head: { type: Type.Object, default: null },
-  /** Right eye object from which to get movement direction */
-  head2: { type: Type.Object, default: null },
-  /** Movement speed, default `1.0` */
-  moveSpeed: { type: Type.Float, default: 1 },
-  /** Allow flying (if false, will not move on the Y axis) */
-  allowFly: { type: Type.Bool, default: false },
-  /** Whether to rotate smoothly or snap in `snapDegrees` increments */
-  rotationType: { type: Type.Enum, values: ["snap", "smooth"], default: "snap" },
-  /** Incremements to snap to when `rotationType` is `"snap"`, default `45` */
-  snapDegrees: { type: Type.Int, default: 45 }
-});
-
 // D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/index.js
 var RuntimeOptions = {
   physx: true,
@@ -57219,22 +57098,20 @@ if (document.readyState === "loading") {
   setupButtonsXR();
 }
 engine.registerComponent(FixedFoveation);
-engine.registerComponent(MouseLookComponent);
 engine.registerComponent(TargetFramerate);
-engine.registerComponent(WasdControlsComponent);
 engine.registerComponent(ConsoleVRToolComponent);
 engine.registerComponent(EasyTuneToolComponent);
 engine.registerComponent(GamepadMeshAnimatorComponent);
 engine.registerComponent(GrabbableComponent);
 engine.registerComponent(GrabberHandComponent);
 engine.registerComponent(PPGatewayComponent);
+engine.registerComponent(PlayerLocomotionComponent);
 engine.registerComponent(SetHandLocalTransformComponent);
 engine.registerComponent(SetHeadLocalTransformComponent);
 engine.registerComponent(SpatialAudioListenerComponent);
 engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
-engine.registerComponent(SmoothLocomotion);
 var loadDelaySeconds = 0;
 if (loadDelaySeconds > 0) {
   setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), loadDelaySeconds * 1e3);

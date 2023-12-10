@@ -24,8 +24,10 @@
                         "_myFlatTransparentNoDepth": "90",
                         "_myPhongOpaque": "32",
                         "_myText": "110",
-                        "_myScene": "18"
-                    }
+                        "_myScene": "18",
+                        "_myPoseForwardFixed": true
+                    },
+                    "active": true
                 }
             ]
         },
@@ -57,6 +59,15 @@
                     "target-framerate": {
                         "framerate": 80.0
                     }
+                },
+                {
+                    "type": "pp-player-locomotion",
+                    "pp-player-locomotion": {
+                        "_myPhysicsBlockLayerFlags": "1, 2, 3, 4, 5, 6, 0, 0",
+                        "_myFlyEnabled": false,
+                        "_myStartFlying": false,
+                        "_mySwitchLocomotionTypeShortcutEnabled": true
+                    }
                 }
             ]
         },
@@ -65,9 +76,9 @@
             "parent": "19",
             "rotation": [
                 0.0,
-                1.0,
                 0.0,
-                0.0
+                0.0,
+                1.0
             ]
         },
         "21": {
@@ -76,16 +87,6 @@
             "components": [
                 {
                     "type": "view"
-                },
-                {
-                    "type": "wasd-controls",
-                    "wasd-controls": {
-                        "headObject": "74"
-                    },
-                    "active": true
-                },
-                {
-                    "type": "mouse-look"
                 }
             ],
             "rotation": [
@@ -814,19 +815,6 @@
                 0.0,
                 0.0,
                 1.0
-            ]
-        },
-        "182": {
-            "name": "Controller",
-            "parent": "20",
-            "components": [
-                {
-                    "type": "smooth-locomotion",
-                    "smooth-locomotion": {
-                        "player": "19",
-                        "head": "74"
-                    }
-                }
             ]
         }
     },

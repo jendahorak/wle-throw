@@ -13,22 +13,20 @@
 
 /* wle:auto-imports:start */
 import {FixedFoveation} from '@wonderlandengine/components';
-import {MouseLookComponent} from '@wonderlandengine/components';
 import {TargetFramerate} from '@wonderlandengine/components';
-import {WasdControlsComponent} from '@wonderlandengine/components';
 import {ConsoleVRToolComponent} from 'wle-pp';
 import {EasyTuneToolComponent} from 'wle-pp';
 import {GamepadMeshAnimatorComponent} from 'wle-pp';
 import {GrabbableComponent} from 'wle-pp';
 import {GrabberHandComponent} from 'wle-pp';
 import {PPGatewayComponent} from 'wle-pp';
+import {PlayerLocomotionComponent} from 'wle-pp';
 import {SetHandLocalTransformComponent} from 'wle-pp';
 import {SetHeadLocalTransformComponent} from 'wle-pp';
 import {SpatialAudioListenerComponent} from 'wle-pp';
 import {SwitchHandObjectComponent} from 'wle-pp';
 import {ToolCursorComponent} from 'wle-pp';
 import {TrackedHandDrawAllJointsComponent} from 'wle-pp';
-import {SmoothLocomotion} from './../node_modules/@wonderlandengine/community-components/dist/components/controller.js';
 /* wle:auto-imports:end */
 
 import { loadRuntime } from '@wonderlandengine/api';
@@ -85,22 +83,20 @@ if (document.readyState === 'loading') {
 
 /* wle:auto-register:start */
 engine.registerComponent(FixedFoveation);
-engine.registerComponent(MouseLookComponent);
 engine.registerComponent(TargetFramerate);
-engine.registerComponent(WasdControlsComponent);
 engine.registerComponent(ConsoleVRToolComponent);
 engine.registerComponent(EasyTuneToolComponent);
 engine.registerComponent(GamepadMeshAnimatorComponent);
 engine.registerComponent(GrabbableComponent);
 engine.registerComponent(GrabberHandComponent);
 engine.registerComponent(PPGatewayComponent);
+engine.registerComponent(PlayerLocomotionComponent);
 engine.registerComponent(SetHandLocalTransformComponent);
 engine.registerComponent(SetHeadLocalTransformComponent);
 engine.registerComponent(SpatialAudioListenerComponent);
 engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
-engine.registerComponent(SmoothLocomotion);
 /* wle:auto-register:end */
 
 let loadDelaySeconds = 0;
