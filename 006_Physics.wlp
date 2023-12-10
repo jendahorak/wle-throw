@@ -47,6 +47,17 @@
                 1.0,
                 1.0,
                 1.0
+            ],
+            "components": [
+                {
+                    "type": "fixed-foveation"
+                },
+                {
+                    "type": "target-framerate",
+                    "target-framerate": {
+                        "framerate": 80.0
+                    }
+                }
             ]
         },
         "20": {
@@ -86,7 +97,7 @@
             "translation": [
                 -1.176643493749907e-7,
                 0.0,
-                2.0418401902588812e-7
+                2.0418401902588815e-7
             ],
             "scaling": [
                 0.9999945,
@@ -172,7 +183,8 @@
             "parent": "73",
             "components": [
                 {
-                    "type": "pp-set-head-local-transform"
+                    "type": "pp-set-head-local-transform",
+                    "active": true
                 },
                 {
                     "type": "pp-spatial-audio-listener"
@@ -497,7 +509,7 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "p1",
-                        "material": "166"
+                        "material": "169"
                     }
                 },
                 {
@@ -516,9 +528,9 @@
                 }
             ],
             "scaling": [
-                10.0,
-                0.2,
-                10.0
+                12.1999988,
+                0.2439999,
+                12.1999988
             ],
             "translation": [
                 -0.0005548,
@@ -656,20 +668,20 @@
                 }
             ],
             "translation": [
-                8.0,
-                5.0000033,
-                8.0000171
+                4.1560072,
+                5.0000066,
+                0.7995242
             ],
             "rotation": [
-                0.0904793,
-                -0.4293807,
-                -0.4343161,
-                0.786648
+                0.09048,
+                -0.4293816,
+                -0.4343159,
+                0.7866476
             ],
             "scaling": [
                 0.9999993,
-                0.9999991,
-                0.9999991
+                0.9999993,
+                0.9999989
             ]
         },
         "177": {
@@ -680,25 +692,25 @@
                     "type": "light",
                     "light": {
                         "type": "sun",
-                        "shadows": false
+                        "shadows": true
                     }
                 }
             ],
             "translation": [
-                -8.0000028,
-                5.0000143,
-                -8.0000009
+                -2.5168833,
+                5.0000643,
+                -3.197081
             ],
             "rotation": [
-                -0.0914733,
-                -0.423076,
-                0.4096059,
-                0.8030332
+                -0.0914719,
+                -0.4230759,
+                0.4096069,
+                0.8030328
             ],
             "scaling": [
-                0.9999995,
-                0.9999984,
-                0.9999993
+                1.0,
+                0.999998,
+                0.9999994
             ]
         },
         "178": {
@@ -802,6 +814,19 @@
                 0.0,
                 0.0,
                 1.0
+            ]
+        },
+        "182": {
+            "name": "Controller",
+            "parent": "20",
+            "components": [
+                {
+                    "type": "smooth-locomotion",
+                    "smooth-locomotion": {
+                        "player": "19",
+                        "head": "74"
+                    }
+                }
             ]
         }
     },
@@ -1105,7 +1130,31 @@
         },
         "175": {
             "name": "sky",
-            "pipeline": "85"
+            "pipeline": "85",
+            "Sky": {
+                "colorStop3": [
+                    0.9882352,
+                    0.7921568,
+                    0.2745098,
+                    1.0
+                ],
+                "colorStop0": [
+                    0.1372549,
+                    0.2392156,
+                    0.3019607,
+                    1.0
+                ],
+                "colorStop1": [
+                    0.5490196,
+                    0.9490196,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
+        "180": {
+            "name": "Wood floor",
+            "pipeline": "14"
         }
     },
     "shaders": {
@@ -1313,8 +1362,14 @@
                 1.0
             ],
             "sky": {
-                "enabled": false,
+                "enabled": true,
                 "material": "175"
+            },
+            "bloom": {
+                "enabled": false
+            },
+            "hdr": {
+                "exposure": 1.0
             }
         },
         "runtime": {
@@ -1328,7 +1383,8 @@
         },
         "scripting": {
             "sourcePaths": [
-                "js"
+                "js",
+                "node_modules/@wonderlandengine/community-components/dist/components"
             ],
             "bundlingType": "esbuild",
             "libraryPaths": [
@@ -1447,6 +1503,10 @@
             "link": {
                 "name": "Sky",
                 "file": "default"
+            },
+            "features": {
+                "GRADIENT_4_STOPS": true,
+                "TEXTURED": false
             }
         },
         "145": {
@@ -1482,7 +1542,11 @@
             "blendDestAlpha": "one"
         }
     },
-    "textures": {},
+    "textures": {
+        "181": {
+            "name": "texture"
+        }
+    },
     "images": {},
     "files": {
         "164": {
