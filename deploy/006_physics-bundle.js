@@ -57192,6 +57192,7 @@ var ButtonComponent2 = class extends Component {
     this.target.onHover.add(this.onHover);
     this.target.onUnhover.add(this.onUnhover);
     this.target.onDown.add(this.onDown);
+    this.target.onClick.add(this.onClick);
   }
   onDeactivate() {
     this.target.onHover.remove(this.onHover);
@@ -57224,6 +57225,25 @@ var ButtonComponent2 = class extends Component {
       hapticFeedback2(cursor.object, 0.7, 20);
     }
   };
+  // onClick = (_, cursor) => {
+  //   // toggles material on given target
+  //   this.toggled = !this.toggled;
+  //   if (this.toggled) {
+  //     console.log('Toggle');
+  //     this.targetMesh.material = this.hoverMaterial;
+  //     this.soundClick.play();
+  //     this.buttonMeshObject.translate([0.0, -0.01, 0.0]);
+  //     hapticFeedback(cursor.object, 1.0, 20);
+  //     this.mesh.material = this.toggleMaterial;
+  //   } else {
+  //     // on up implemented here
+  //     console.log('Untoggle');
+  //     this.targetMesh.material = this.defaultTargetMaterial;
+  //     this.soundUnClick.play();
+  //     this.buttonMeshObject.setTranslationLocal(this.returnPos);
+  //     hapticFeedback(cursor.object, 0.7, 20);
+  //   }
+  // };
   //   /* Called by 'cursor-target' */
   //   onUp = (_, cursor) => {
   //     console.log('onUp called');
@@ -57293,6 +57313,7 @@ if (document.readyState === "loading") {
 } else {
   setupButtonsXR();
 }
+engine.registerComponent(Cursor);
 engine.registerComponent(CursorTarget);
 engine.registerComponent(FixedFoveation);
 engine.registerComponent(MouseLookComponent);
