@@ -28,7 +28,26 @@
                         "_myPoseForwardFixed": true
                     },
                     "active": true
+                },
+                {
+                    "type": "pp-show-fps"
                 }
+            ],
+            "translation": [
+                0.0,
+                -0.3148467,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "19": {
@@ -98,7 +117,7 @@
             "translation": [
                 -1.176643493749907e-7,
                 0.0,
-                2.0418401902588815e-7
+                2.0418401902588817e-7
             ],
             "scaling": [
                 0.9999945,
@@ -304,38 +323,18 @@
                         "_myHandedness": "Right",
                         "_myGrabButton": "Squeeze"
                     }
+                },
+                {
+                    "type": "pp-tool-cursor",
+                    "pp-tool-cursor": {
+                        "_myHandedness": "Right"
+                    }
                 }
             ],
             "translation": [
                 0.1,
                 0.0,
                 0.0
-            ]
-        },
-        "107": {
-            "name": "Hand Right",
-            "parent": "24",
-            "components": [
-                {
-                    "type": "pp-set-hand-local-transform",
-                    "pp-set-hand-local-transform": {
-                        "_myHandedness": "Right"
-                    }
-                }
-            ]
-        },
-        "108": {
-            "name": "Tracked Hand Right",
-            "parent": "24",
-            "components": [
-                {
-                    "type": "pp-tracked-hand-draw-all-joints",
-                    "pp-tracked-hand-draw-all-joints": {
-                        "_myJointMesh": "p1",
-                        "_myJointMaterial": "144",
-                        "_myHandedness": "Right"
-                    }
-                }
             ]
         },
         "109": {
@@ -547,7 +546,23 @@
         },
         "171": {
             "name": "World",
-            "parent": "18"
+            "parent": "18",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
         },
         "172": {
             "name": "Table",
@@ -729,7 +744,7 @@
                     "type": "physx",
                     "physx": {
                         "groups": 255,
-                        "block": 6,
+                        "block": 255,
                         "kinematic": false,
                         "shape": "box",
                         "box": {
@@ -749,6 +764,29 @@
                     "type": "pp-grabbable",
                     "pp-grabbable": {
                         "_myParentOnRelease": "Scene"
+                    }
+                },
+                {
+                    "type": "pp-easy-scale",
+                    "pp-easy-scale": {
+                        "_mySetAsWidgetCurrentVariable": true,
+                        "_myUseTuneTarget": false
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        }
                     }
                 }
             ],
@@ -815,6 +853,200 @@
                 0.0,
                 0.0,
                 1.0
+            ]
+        },
+        "190": {
+            "name": "UI",
+            "parent": "18",
+            "translation": [
+                0.0,
+                0.5907947,
+                0.712904
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "191": {
+            "name": "UI_Base",
+            "parent": "190",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "168"
+                    }
+                }
+            ],
+            "translation": [
+                0.4053804,
+                -0.0227607,
+                -0.0500243
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.5264644,
+                0.030784,
+                0.1258676
+            ]
+        },
+        "192": {
+            "name": "Button_1_Mesh",
+            "parent": "196",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "170"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0952102,
+                0.0131491,
+                0.05
+            ]
+        },
+        "196": {
+            "name": "Button_1",
+            "parent": "191",
+            "translation": [
+                0.6973174,
+                1.2063052,
+                -0.2187972
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.0952102,
+                                0.0131491,
+                                0.05
+                            ]
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "button",
+                    "button": {
+                        "buttonMeshObject": "192",
+                        "hoverMaterial": "198",
+                        "buttonTargetObejct": "178"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0952102,
+                                0.023,
+                                0.05
+                            ]
+                        }
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.8994634,
+                57.3766365,
+                7.9448523
+            ]
+        },
+        "200": {
+            "name": "Text",
+            "parent": "192",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "effect": "none",
+                        "material": "110",
+                        "text": "BUTTON 1"
+                    }
+                }
+            ],
+            "rotation": [
+                0.000003,
+                0.7071081,
+                0.7071053,
+                0.000003
+            ],
+            "translation": [
+                -0.00022,
+                1.1429126,
+                0.0001298
+            ],
+            "scaling": [
+                3.5115864,
+                29.2531299,
+                2.557867
+            ]
+        },
+        "108": {
+            "name": "Tracked Hand Right",
+            "parent": "24",
+            "components": [
+                {
+                    "type": "pp-tracked-hand-draw-all-joints",
+                    "pp-tracked-hand-draw-all-joints": {
+                        "_myJointMesh": "p1",
+                        "_myJointMaterial": "144",
+                        "_myHandedness": "Right"
+                    }
+                }
+            ]
+        },
+        "107": {
+            "name": "Hand Right",
+            "parent": "24",
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform",
+                    "pp-set-hand-local-transform": {
+                        "_myHandedness": "Right"
+                    }
+                }
             ]
         }
     },
@@ -938,6 +1170,12 @@
                 "name": "Gamepad Top Button Right",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             }
+        },
+        "182": {
+            "link": {
+                "name": "Cube.001",
+                "file": "assets\\models\\button.glb"
+            }
         }
     },
     "materials": {
@@ -947,7 +1185,19 @@
                 "file": "default"
             },
             "Text": {
-                "font": "147"
+                "font": "147",
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "effectColor": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
             }
         },
         "31": {
@@ -1143,6 +1393,27 @@
         "180": {
             "name": "Wood floor",
             "pipeline": "14"
+        },
+        "197": {
+            "name": "material"
+        },
+        "198": {
+            "name": "zomp-bright",
+            "Phong": {
+                "diffuseColor": [
+                    0.3803921,
+                    0.6078431,
+                    0.5411764,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.3756,
+                    0.6,
+                    0.5340263,
+                    1.0
+                ]
+            },
+            "pipeline": "13"
         }
     },
     "shaders": {
@@ -1540,6 +1811,10 @@
         "164": {
             "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
             "importerName": "AssimpImporter"
+        },
+        "184": {
+            "fileName": "assets/models/button.glb",
+            "importerName": ""
         }
     },
     "fonts": {
