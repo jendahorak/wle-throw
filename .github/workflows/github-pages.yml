@@ -1,0 +1,62 @@
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    container:
+      image: wonderlandengine/editor:latest
+
+    steps:
+      - name: Install Git
+
+        run: apt-get update && apt-get install -y git git-lfs
+
+      - uses: actions/checkout@v4
+
+        with:
+          lfs: true
+
+      - name: Package
+
+        run: /usr/local/bin/entrypoint.sh WonderlandEditor --windowless --package --project 006_Physics.wlp --credentials "$WLE_CREDENTIALS"
+
+        env:
+          WLE_CREDENTIALS: ${{ secrets.WLE_CREDENTIALS }}
+
+      - name: List files in deploy directory
+        run: ls -R deploy # This was changed, i got a that Gzip could not found deploy folder.
+
+      - name: Gzip
+        run: find deploy -type f -exec gzip -k {} \; # This was changed, i got a that Gzip could not found deploy folder.
+
+      - name: List directory contents
+        run: ls -la
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          name: github-pages # This should match the `artifact_name` in the `actions/deploy-pages@v2` step
+          path: ./deploy # This was changed from ./public which was not created in the build step.
+
+  deploy-pages:
+    needs: package
+
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pages: write
+
+    if: ${{ format('refs/heads/{0}', github.event.repository.default_branch) == github.ref }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+
+        uses: actions/deploy-pages@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: github-pages # This should match the name of the uploaded artifact
