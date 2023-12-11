@@ -404,7 +404,7 @@
                     "active": true,
                     "cursor": {
                         "cursorObject": "209",
-                        "cursorRayObject": "218",
+                        "cursorRayObject": "213",
                         "cursorRayScalingAxis": "none",
                         "handedness": "input component"
                     }
@@ -1222,7 +1222,7 @@
             ]
         },
         "213": {
-            "name": "CursorRayEmpty",
+            "name": "CursorRayRight",
             "parent": "106",
             "translation": [
                 0.0,
