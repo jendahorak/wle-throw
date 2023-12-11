@@ -184,6 +184,11 @@
                         "type": "eye left"
                     }
                 }
+            ],
+            "translation": [
+                0.0,
+                0.09,
+                0.0
             ]
         },
         "27": {
@@ -199,6 +204,22 @@
                         "type": "eye right"
                     }
                 }
+            ],
+            "translation": [
+                -0.0,
+                0.09,
+                -1.2308261077009774e-8
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "28": {
@@ -383,8 +404,8 @@
                     "active": true,
                     "cursor": {
                         "cursorObject": "209",
-                        "cursorRayObject": "212",
-                        "cursorRayScalingAxis": "none",
+                        "cursorRayObject": "218",
+                        "cursorRayScalingAxis": "z",
                         "handedness": "input component"
                     }
                 }
@@ -1202,14 +1223,15 @@
         },
         "212": {
             "name": "CursorRay",
-            "parent": "136",
+            "parent": "213",
             "components": [
                 {
                     "type": "mesh",
                     "mesh": {
                         "mesh": "p3",
                         "material": "211"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "translation": [
@@ -1221,12 +1243,96 @@
                 0.7071065,
                 6.181718958941929e-8,
                 0.0,
-                0.707107
+                0.7071069
             ],
             "scaling": [
                 0.002,
                 0.1999982,
                 0.0019999
+            ]
+        },
+        "213": {
+            "name": "CursorRayEmpty",
+            "parent": "106",
+            "translation": [
+                0.0,
+                -0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "215": {
+            "link": {
+                "name": "CursorRay",
+                "file": "assets\\models\\mine\\CursorRay.glb"
+            },
+            "parent": "213",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "211"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                -0.0004717,
+                0.3103331
+            ],
+            "rotation": [
+                0.7071066,
+                6.181722511655607e-8,
+                0.0,
+                0.7071068
+            ],
+            "scaling": [
+                0.0049999,
+                0.2499937,
+                0.0049998
+            ],
+            "name": "CursorRay2"
+        },
+        "218": {
+            "link": {
+                "name": "CursorRay",
+                "file": "assets\\models\\mine\\CursorRayScaled.glb"
+            },
+            "parent": "213",
+            "name": "CursorRayScaled",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "211"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                -0.0,
+                -0.0,
+                0.0619046
+            ],
+            "rotation": [
+                0.7071079,
+                6.181728906540229e-8,
+                -0.0,
+                0.7071055
+            ],
+            "scaling": [
+                1.0,
+                0.9999908,
+                0.9999908
             ]
         }
     },
@@ -1355,6 +1461,18 @@
             "link": {
                 "name": "Cube.001",
                 "file": "assets\\models\\button.glb"
+            }
+        },
+        "214": {
+            "link": {
+                "name": "CursorRay",
+                "file": "assets\\models\\mine\\CursorRay.glb"
+            }
+        },
+        "217": {
+            "link": {
+                "name": "CursorRay",
+                "file": "assets\\models\\mine\\CursorRayScaled.glb"
             }
         }
     },
@@ -2021,6 +2139,14 @@
         },
         "184": {
             "fileName": "assets/models/button.glb",
+            "importerName": ""
+        },
+        "216": {
+            "fileName": "assets/models/mine/CursorRay.glb",
+            "importerName": ""
+        },
+        "219": {
+            "fileName": "assets/models/mine/CursorRayScaled.glb",
             "importerName": ""
         }
     },
