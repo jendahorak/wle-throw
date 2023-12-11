@@ -875,7 +875,8 @@
                         "buttonMeshObject": "192",
                         "hoverMaterial": "198",
                         "buttonTargetObejct": "178",
-                        "toggleMaterial": "197"
+                        "toggleMaterial": "197",
+                        "targetObject": "178"
                     }
                 }
             ],

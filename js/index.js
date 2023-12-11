@@ -34,7 +34,7 @@ import {ToolCursorComponent} from 'wle-pp';
 import {TrackedHandDrawAllJointsComponent} from 'wle-pp';
 import {Documentation} from './my-src/rotate.js';
 import {ButtonComponentActive} from './my-src/toggle-active.js';
-import {ButtonComponent as ButtonComponent1} from './my-src/toggle-button.js';
+import {ButtonComponentToggle} from './my-src/toggle-button.js';
 /* wle:auto-imports:end */
 
 import { loadRuntime } from '@wonderlandengine/api';
@@ -112,7 +112,7 @@ engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(Documentation);
 engine.registerComponent(ButtonComponentActive);
-engine.registerComponent(ButtonComponent1);
+engine.registerComponent(ButtonComponentToggle);
 /* wle:auto-register:end */
 
 let loadDelaySeconds = 0;

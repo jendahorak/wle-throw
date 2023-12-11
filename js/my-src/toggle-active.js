@@ -1,4 +1,4 @@
-import { Component, InputComponent, MeshComponent, Property, Material } from '@wonderlandengine/api';
+import { Component, InputComponent, MeshComponent, Property } from '@wonderlandengine/api';
 import { CursorTarget, HowlerAudioSource } from '@wonderlandengine/components';
 
 /**
@@ -68,19 +68,16 @@ export class ButtonComponentActive extends Component {
     // toggled state
     this.toggled = false;
     this.hover = false;
-    // toggle-hover material
 
+    // toggle-hover material
     this.hoveredToggleMaterial = this.toggleMaterial.clone();
     const c = this.hoveredToggleMaterial.diffuseColor;
 
     this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
 
-    // Target object
-
+    // Get target object property
     this.targetMesh = this.targetObject.getComponent(MeshComponent);
     this.isTargetActive = this.targetMesh.active;
-
-    console.log(this.isTargetActive);
   }
 
   onActivate() {
@@ -104,7 +101,6 @@ export class ButtonComponentActive extends Component {
     this.hover = true;
 
     if (this.toggled) {
-      console.log(this.hoveredToggleMaterial.diffuseColor);
       this.mesh.material = this.hoveredToggleMaterial;
     } else {
       this.mesh.material = this.hoverMaterial;
@@ -131,6 +127,7 @@ export class ButtonComponentActive extends Component {
     if (this.toggled) {
       console.log('Toggle');
 
+      //   targetObject changes
       this.targetMesh.active = false;
 
       // button object changes
@@ -145,6 +142,8 @@ export class ButtonComponentActive extends Component {
     } else {
       // on up implemented here
       console.log('Untoggle');
+
+      // targetObject changes
       this.targetMesh.active = true;
 
       // button object changes

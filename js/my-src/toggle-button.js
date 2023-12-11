@@ -28,7 +28,7 @@ export function hapticFeedback(object, strength, duration) {
  *
  * Supports interaction with `finger-cursor` component for hand tracking.
  */
-export class ButtonComponent extends Component {
+export class ButtonComponentToggle extends Component {
   static TypeName = 'toggle-button';
   static Properties = {
     /** Object that has the button's mesh attached */
@@ -36,7 +36,7 @@ export class ButtonComponent extends Component {
     /** Material to apply when the user hovers the button */
     hoverMaterial: Property.material(),
 
-    buttonTargetObejct: Property.object(),
+    targetObject: Property.object(),
 
     toggleMaterial: Property.material(),
   };
@@ -65,16 +65,19 @@ export class ButtonComponent extends Component {
       spatial: true,
     });
 
-    // My changes - 10.12
-    this.targetMesh = this.buttonTargetObejct.getComponent(MeshComponent);
-    this.defaultTargetMaterial = this.targetMesh.material;
-    console.log('This is target object mesh component: ', this.targetMesh);
-    console.log('This is material of button: ', this.defaultMaterial);
-    console.log('This is curr material of target: ', this.targetMesh.material);
-    console.log('This is initial target material: ', this.defaultTargetMaterial);
-
     // toggled state
     this.toggled = false;
+    this.hover = false;
+
+    // toggle-hover material
+    this.hoveredToggleMaterial = this.toggleMaterial.clone();
+    const c = this.hoveredToggleMaterial.diffuseColor;
+
+    this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
+
+    // Get target property which to be changed
+    this.targetMesh = this.targetObject.getComponent(MeshComponent);
+    this.defaultTargetMaterial = this.targetMesh.material;
   }
 
   onActivate() {
@@ -95,7 +98,13 @@ export class ButtonComponent extends Component {
 
   /* Called by 'cursor-target' */
   onHover = (_, cursor) => {
-    this.mesh.material = this.hoverMaterial;
+    this.hover = true;
+
+    if (this.toggled) {
+      this.mesh.material = this.hoveredToggleMaterial;
+    } else {
+      this.mesh.material = this.hoverMaterial;
+    }
 
     if (cursor.type === 'finger-cursor') {
       this.onDown(_, cursor);
@@ -120,19 +129,31 @@ export class ButtonComponent extends Component {
 
       this.targetMesh.material = this.hoverMaterial;
 
+      // button object changes
       this.soundClick.play();
       this.buttonMeshObject.translate([0.0, -0.01, 0.0]);
       hapticFeedback(cursor.object, 1.0, 20);
 
       this.mesh.material = this.toggleMaterial;
+
+      if (this.hover) {
+        this.mesh.material = this.hoveredToggleMaterial;
+      }
     } else {
       // on up implemented here
       console.log('Untoggle');
 
+      // targetObject changes
       this.targetMesh.material = this.defaultTargetMaterial;
+
+      // button object changes
       this.soundUnClick.play();
       this.buttonMeshObject.setTranslationLocal(this.returnPos);
       hapticFeedback(cursor.object, 0.7, 20);
+
+      if (this.hover) {
+        this.mesh.material = this.hoverMaterial;
+      }
     }
   };
 
@@ -143,6 +164,8 @@ export class ButtonComponent extends Component {
 
   /* Called by 'cursor-target' */
   onUnhover = (_, cursor) => {
+    this.hover = false;
+
     if (this.toggled) {
       this.mesh.material = this.toggleMaterial;
     } else {

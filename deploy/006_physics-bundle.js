@@ -57114,7 +57114,6 @@ var ButtonComponentActive = class extends Component {
     this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
     this.targetMesh = this.targetObject.getComponent(MeshComponent);
     this.isTargetActive = this.targetMesh.active;
-    console.log(this.isTargetActive);
   }
   onActivate() {
     this.target.onHover.add(this.onHover);
@@ -57134,7 +57133,6 @@ var ButtonComponentActive = class extends Component {
   onHover = (_, cursor) => {
     this.hover = true;
     if (this.toggled) {
-      console.log(this.hoveredToggleMaterial.diffuseColor);
       this.mesh.material = this.hoveredToggleMaterial;
     } else {
       this.mesh.material = this.hoverMaterial;
@@ -57208,7 +57206,7 @@ function hapticFeedback2(object, strength, duration) {
       gamepad.hapticActuators[0].pulse(strength, duration);
   }
 }
-var ButtonComponent = class extends Component {
+var ButtonComponentToggle = class extends Component {
   static onRegister(engine2) {
     engine2.registerComponent(HowlerAudioSource);
     engine2.registerComponent(CursorTarget);
@@ -57228,13 +57226,13 @@ var ButtonComponent = class extends Component {
       src: "sfx/unclick.wav",
       spatial: true
     });
-    this.targetMesh = this.buttonTargetObejct.getComponent(MeshComponent);
-    this.defaultTargetMaterial = this.targetMesh.material;
-    console.log("This is target object mesh component: ", this.targetMesh);
-    console.log("This is material of button: ", this.defaultMaterial);
-    console.log("This is curr material of target: ", this.targetMesh.material);
-    console.log("This is initial target material: ", this.defaultTargetMaterial);
     this.toggled = false;
+    this.hover = false;
+    this.hoveredToggleMaterial = this.toggleMaterial.clone();
+    const c = this.hoveredToggleMaterial.diffuseColor;
+    this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
+    this.targetMesh = this.targetObject.getComponent(MeshComponent);
+    this.defaultTargetMaterial = this.targetMesh.material;
   }
   onActivate() {
     this.target.onHover.add(this.onHover);
@@ -57252,7 +57250,12 @@ var ButtonComponent = class extends Component {
   }
   /* Called by 'cursor-target' */
   onHover = (_, cursor) => {
-    this.mesh.material = this.hoverMaterial;
+    this.hover = true;
+    if (this.toggled) {
+      this.mesh.material = this.hoveredToggleMaterial;
+    } else {
+      this.mesh.material = this.hoverMaterial;
+    }
     if (cursor.type === "finger-cursor") {
       this.onDown(_, cursor);
     }
@@ -57271,12 +57274,18 @@ var ButtonComponent = class extends Component {
       this.buttonMeshObject.translate([0, -0.01, 0]);
       hapticFeedback2(cursor.object, 1, 20);
       this.mesh.material = this.toggleMaterial;
+      if (this.hover) {
+        this.mesh.material = this.hoveredToggleMaterial;
+      }
     } else {
       console.log("Untoggle");
       this.targetMesh.material = this.defaultTargetMaterial;
       this.soundUnClick.play();
       this.buttonMeshObject.setTranslationLocal(this.returnPos);
       hapticFeedback2(cursor.object, 0.7, 20);
+      if (this.hover) {
+        this.mesh.material = this.hoverMaterial;
+      }
     }
   };
   /* Called by 'cursor-target' */
@@ -57285,6 +57294,7 @@ var ButtonComponent = class extends Component {
   };
   /* Called by 'cursor-target' */
   onUnhover = (_, cursor) => {
+    this.hover = false;
     if (this.toggled) {
       this.mesh.material = this.toggleMaterial;
     } else {
@@ -57296,13 +57306,13 @@ var ButtonComponent = class extends Component {
     hapticFeedback2(cursor.object, 0.3, 50);
   };
 };
-__publicField(ButtonComponent, "TypeName", "toggle-button");
-__publicField(ButtonComponent, "Properties", {
+__publicField(ButtonComponentToggle, "TypeName", "toggle-button");
+__publicField(ButtonComponentToggle, "Properties", {
   /** Object that has the button's mesh attached */
   buttonMeshObject: Property.object(),
   /** Material to apply when the user hovers the button */
   hoverMaterial: Property.material(),
-  buttonTargetObejct: Property.object(),
+  targetObject: Property.object(),
   toggleMaterial: Property.material()
 });
 
@@ -57367,7 +57377,7 @@ engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(Documentation);
 engine.registerComponent(ButtonComponentActive);
-engine.registerComponent(ButtonComponent);
+engine.registerComponent(ButtonComponentToggle);
 var loadDelaySeconds = 0;
 if (loadDelaySeconds > 0) {
   setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), loadDelaySeconds * 1e3);
