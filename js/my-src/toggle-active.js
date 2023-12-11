@@ -1,6 +1,13 @@
 import { Component, InputComponent, MeshComponent, Property, Material } from '@wonderlandengine/api';
 import { CursorTarget, HowlerAudioSource } from '@wonderlandengine/components';
 
+/**
+ * Helper function to trigger haptic feedback pulse.
+ *
+ * @param {Object} object An object with 'input' component attached
+ * @param {number} strength Strength from 0.0 - 1.0
+ * @param {number} duration Duration in milliseconds
+ */
 export function hapticFeedback(object, strength, duration) {
   const input = object.getComponent(InputComponent);
   if (input && input.xrInputSource) {
@@ -9,12 +16,28 @@ export function hapticFeedback(object, strength, duration) {
   }
 }
 
+/**
+ * Button component.
+ *
+ * Shows a 'hoverMaterial' on cursor hover, moves backward on cursor down,
+ * returns to its position on cursor up, plays click/unclick sounds and haptic
+ * feedback on hover.
+ *
+ * Use `target.onClick.add(() => {})` on the `cursor-target` component used
+ * with the button to define the button's action.
+ *
+ * Supports interaction with `finger-cursor` component for hand tracking.
+ */
 export class ButtonComponentActive extends Component {
   static TypeName = 'toggle-active';
   static Properties = {
+    /** Object that has the button's mesh attached */
     buttonMeshObject: Property.object(),
+    /** Material to apply when the user hovers the button */
     hoverMaterial: Property.material(),
+
     targetObject: Property.object(),
+
     toggleMaterial: Property.material(),
   };
 
@@ -23,28 +46,16 @@ export class ButtonComponentActive extends Component {
     engine.registerComponent(CursorTarget);
   }
 
+  /* Position to return to when "unpressing" the button */
   returnPos = new Float32Array(3);
 
   start() {
-    this.initializeMesh();
-    this.initializeTarget();
-    this.initializeSounds();
-    this.initializeState();
-  }
-
-  initializeMesh() {
     this.mesh = this.buttonMeshObject.getComponent(MeshComponent);
     this.defaultMaterial = this.mesh.material;
     this.buttonMeshObject.getTranslationLocal(this.returnPos);
-  }
 
-  initializeTarget() {
     this.target = this.object.getComponent(CursorTarget) || this.object.addComponent(CursorTarget);
-    this.targetMesh = this.targetObject.getComponent(MeshComponent);
-    this.isTargetActive = this.targetMesh.active;
-  }
 
-  initializeSounds() {
     this.soundClick = this.object.addComponent(HowlerAudioSource, {
       src: 'sfx/click.wav',
       spatial: true,
@@ -53,14 +64,23 @@ export class ButtonComponentActive extends Component {
       src: 'sfx/unclick.wav',
       spatial: true,
     });
-  }
 
-  initializeState() {
+    // toggled state
     this.toggled = false;
     this.hover = false;
+    // toggle-hover material
+
     this.hoveredToggleMaterial = this.toggleMaterial.clone();
     const c = this.hoveredToggleMaterial.diffuseColor;
+
     this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
+
+    // Target object
+
+    this.targetMesh = this.targetObject.getComponent(MeshComponent);
+    this.isTargetActive = this.targetMesh.active;
+
+    console.log(this.isTargetActive);
   }
 
   onActivate() {
@@ -79,44 +99,84 @@ export class ButtonComponentActive extends Component {
     this.target.onUp.remove(this.onUp);
   }
 
+  /* Called by 'cursor-target' */
   onHover = (_, cursor) => {
     this.hover = true;
-    this.mesh.material = this.toggled ? this.hoveredToggleMaterial : this.hoverMaterial;
-    if (cursor.type === 'finger-cursor') this.onDown(_, cursor);
+
+    if (this.toggled) {
+      console.log(this.hoveredToggleMaterial.diffuseColor);
+      this.mesh.material = this.hoveredToggleMaterial;
+    } else {
+      this.mesh.material = this.hoverMaterial;
+    }
+
+    if (cursor.type === 'finger-cursor') {
+      this.onDown(_, cursor);
+    }
+
     hapticFeedback(cursor.object, 0.5, 50);
   };
+
+  /* Called by 'cursor-target' */
 
   onDown = (_, cursor) => {
     return;
   };
 
   onClick = (_, cursor) => {
-    this.toggled = !this.toggled;
-    this.targetMesh.active = !this.toggled;
-    this.mesh.material = this.toggled ? this.toggleMaterial : this.hoverMaterial;
-    this.playSoundAndMoveButton(cursor);
-  };
+    // toggles material on given target
 
-  playSoundAndMoveButton(cursor) {
+    this.toggled = !this.toggled;
+
     if (this.toggled) {
+      console.log('Toggle');
+
+      this.targetMesh.active = false;
+
+      // button object changes
       this.soundClick.play();
       this.buttonMeshObject.translate([0.0, -0.01, 0.0]);
       hapticFeedback(cursor.object, 1.0, 20);
+      this.mesh.material = this.toggleMaterial;
+
+      if (this.hover) {
+        this.mesh.material = this.hoveredToggleMaterial;
+      }
     } else {
+      // on up implemented here
+      console.log('Untoggle');
+      this.targetMesh.active = true;
+
+      // button object changes
       this.soundUnClick.play();
       this.buttonMeshObject.setTranslationLocal(this.returnPos);
       hapticFeedback(cursor.object, 0.7, 20);
-    }
-  }
 
+      if (this.hover) {
+        this.mesh.material = this.hoverMaterial;
+      }
+    }
+  };
+
+  /* Called by 'cursor-target' */
   onUp = (_, cursor) => {
     return;
   };
 
+  /* Called by 'cursor-target' */
   onUnhover = (_, cursor) => {
     this.hover = false;
-    this.mesh.material = this.toggled ? this.toggleMaterial : this.defaultMaterial;
-    if (cursor.type === 'finger-cursor') this.onUp(_, cursor);
+
+    if (this.toggled) {
+      this.mesh.material = this.toggleMaterial;
+    } else {
+      this.mesh.material = this.defaultMaterial;
+    }
+
+    if (cursor.type === 'finger-cursor') {
+      this.onUp(_, cursor);
+    }
+
     hapticFeedback(cursor.object, 0.3, 50);
   };
 }
