@@ -30,7 +30,8 @@
                     "active": true
                 },
                 {
-                    "type": "pp-show-fps"
+                    "type": "pp-show-fps",
+                    "active": true
                 }
             ],
             "translation": [
@@ -94,7 +95,8 @@
                     }
                 },
                 {
-                    "type": "pp-input-manager"
+                    "type": "pp-input-manager",
+                    "active": false
                 }
             ]
         },
@@ -385,7 +387,8 @@
                     "type": "pp-tool-cursor",
                     "pp-tool-cursor": {
                         "_myHandedness": "Right"
-                    }
+                    },
+                    "active": true
                 }
             ]
         },
