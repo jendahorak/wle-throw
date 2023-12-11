@@ -57058,8 +57058,136 @@ __publicField(EasyTransformComponent, "Properties", {
   // Edit all scale values together
 });
 
-// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/button.js
+// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/my-src/rotate.js
+var Documentation = class extends Component {
+  static onRegister(engine2) {
+  }
+  init() {
+    console.log("init() with param", this.param);
+  }
+  start() {
+    console.log("start() with param", this.param);
+  }
+  update(dt) {
+    this.object.rotateAxisAngleDegObject([0, 1, 0], dt * this.param);
+  }
+};
+__publicField(Documentation, "TypeName", "rotate");
+/* Properties that are configurable in the editor */
+__publicField(Documentation, "Properties", {
+  param: Property.float(1)
+});
+
+// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/my-src/toggle-active.js
 function hapticFeedback(object, strength, duration) {
+  const input = object.getComponent(InputComponent);
+  if (input && input.xrInputSource) {
+    const gamepad = input.xrInputSource.gamepad;
+    if (gamepad && gamepad.hapticActuators)
+      gamepad.hapticActuators[0].pulse(strength, duration);
+  }
+}
+var ButtonComponentActive = class extends Component {
+  static onRegister(engine2) {
+    engine2.registerComponent(HowlerAudioSource);
+    engine2.registerComponent(CursorTarget);
+  }
+  returnPos = new Float32Array(3);
+  start() {
+    this.initializeMesh();
+    this.initializeTarget();
+    this.initializeSounds();
+    this.initializeState();
+  }
+  initializeMesh() {
+    this.mesh = this.buttonMeshObject.getComponent(MeshComponent);
+    this.defaultMaterial = this.mesh.material;
+    this.buttonMeshObject.getTranslationLocal(this.returnPos);
+  }
+  initializeTarget() {
+    this.target = this.object.getComponent(CursorTarget) || this.object.addComponent(CursorTarget);
+    this.targetMesh = this.targetObject.getComponent(MeshComponent);
+    this.isTargetActive = this.targetMesh.active;
+  }
+  initializeSounds() {
+    this.soundClick = this.object.addComponent(HowlerAudioSource, {
+      src: "sfx/click.wav",
+      spatial: true
+    });
+    this.soundUnClick = this.object.addComponent(HowlerAudioSource, {
+      src: "sfx/unclick.wav",
+      spatial: true
+    });
+  }
+  initializeState() {
+    this.toggled = false;
+    this.hover = false;
+    this.hoveredToggleMaterial = this.toggleMaterial.clone();
+    const c = this.hoveredToggleMaterial.diffuseColor;
+    this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
+  }
+  onActivate() {
+    this.target.onHover.add(this.onHover);
+    this.target.onUnhover.add(this.onUnhover);
+    this.target.onDown.add(this.onDown);
+    this.target.onClick.add(this.onClick);
+    this.target.onUp.add(this.onUp);
+  }
+  onDeactivate() {
+    this.target.onHover.remove(this.onHover);
+    this.target.onUnhover.remove(this.onUnhover);
+    this.target.onDown.remove(this.onDown);
+    this.target.onClick.remove(this.onClick);
+    this.target.onUp.remove(this.onUp);
+  }
+  onHover = (_, cursor) => {
+    this.hover = true;
+    this.mesh.material = this.toggled ? this.hoveredToggleMaterial : this.hoverMaterial;
+    if (cursor.type === "finger-cursor")
+      this.onDown(_, cursor);
+    hapticFeedback(cursor.object, 0.5, 50);
+  };
+  onDown = (_, cursor) => {
+    return;
+  };
+  onClick = (_, cursor) => {
+    this.toggled = !this.toggled;
+    this.targetMesh.active = !this.toggled;
+    this.mesh.material = this.toggled ? this.toggleMaterial : this.hoverMaterial;
+    this.playSoundAndMoveButton(cursor);
+  };
+  playSoundAndMoveButton(cursor) {
+    if (this.toggled) {
+      this.soundClick.play();
+      this.buttonMeshObject.translate([0, -0.01, 0]);
+      hapticFeedback(cursor.object, 1, 20);
+    } else {
+      this.soundUnClick.play();
+      this.buttonMeshObject.setTranslationLocal(this.returnPos);
+      hapticFeedback(cursor.object, 0.7, 20);
+    }
+  }
+  onUp = (_, cursor) => {
+    return;
+  };
+  onUnhover = (_, cursor) => {
+    this.hover = false;
+    this.mesh.material = this.toggled ? this.toggleMaterial : this.defaultMaterial;
+    if (cursor.type === "finger-cursor")
+      this.onUp(_, cursor);
+    hapticFeedback(cursor.object, 0.3, 50);
+  };
+};
+__publicField(ButtonComponentActive, "TypeName", "toggle-active");
+__publicField(ButtonComponentActive, "Properties", {
+  buttonMeshObject: Property.object(),
+  hoverMaterial: Property.material(),
+  targetObject: Property.object(),
+  toggleMaterial: Property.material()
+});
+
+// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/my-src/toggle-button.js
+function hapticFeedback2(object, strength, duration) {
   const input = object.getComponent(InputComponent);
   if (input && input.xrInputSource) {
     const gamepad = input.xrInputSource.gamepad;
@@ -57093,119 +57221,6 @@ var ButtonComponent = class extends Component {
     console.log("This is material of button: ", this.defaultMaterial);
     console.log("This is curr material of target: ", this.targetMesh.material);
     console.log("This is initial target material: ", this.defaultTargetMaterial);
-  }
-  onActivate() {
-    this.target.onHover.add(this.onHover);
-    this.target.onUnhover.add(this.onUnhover);
-    this.target.onDown.add(this.onDown);
-    this.target.onUp.add(this.onUp);
-  }
-  onDeactivate() {
-    this.target.onHover.remove(this.onHover);
-    this.target.onUnhover.remove(this.onUnhover);
-    this.target.onDown.remove(this.onDown);
-    this.target.onUp.remove(this.onUp);
-  }
-  /* Called by 'cursor-target' */
-  onHover = (_, cursor) => {
-    this.mesh.material = this.hoverMaterial;
-    if (cursor.type === "finger-cursor") {
-      this.onDown(_, cursor);
-    }
-    hapticFeedback(cursor.object, 0.5, 50);
-  };
-  /* Called by 'cursor-target' */
-  onDown = (_, cursor) => {
-    if (this.targetMesh.material.equals(this.defaultTargetMaterial)) {
-      console.log("Changed");
-      console.log("object is default material");
-      this.targetMesh.material = this.hoverMaterial;
-    } else {
-      this.targetMesh.material = this.defaultTargetMaterial;
-    }
-    this.soundClick.play();
-    this.buttonMeshObject.translate([0, -0.01, 0]);
-    hapticFeedback(cursor.object, 1, 20);
-  };
-  /* Called by 'cursor-target' */
-  onUp = (_, cursor) => {
-    this.soundUnClick.play();
-    this.buttonMeshObject.setTranslationLocal(this.returnPos);
-    hapticFeedback(cursor.object, 0.7, 20);
-  };
-  /* Called by 'cursor-target' */
-  onUnhover = (_, cursor) => {
-    this.mesh.material = this.defaultMaterial;
-    if (cursor.type === "finger-cursor") {
-      this.onUp(_, cursor);
-    }
-    hapticFeedback(cursor.object, 0.3, 50);
-  };
-};
-__publicField(ButtonComponent, "TypeName", "button");
-__publicField(ButtonComponent, "Properties", {
-  /** Object that has the button's mesh attached */
-  buttonMeshObject: Property.object(),
-  /** Material to apply when the user hovers the button */
-  hoverMaterial: Property.material(),
-  buttonTargetObejct: Property.object()
-});
-
-// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/rotate.js
-var Documentation = class extends Component {
-  static onRegister(engine2) {
-  }
-  init() {
-    console.log("init() with param", this.param);
-  }
-  start() {
-    console.log("start() with param", this.param);
-  }
-  update(dt) {
-    this.object.rotateAxisAngleDegObject([0, 1, 0], dt * this.param);
-  }
-};
-__publicField(Documentation, "TypeName", "rotate");
-/* Properties that are configurable in the editor */
-__publicField(Documentation, "Properties", {
-  param: Property.float(1)
-});
-
-// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/toggle-button.js
-function hapticFeedback2(object, strength, duration) {
-  const input = object.getComponent(InputComponent);
-  if (input && input.xrInputSource) {
-    const gamepad = input.xrInputSource.gamepad;
-    if (gamepad && gamepad.hapticActuators)
-      gamepad.hapticActuators[0].pulse(strength, duration);
-  }
-}
-var ButtonComponent2 = class extends Component {
-  static onRegister(engine2) {
-    engine2.registerComponent(HowlerAudioSource);
-    engine2.registerComponent(CursorTarget);
-  }
-  /* Position to return to when "unpressing" the button */
-  returnPos = new Float32Array(3);
-  start() {
-    this.mesh = this.buttonMeshObject.getComponent(MeshComponent);
-    this.defaultMaterial = this.mesh.material;
-    this.buttonMeshObject.getTranslationLocal(this.returnPos);
-    this.target = this.object.getComponent(CursorTarget) || this.object.addComponent(CursorTarget);
-    this.soundClick = this.object.addComponent(HowlerAudioSource, {
-      src: "sfx/click.wav",
-      spatial: true
-    });
-    this.soundUnClick = this.object.addComponent(HowlerAudioSource, {
-      src: "sfx/unclick.wav",
-      spatial: true
-    });
-    this.targetMesh = this.buttonTargetObejct.getComponent(MeshComponent);
-    this.defaultTargetMaterial = this.targetMesh.material;
-    console.log("This is target object mesh component: ", this.targetMesh);
-    console.log("This is material of button: ", this.defaultMaterial);
-    console.log("This is curr material of target: ", this.targetMesh.material);
-    console.log("This is initial target material: ", this.defaultTargetMaterial);
     this.toggled = false;
   }
   onActivate() {
@@ -57213,11 +57228,14 @@ var ButtonComponent2 = class extends Component {
     this.target.onUnhover.add(this.onUnhover);
     this.target.onDown.add(this.onDown);
     this.target.onClick.add(this.onClick);
+    this.target.onUp.add(this.onUp);
   }
   onDeactivate() {
     this.target.onHover.remove(this.onHover);
     this.target.onUnhover.remove(this.onUnhover);
     this.target.onDown.remove(this.onDown);
+    this.target.onClick.remove(this.onClick);
+    this.target.onUp.remove(this.onUp);
   }
   /* Called by 'cursor-target' */
   onHover = (_, cursor) => {
@@ -57248,13 +57266,10 @@ var ButtonComponent2 = class extends Component {
       hapticFeedback2(cursor.object, 0.7, 20);
     }
   };
-  //   /* Called by 'cursor-target' */
-  //   onUp = (_, cursor) => {
-  //     console.log('onUp called');
-  //     this.soundUnClick.play();
-  //     this.buttonMeshObject.setTranslationLocal(this.returnPos);
-  //     hapticFeedback(cursor.object, 0.7, 20);
-  //   };
+  /* Called by 'cursor-target' */
+  onUp = (_, cursor) => {
+    return;
+  };
   /* Called by 'cursor-target' */
   onUnhover = (_, cursor) => {
     if (this.toggled) {
@@ -57268,8 +57283,8 @@ var ButtonComponent2 = class extends Component {
     hapticFeedback2(cursor.object, 0.3, 50);
   };
 };
-__publicField(ButtonComponent2, "TypeName", "toggle-button");
-__publicField(ButtonComponent2, "Properties", {
+__publicField(ButtonComponent, "TypeName", "toggle-button");
+__publicField(ButtonComponent, "Properties", {
   /** Object that has the button's mesh attached */
   buttonMeshObject: Property.object(),
   /** Material to apply when the user hovers the button */
@@ -57323,7 +57338,6 @@ engine.registerComponent(FixedFoveation);
 engine.registerComponent(MouseLookComponent);
 engine.registerComponent(TargetFramerate);
 engine.registerComponent(ConsoleVRToolComponent);
-engine.registerComponent(EasyScaleComponent);
 engine.registerComponent(EasyTuneToolComponent);
 engine.registerComponent(GamepadMeshAnimatorComponent);
 engine.registerComponent(GrabbableComponent);
@@ -57338,9 +57352,9 @@ engine.registerComponent(SpatialAudioListenerComponent);
 engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
-engine.registerComponent(ButtonComponent);
 engine.registerComponent(Documentation);
-engine.registerComponent(ButtonComponent2);
+engine.registerComponent(ButtonComponentActive);
+engine.registerComponent(ButtonComponent);
 var loadDelaySeconds = 0;
 if (loadDelaySeconds > 0) {
   setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), loadDelaySeconds * 1e3);

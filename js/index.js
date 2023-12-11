@@ -18,7 +18,6 @@ import {FixedFoveation} from '@wonderlandengine/components';
 import {MouseLookComponent} from '@wonderlandengine/components';
 import {TargetFramerate} from '@wonderlandengine/components';
 import {ConsoleVRToolComponent} from 'wle-pp';
-import {EasyScaleComponent} from 'wle-pp';
 import {EasyTuneToolComponent} from 'wle-pp';
 import {GamepadMeshAnimatorComponent} from 'wle-pp';
 import {GrabbableComponent} from 'wle-pp';
@@ -33,9 +32,9 @@ import {SpatialAudioListenerComponent} from 'wle-pp';
 import {SwitchHandObjectComponent} from 'wle-pp';
 import {ToolCursorComponent} from 'wle-pp';
 import {TrackedHandDrawAllJointsComponent} from 'wle-pp';
-import {ButtonComponent} from './button.js';
-import {Documentation} from './rotate.js';
-import {ButtonComponent as ButtonComponent1} from './toggle-button.js';
+import {Documentation} from './my-src/rotate.js';
+import {ButtonComponentActive} from './my-src/toggle-active.js';
+import {ButtonComponent as ButtonComponent1} from './my-src/toggle-button.js';
 /* wle:auto-imports:end */
 
 import { loadRuntime } from '@wonderlandengine/api';
@@ -97,7 +96,6 @@ engine.registerComponent(FixedFoveation);
 engine.registerComponent(MouseLookComponent);
 engine.registerComponent(TargetFramerate);
 engine.registerComponent(ConsoleVRToolComponent);
-engine.registerComponent(EasyScaleComponent);
 engine.registerComponent(EasyTuneToolComponent);
 engine.registerComponent(GamepadMeshAnimatorComponent);
 engine.registerComponent(GrabbableComponent);
@@ -112,8 +110,8 @@ engine.registerComponent(SpatialAudioListenerComponent);
 engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
-engine.registerComponent(ButtonComponent);
 engine.registerComponent(Documentation);
+engine.registerComponent(ButtonComponentActive);
 engine.registerComponent(ButtonComponent1);
 /* wle:auto-register:end */
 

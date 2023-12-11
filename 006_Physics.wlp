@@ -96,7 +96,7 @@
                 },
                 {
                     "type": "pp-input-manager",
-                    "active": false
+                    "active": true
                 }
             ]
         },
@@ -104,7 +104,7 @@
             "name": "Reference Space",
             "parent": "19",
             "rotation": [
-                4.371138828673793e-8,
+                4.3711388286737935e-8,
                 -1.0,
                 7.549790126404332e-8,
                 -0.0
@@ -691,33 +691,14 @@
                     }
                 },
                 {
-                    "type": "pp-easy-scale",
-                    "pp-easy-scale": {
-                        "_mySetAsWidgetCurrentVariable": true,
-                        "_myUseTuneTarget": false
-                    }
-                },
-                {
                     "type": "cursor-target"
-                },
-                {
-                    "type": "collision",
-                    "collision": {
-                        "collider": "box",
-                        "box": {
-                            "extents": [
-                                0.1,
-                                0.1,
-                                0.1
-                            ]
-                        }
-                    }
                 },
                 {
                     "type": "rotate",
                     "rotate": {
                         "param": 55.2000007
-                    }
+                    },
+                    "active": true
                 }
             ],
             "scaling": [
@@ -873,30 +854,7 @@
             ],
             "components": [
                 {
-                    "type": "physx",
-                    "physx": {
-                        "shape": "box",
-                        "box": {
-                            "extents": [
-                                0.0952102,
-                                0.0131491,
-                                0.05
-                            ]
-                        }
-                    },
-                    "active": false
-                },
-                {
                     "type": "cursor-target"
-                },
-                {
-                    "type": "button",
-                    "button": {
-                        "buttonMeshObject": "192",
-                        "hoverMaterial": "198",
-                        "buttonTargetObejct": "178"
-                    },
-                    "active": false
                 },
                 {
                     "type": "collision",
@@ -1083,6 +1041,112 @@
                 0.9999966,
                 0.999994,
                 0.9999955
+            ]
+        },
+        "206": {
+            "name": "Button_2",
+            "parent": "191",
+            "translation": [
+                0.2509797,
+                1.2062567,
+                -0.218775
+            ],
+            "components": [
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0952102,
+                                0.023,
+                                0.05
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "toggle-active",
+                    "toggle-active": {
+                        "buttonMeshObject": "207",
+                        "hoverMaterial": "198",
+                        "targetObject": "178",
+                        "toggleMaterial": "197"
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.8994634,
+                57.3766365,
+                7.9448523
+            ]
+        },
+        "207": {
+            "name": "Button_2_Mesh",
+            "parent": "206",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "170"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                8.791685104370117e-7,
+                -0.0000035
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0952102,
+                0.0131491,
+                0.05
+            ]
+        },
+        "208": {
+            "name": "Text",
+            "parent": "207",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "effect": "none",
+                        "material": "110",
+                        "text": "BUTTON 2"
+                    }
+                }
+            ],
+            "rotation": [
+                0.000003,
+                0.7071081,
+                0.7071053,
+                0.000003
+            ],
+            "translation": [
+                -0.00022,
+                1.1429126,
+                0.0001298
+            ],
+            "scaling": [
+                3.5115864,
+                29.2531299,
+                2.557867
             ]
         }
     },
