@@ -57228,24 +57228,7 @@ var ButtonComponent2 = class extends Component {
     hapticFeedback2(cursor.object, 0.5, 50);
   };
   /* Called by 'cursor-target' */
-  onDown = (_, cursor) => {
-    this.toggled = !this.toggled;
-    if (this.toggled) {
-      console.log("Toggle");
-      this.targetMesh.material = this.hoverMaterial;
-      this.soundClick.play();
-      this.buttonMeshObject.translate([0, -0.01, 0]);
-      hapticFeedback2(cursor.object, 1, 20);
-      this.mesh.material = this.toggleMaterial;
-    } else {
-      console.log("Untoggle");
-      this.targetMesh.material = this.defaultTargetMaterial;
-      this.soundUnClick.play();
-      this.buttonMeshObject.setTranslationLocal(this.returnPos);
-      hapticFeedback2(cursor.object, 0.7, 20);
-    }
-  };
-  // onClick = (_, cursor) => {
+  // onDown = (_, cursor) => {
   //   // toggles material on given target
   //   this.toggled = !this.toggled;
   //   if (this.toggled) {
@@ -57264,6 +57247,23 @@ var ButtonComponent2 = class extends Component {
   //     hapticFeedback(cursor.object, 0.7, 20);
   //   }
   // };
+  onClick = (_, cursor) => {
+    this.toggled = !this.toggled;
+    if (this.toggled) {
+      console.log("Toggle");
+      this.targetMesh.material = this.hoverMaterial;
+      this.soundClick.play();
+      this.buttonMeshObject.translate([0, -0.01, 0]);
+      hapticFeedback2(cursor.object, 1, 20);
+      this.mesh.material = this.toggleMaterial;
+    } else {
+      console.log("Untoggle");
+      this.targetMesh.material = this.defaultTargetMaterial;
+      this.soundUnClick.play();
+      this.buttonMeshObject.setTranslationLocal(this.returnPos);
+      hapticFeedback2(cursor.object, 0.7, 20);
+    }
+  };
   //   /* Called by 'cursor-target' */
   //   onUp = (_, cursor) => {
   //     console.log('onUp called');

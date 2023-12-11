@@ -355,14 +355,6 @@
                     }
                 },
                 {
-                    "type": "pp-tool-cursor",
-                    "pp-tool-cursor": {
-                        "_myHandedness": "Right",
-                        "_myPulseOnHover": true
-                    },
-                    "active": false
-                },
-                {
                     "type": "input",
                     "input": {
                         "type": "ray right"
@@ -656,76 +648,6 @@
                 1.0,
                 0.2,
                 1.0
-            ]
-        },
-        "176": {
-            "name": "sun1",
-            "parent": "28",
-            "components": [
-                {
-                    "type": "light",
-                    "light": {
-                        "type": "sun"
-                    }
-                }
-            ],
-            "translation": [
-                4.1560072,
-                5.0000066,
-                0.7995242
-            ],
-            "rotation": [
-                0.09048,
-                -0.4293816,
-                -0.4343159,
-                0.7866476
-            ],
-            "scaling": [
-                0.9999993,
-                0.9999993,
-                0.9999989
-            ]
-        },
-        "177": {
-            "name": "sun2",
-            "parent": "28",
-            "components": [
-                {
-                    "type": "light",
-                    "light": {
-                        "type": "sun",
-                        "shadows": false,
-                        "shadowRange": 100.0,
-                        "shadowBias": 0.001,
-                        "shadowTexelSize": 1.0
-                    },
-                    "active": false
-                },
-                {
-                    "type": "light",
-                    "light": {
-                        "shadows": true,
-                        "type": "sun",
-                        "shadowRange": 100.0
-                    },
-                    "active": true
-                }
-            ],
-            "translation": [
-                -2.5168833,
-                5.0000643,
-                -3.197081
-            ],
-            "rotation": [
-                -0.0914719,
-                -0.4230759,
-                0.4096069,
-                0.8030328
-            ],
-            "scaling": [
-                1.0,
-                0.999998,
-                0.9999994
             ]
         },
         "178": {
@@ -1091,6 +1013,73 @@
                 1.0,
                 1.0,
                 1.0
+            ]
+        },
+        "203": {
+            "name": "Light",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "type": "sun",
+                        "shadows": true,
+                        "intensity": 1.0,
+                        "shadowRange": 20.0
+                    }
+                }
+            ],
+            "translation": [
+                -1.7811043,
+                3.8422122,
+                -3.9442281
+            ],
+            "rotation": [
+                -0.4133322,
+                0.4147682,
+                0.1372853,
+                0.798922
+            ],
+            "scaling": [
+                0.9999979,
+                0.999996,
+                0.9999979
+            ]
+        },
+        "204": {
+            "name": "Light",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "type": "sun",
+                        "shadows": false,
+                        "intensity": 0.5,
+                        "shadowRange": 20.0,
+                        "color": [
+                            1.0,
+                            0.9547511,
+                            0.8352941
+                        ]
+                    }
+                }
+            ],
+            "translation": [
+                -1.2425502,
+                3.8422145,
+                -3.9442305
+            ],
+            "rotation": [
+                0.1358987,
+                0.8003075,
+                0.4138119,
+                -0.4120668
+            ],
+            "scaling": [
+                0.9999966,
+                0.999994,
+                0.9999955
             ]
         }
     },
