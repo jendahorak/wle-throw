@@ -247,7 +247,7 @@
             "parent": "20",
             "translation": [
                 -2.8814220343065244e-8,
-                0.3295962,
+                0.0,
                 -4.976764600428396e-8
             ],
             "rotation": [
@@ -1209,8 +1209,7 @@
                     "mesh": {
                         "mesh": "p3",
                         "material": "211"
-                    },
-                    "active": false
+                    }
                 }
             ],
             "translation": [
