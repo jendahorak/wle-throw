@@ -405,7 +405,7 @@
                     "cursor": {
                         "cursorObject": "209",
                         "cursorRayObject": "218",
-                        "cursorRayScalingAxis": "z",
+                        "cursorRayScalingAxis": "none",
                         "handedness": "input component"
                     }
                 }
@@ -1221,36 +1221,6 @@
                 0.008
             ]
         },
-        "212": {
-            "name": "CursorRay",
-            "parent": "213",
-            "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p3",
-                        "material": "211"
-                    },
-                    "active": false
-                }
-            ],
-            "translation": [
-                -0.0017673,
-                -0.0010485,
-                0.2457221
-            ],
-            "rotation": [
-                0.7071065,
-                6.181718958941929e-8,
-                0.0,
-                0.7071069
-            ],
-            "scaling": [
-                0.002,
-                0.1999982,
-                0.0019999
-            ]
-        },
         "213": {
             "name": "CursorRayEmpty",
             "parent": "106",
@@ -1271,38 +1241,6 @@
                 1.0
             ]
         },
-        "215": {
-            "link": {
-                "name": "CursorRay",
-                "file": "assets\\models\\mine\\CursorRay.glb"
-            },
-            "parent": "213",
-            "components": [
-                {
-                    "mesh": {
-                        "material": "211"
-                    },
-                    "active": false
-                }
-            ],
-            "translation": [
-                0.0,
-                -0.0004717,
-                0.3103331
-            ],
-            "rotation": [
-                0.7071066,
-                6.181722511655607e-8,
-                0.0,
-                0.7071068
-            ],
-            "scaling": [
-                0.0049999,
-                0.2499937,
-                0.0049998
-            ],
-            "name": "CursorRay2"
-        },
         "218": {
             "link": {
                 "name": "CursorRay",
@@ -1315,13 +1253,13 @@
                     "mesh": {
                         "material": "211"
                     },
-                    "active": false
+                    "active": true
                 }
             ],
             "translation": [
-                -0.0,
-                -0.0,
-                0.0619046
+                -0.0003324,
+                -6.705522537231445e-8,
+                0.0649764
             ],
             "rotation": [
                 0.7071079,
@@ -1331,8 +1269,8 @@
             ],
             "scaling": [
                 1.0,
-                0.9999908,
-                0.9999908
+                0.9999547,
+                0.9999547
             ]
         }
     },
