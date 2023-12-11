@@ -57132,6 +57132,7 @@ var ButtonComponentActive = class extends Component {
   /* Called by 'cursor-target' */
   onHover = (_, cursor) => {
     this.hover = true;
+    hapticFeedback(cursor.object, 0.5, 50);
     if (this.toggled) {
       this.mesh.material = this.hoveredToggleMaterial;
     } else {
@@ -57140,7 +57141,6 @@ var ButtonComponentActive = class extends Component {
     if (cursor.type === "finger-cursor") {
       this.onDown(_, cursor);
     }
-    hapticFeedback(cursor.object, 0.5, 50);
   };
   /* Called by 'cursor-target' */
   onDown = (_, cursor) => {

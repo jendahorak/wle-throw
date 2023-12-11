@@ -957,7 +957,8 @@
                     "mesh": {
                         "mesh": "p1",
                         "material": "168"
-                    }
+                    },
+                    "active": false
                 }
             ],
             "translation": [

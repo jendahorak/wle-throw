@@ -3,7 +3,7 @@ import { CursorTarget, HowlerAudioSource } from '@wonderlandengine/components';
 
 /**
  * Helper function to trigger haptic feedback pulse.
- *
+
  * @param {Object} object An object with 'input' component attached
  * @param {number} strength Strength from 0.0 - 1.0
  * @param {number} duration Duration in milliseconds
@@ -99,6 +99,7 @@ export class ButtonComponentActive extends Component {
   /* Called by 'cursor-target' */
   onHover = (_, cursor) => {
     this.hover = true;
+    hapticFeedback(cursor.object, 0.5, 50);
 
     if (this.toggled) {
       this.mesh.material = this.hoveredToggleMaterial;
@@ -109,8 +110,6 @@ export class ButtonComponentActive extends Component {
     if (cursor.type === 'finger-cursor') {
       this.onDown(_, cursor);
     }
-
-    hapticFeedback(cursor.object, 0.5, 50);
   };
 
   /* Called by 'cursor-target' */
