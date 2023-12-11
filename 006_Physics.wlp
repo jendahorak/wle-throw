@@ -93,10 +93,6 @@
                         "_myMaxSpeed": 3.0,
                         "_myVRDirectionReferenceObject": null
                     }
-                },
-                {
-                    "type": "pp-input-manager",
-                    "active": false
                 }
             ]
         },
@@ -389,7 +385,7 @@
                     "pp-tool-cursor": {
                         "_myHandedness": "Right"
                     },
-                    "active": true
+                    "active": false
                 }
             ]
         },
@@ -638,6 +634,19 @@
                 },
                 {
                     "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.2,
+                                1.0
+                            ]
+                        }
+                    }
                 }
             ],
             "translation": [
@@ -803,6 +812,19 @@
                 },
                 {
                     "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.5264644,
+                                0.030784,
+                                0.1258676
+                            ]
+                        }
+                    }
                 }
             ],
             "translation": [
@@ -1056,7 +1078,7 @@
             "name": "Button_2",
             "parent": "191",
             "translation": [
-                0.2509797,
+                0.2509796,
                 1.2062567,
                 -0.218775
             ],
@@ -1156,6 +1178,35 @@
                 3.5115864,
                 29.2531299,
                 2.557867
+            ]
+        },
+        "209": {
+            "name": "Cursor_mesh",
+            "parent": "18",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "167"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.5468638,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.0099999,
+                0.0099999,
+                0.0099999
             ]
         }
     },
