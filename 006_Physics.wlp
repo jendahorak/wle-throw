@@ -35,7 +35,7 @@
             ],
             "translation": [
                 0.0,
-                -0.3148467,
+                0.0,
                 0.0
             ],
             "rotation": [
@@ -55,8 +55,8 @@
             "parent": "18",
             "translation": [
                 0.0,
-                0.6830161,
-                -0.8533003
+                0.0,
+                0.0
             ],
             "rotation": [
                 0.0,
@@ -71,13 +71,15 @@
             ],
             "components": [
                 {
-                    "type": "fixed-foveation"
+                    "type": "fixed-foveation",
+                    "active": false
                 },
                 {
                     "type": "target-framerate",
                     "target-framerate": {
-                        "framerate": 80.0
-                    }
+                        "framerate": 60.0
+                    },
+                    "active": false
                 },
                 {
                     "type": "pp-player-locomotion",
@@ -85,7 +87,10 @@
                         "_myPhysicsBlockLayerFlags": "1, 2, 3, 4, 5, 6, 0, 0",
                         "_myFlyEnabled": false,
                         "_myStartFlying": false,
-                        "_mySwitchLocomotionTypeShortcutEnabled": true
+                        "_mySwitchLocomotionTypeShortcutEnabled": true,
+                        "_myDefaultHeight": 1.75,
+                        "_myMaxSpeed": 3.0,
+                        "_myVRDirectionReferenceObject": null
                     }
                 },
                 {
@@ -97,10 +102,10 @@
             "name": "Reference Space",
             "parent": "19",
             "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
+                4.371138828673793e-8,
+                -1.0,
+                7.549790126404332e-8,
+                -0.0
             ]
         },
         "21": {
@@ -218,6 +223,22 @@
                 {
                     "type": "pp-spatial-audio-listener"
                 }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "75": {
@@ -531,7 +552,8 @@
                     "mesh": {
                         "mesh": "p1",
                         "material": "169"
-                    }
+                    },
+                    "active": true
                 },
                 {
                     "type": "physx",
@@ -539,24 +561,27 @@
                         "shape": "box",
                         "box": {
                             "extents": [
-                                10.0,
-                                0.2,
-                                10.0
+                                12.1999988,
+                                1.0,
+                                12.1999988
                             ]
                         },
-                        "static": true
-                    }
+                        "static": true,
+                        "groups": 3,
+                        "block": 5
+                    },
+                    "active": true
                 }
             ],
             "scaling": [
                 12.1999988,
-                0.2439999,
+                1.0,
                 12.1999988
             ],
             "translation": [
-                -0.0005548,
-                -0.0002516,
-                -0.0000724
+                -0.0005546,
+                -1.0,
+                -0.0000722
             ],
             "rotation": [
                 0.0,
@@ -618,7 +643,7 @@
             ],
             "translation": [
                 0.0,
-                0.3623555,
+                0.1811425,
                 1.4780209
             ],
             "rotation": [
@@ -630,66 +655,6 @@
             "scaling": [
                 1.0,
                 0.2,
-                1.0
-            ]
-        },
-        "173": {
-            "name": "Light",
-            "parent": "28",
-            "components": [
-                {
-                    "type": "light",
-                    "light": {
-                        "intensity": 0.001,
-                        "shadows": false
-                    },
-                    "active": false
-                }
-            ],
-            "translation": [
-                -2.0,
-                1.8442788,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
-            ]
-        },
-        "174": {
-            "name": "Light",
-            "parent": "28",
-            "components": [
-                {
-                    "type": "light",
-                    "light": {
-                        "intensity": 3.0,
-                        "shadows": false
-                    },
-                    "active": false
-                }
-            ],
-            "translation": [
-                2.0,
-                2.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
                 1.0
             ]
         },
@@ -729,8 +694,21 @@
                     "type": "light",
                     "light": {
                         "type": "sun",
-                        "shadows": true
-                    }
+                        "shadows": false,
+                        "shadowRange": 100.0,
+                        "shadowBias": 0.001,
+                        "shadowTexelSize": 1.0
+                    },
+                    "active": false
+                },
+                {
+                    "type": "light",
+                    "light": {
+                        "shadows": true,
+                        "type": "sun",
+                        "shadowRange": 100.0
+                    },
+                    "active": true
                 }
             ],
             "translation": [
@@ -809,6 +787,12 @@
                             ]
                         }
                     }
+                },
+                {
+                    "type": "rotate",
+                    "rotate": {
+                        "param": 55.2000007
+                    }
                 }
             ],
             "scaling": [
@@ -818,8 +802,8 @@
             ],
             "translation": [
                 0.0,
-                0.9010766,
-                0.8955334
+                0.6367269,
+                0.9809696
             ],
             "rotation": [
                 0.0,
@@ -866,7 +850,7 @@
             ],
             "translation": [
                 0.0,
-                1.2215422,
+                0.9698639,
                 2.6430778
             ],
             "rotation": [
@@ -881,8 +865,8 @@
             "parent": "18",
             "translation": [
                 0.0,
-                0.5907947,
-                0.712904
+                0.4112767,
+                0.7129039
             ],
             "rotation": [
                 0.0,
@@ -1078,6 +1062,35 @@
                         "_myHandedness": "Right"
                     }
                 }
+            ]
+        },
+        "202": {
+            "name": "Mesh",
+            "parent": "171",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "168"
+                    }
+                }
+            ],
+            "translation": [
+                3.1872146,
+                1.0,
+                0.9602356
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         }
     },

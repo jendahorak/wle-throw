@@ -57151,6 +57151,26 @@ __publicField(ButtonComponent, "Properties", {
   buttonTargetObejct: Property.object()
 });
 
+// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/rotate.js
+var Documentation = class extends Component {
+  static onRegister(engine2) {
+  }
+  init() {
+    console.log("init() with param", this.param);
+  }
+  start() {
+    console.log("start() with param", this.param);
+  }
+  update(dt) {
+    this.object.rotateAxisAngleDegObject([0, 1, 0], dt * this.param);
+  }
+};
+__publicField(Documentation, "TypeName", "rotate");
+/* Properties that are configurable in the editor */
+__publicField(Documentation, "Properties", {
+  param: Property.float(1)
+});
+
 // D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/toggle-button.js
 function hapticFeedback2(object, strength, duration) {
   const input = object.getComponent(InputComponent);
@@ -57335,6 +57355,7 @@ engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(ButtonComponent);
+engine.registerComponent(Documentation);
 engine.registerComponent(ButtonComponent2);
 var loadDelaySeconds = 0;
 if (loadDelaySeconds > 0) {

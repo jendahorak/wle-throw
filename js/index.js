@@ -34,6 +34,7 @@ import {SwitchHandObjectComponent} from 'wle-pp';
 import {ToolCursorComponent} from 'wle-pp';
 import {TrackedHandDrawAllJointsComponent} from 'wle-pp';
 import {ButtonComponent} from './button.js';
+import {Documentation} from './rotate.js';
 import {ButtonComponent as ButtonComponent1} from './toggle-button.js';
 /* wle:auto-imports:end */
 
@@ -112,6 +113,7 @@ engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(ButtonComponent);
+engine.registerComponent(Documentation);
 engine.registerComponent(ButtonComponent1);
 /* wle:auto-register:end */
 
