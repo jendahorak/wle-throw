@@ -118,6 +118,9 @@
                     "mouse-look": {
                         "requireMouseDown": true
                     }
+                },
+                {
+                    "type": "cursor"
                 }
             ],
             "rotation": [
@@ -241,7 +244,23 @@
         },
         "75": {
             "name": "Hands",
-            "parent": "20"
+            "parent": "20",
+            "translation": [
+                -2.8814220343065244e-8,
+                0.3295962,
+                -4.976764600428396e-8
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
         },
         "99": {
             "name": "Hand Left",
@@ -361,7 +380,13 @@
                 },
                 {
                     "type": "cursor",
-                    "active": true
+                    "active": true,
+                    "cursor": {
+                        "cursorObject": "209",
+                        "cursorRayObject": "212",
+                        "cursorRayScalingAxis": "none",
+                        "handedness": "input component"
+                    }
                 }
             ],
             "translation": [
@@ -379,13 +404,6 @@
                     "pp-set-hand-local-transform": {
                         "_myHandedness": "Right"
                     }
-                },
-                {
-                    "type": "pp-tool-cursor",
-                    "pp-tool-cursor": {
-                        "_myHandedness": "Right"
-                    },
-                    "active": false
                 }
             ]
         },
@@ -895,7 +913,8 @@
                                 0.023,
                                 0.05
                             ]
-                        }
+                        },
+                        "groups": 2
                     }
                 },
                 {
@@ -975,36 +994,6 @@
                         "_myHandedness": "Right"
                     }
                 }
-            ]
-        },
-        "202": {
-            "name": "Mesh",
-            "parent": "171",
-            "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p1",
-                        "material": "168"
-                    },
-                    "active": false
-                }
-            ],
-            "translation": [
-                3.1872146,
-                1.0,
-                0.9602356
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "203": {
@@ -1096,7 +1085,8 @@
                                 0.023,
                                 0.05
                             ]
-                        }
+                        },
+                        "groups": 2
                     }
                 },
                 {
@@ -1182,31 +1172,62 @@
         },
         "209": {
             "name": "Cursor_mesh",
-            "parent": "18",
+            "parent": "75",
             "components": [
                 {
                     "type": "mesh",
                     "mesh": {
                         "mesh": "p2",
-                        "material": "167"
-                    }
+                        "material": "211"
+                    },
+                    "active": false
                 }
             ],
             "translation": [
+                2.8814220343065244e-8,
                 0.0,
-                0.5468638,
-                0.0
+                4.976764600428396e-8
             ],
             "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
+                -4.371138828673793e-8,
+                1.0,
+                -7.549790126404332e-8,
+                -0.0
             ],
             "scaling": [
-                0.0099999,
-                0.0099999,
-                0.0099999
+                0.008,
+                0.008,
+                0.008
+            ]
+        },
+        "212": {
+            "name": "CursorRay",
+            "parent": "136",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p3",
+                        "material": "211"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                -0.0017673,
+                -0.0010485,
+                0.2457221
+            ],
+            "rotation": [
+                0.7071065,
+                6.181718958941929e-8,
+                0.0,
+                0.707107
+            ],
+            "scaling": [
+                0.002,
+                0.1999982,
+                0.0019999
             ]
         }
     },
@@ -1588,6 +1609,18 @@
                 ]
             },
             "pipeline": "13"
+        },
+        "211": {
+            "name": "CursorHitMaterial",
+            "pipeline": "7",
+            "Flat": {
+                "color": [
+                    0.9960784,
+                    0.4980392,
+                    0.1764705,
+                    1.0
+                ]
+            }
         }
     },
     "shaders": {

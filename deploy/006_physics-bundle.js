@@ -57372,7 +57372,6 @@ engine.registerComponent(SetHeadLocalTransformComponent);
 engine.registerComponent(ShowFPSComponent);
 engine.registerComponent(SpatialAudioListenerComponent);
 engine.registerComponent(SwitchHandObjectComponent);
-engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(Documentation);
 engine.registerComponent(ButtonComponentActive);
