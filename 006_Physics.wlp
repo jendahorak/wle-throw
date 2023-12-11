@@ -96,7 +96,7 @@
                 },
                 {
                     "type": "pp-input-manager",
-                    "active": true
+                    "active": false
                 }
             ]
         },
@@ -364,7 +364,8 @@
                     "active": true
                 },
                 {
-                    "type": "cursor"
+                    "type": "cursor",
+                    "active": true
                 }
             ],
             "translation": [
@@ -634,6 +635,9 @@
                         "trigger": false,
                         "allowSimulation": true
                     }
+                },
+                {
+                    "type": "cursor-target"
                 }
             ],
             "translation": [
@@ -796,6 +800,9 @@
                         "mesh": "p1",
                         "material": "168"
                     }
+                },
+                {
+                    "type": "cursor-target"
                 }
             ],
             "translation": [
@@ -1759,7 +1766,8 @@
         "scripting": {
             "sourcePaths": [
                 "js",
-                "node_modules/@wonderlandengine/community-components/dist/components"
+                "node_modules/@wonderlandengine/community-components/dist/components",
+                "js/my-src"
             ],
             "bundlingType": "esbuild",
             "libraryPaths": [
