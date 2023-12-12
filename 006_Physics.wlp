@@ -269,7 +269,7 @@
             "translation": [
                 -2.8814220343065244e-8,
                 0.0,
-                -4.976764600428396e-8
+                -4.9767646004283974e-8
             ],
             "rotation": [
                 0.0,
@@ -374,25 +374,6 @@
                     }
                 },
                 {
-                    "type": "physx",
-                    "physx": {
-                        "static": false,
-                        "trigger": true,
-                        "allowSimulation": false,
-                        "kinematic": true,
-                        "sphere": {
-                            "radius": 0.1
-                        }
-                    }
-                },
-                {
-                    "type": "pp-grabber-hand",
-                    "pp-grabber-hand": {
-                        "_myHandedness": "Right",
-                        "_myGrabButton": "Squeeze"
-                    }
-                },
-                {
                     "type": "input",
                     "input": {
                         "type": "ray right"
@@ -405,7 +386,7 @@
                     "cursor": {
                         "cursorObject": "209",
                         "cursorRayObject": "213",
-                        "cursorRayScalingAxis": "none",
+                        "cursorRayScalingAxis": "z",
                         "handedness": "input component"
                     }
                 }
@@ -642,8 +623,8 @@
             ]
         },
         "172": {
-            "name": "Table",
-            "parent": "171",
+            "name": "TableMesh",
+            "parent": "273",
             "components": [
                 {
                     "type": "mesh",
@@ -651,46 +632,11 @@
                         "mesh": "p1",
                         "material": "170"
                     }
-                },
-                {
-                    "type": "physx",
-                    "physx": {
-                        "shape": "box",
-                        "box": {
-                            "extents": [
-                                1.0,
-                                0.2,
-                                1.0
-                            ]
-                        },
-                        "static": true,
-                        "groups": 255,
-                        "block": 255,
-                        "allowQuery": false,
-                        "trigger": false,
-                        "allowSimulation": true
-                    }
-                },
-                {
-                    "type": "cursor-target"
-                },
-                {
-                    "type": "collision",
-                    "collision": {
-                        "collider": "box",
-                        "box": {
-                            "extents": [
-                                1.0,
-                                0.2,
-                                1.0
-                            ]
-                        }
-                    }
                 }
             ],
             "translation": [
                 0.0,
-                0.1811425,
+                0.2419784,
                 1.4780209
             ],
             "rotation": [
@@ -700,9 +646,9 @@
                 1.0
             ],
             "scaling": [
-                1.0,
-                0.2,
-                1.0
+                1.8739683,
+                0.1140178,
+                1.5340954
             ]
         },
         "178": {
@@ -714,7 +660,8 @@
                     "mesh": {
                         "mesh": "p1",
                         "material": "167"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "physx",
@@ -734,23 +681,26 @@
                         "bounciness": 1.2,
                         "trigger": false,
                         "allowSimulation": true
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "pp-grabbable",
                     "pp-grabbable": {
                         "_myParentOnRelease": "Scene"
-                    }
+                    },
+                    "active": false
                 },
                 {
-                    "type": "cursor-target"
+                    "type": "cursor-target",
+                    "active": false
                 },
                 {
                     "type": "rotate",
                     "rotate": {
                         "param": 55.2000007
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "scaling": [
@@ -770,61 +720,13 @@
                 1.0
             ]
         },
-        "179": {
-            "name": "Throwing_target",
-            "parent": "171",
-            "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p1",
-                        "material": "168"
-                    }
-                },
-                {
-                    "type": "physx",
-                    "physx": {
-                        "groups": 6,
-                        "block": 6,
-                        "kinematic": false,
-                        "shape": "box",
-                        "box": {
-                            "extents": [
-                                0.3,
-                                1.0,
-                                0.1
-                            ]
-                        },
-                        "linearDamping": 1.0,
-                        "bounciness": 0.2,
-                        "mass": 2.0
-                    }
-                }
-            ],
-            "scaling": [
-                0.3,
-                1.0,
-                0.1
-            ],
-            "translation": [
-                0.0,
-                0.9698639,
-                2.6430778
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ]
-        },
         "190": {
             "name": "UI",
-            "parent": "18",
+            "parent": "273",
             "translation": [
-                0.0,
+                0.8234624,
                 0.4112767,
-                0.7129039
+                0.1979817
             ],
             "rotation": [
                 0.0,
@@ -867,7 +769,7 @@
                 }
             ],
             "translation": [
-                0.4053804,
+                1.7159252,
                 -0.0227607,
                 -0.0500243
             ],
@@ -879,7 +781,7 @@
             ],
             "scaling": [
                 0.5264644,
-                0.030784,
+                0.0307839,
                 0.1258676
             ]
         },
@@ -1014,6 +916,26 @@
                     "pp-set-hand-local-transform": {
                         "_myHandedness": "Right"
                     }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "static": false,
+                        "trigger": true,
+                        "allowSimulation": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.1
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "pp-grabber-hand",
+                    "pp-grabber-hand": {
+                        "_myHandedness": "Right",
+                        "_myGrabButton": "Squeeze"
+                    }
                 }
             ]
         },
@@ -1027,7 +949,10 @@
                         "type": "sun",
                         "shadows": true,
                         "intensity": 1.0,
-                        "shadowRange": 20.0
+                        "shadowRange": 20.0,
+                        "cascadeCount": 4,
+                        "shadowBias": 0.001,
+                        "shadowNormalBias": 0.035
                     }
                 }
             ],
@@ -1207,10 +1132,10 @@
             "translation": [
                 2.8814220343065244e-8,
                 0.0,
-                4.976764600428396e-8
+                4.9767646004283974e-8
             ],
             "rotation": [
-                -4.371138828673793e-8,
+                -4.3711388286737935e-8,
                 1.0,
                 -7.549790126404332e-8,
                 -0.0
@@ -1271,6 +1196,583 @@
                 1.0,
                 0.9999547,
                 0.9999547
+            ]
+        },
+        "262": {
+            "link": {
+                "name": "terrain_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "272",
+            "translation": [
+                -0.0006696,
+                1.9196932,
+                0.0269598
+            ],
+            "rotation": [
+                0.0,
+                0.9997632,
+                0.0,
+                -0.0217605
+            ],
+            "scaling": [
+                0.9999996,
+                5.0,
+                0.9999996
+            ]
+        },
+        "263": {
+            "link": {
+                "name": "Buildings_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "272",
+            "translation": [
+                -0.0006696,
+                1.9196932,
+                0.0269598
+            ],
+            "rotation": [
+                0.0,
+                0.9997632,
+                0.0,
+                -0.0217605
+            ],
+            "scaling": [
+                0.9999996,
+                5.0,
+                0.9999996
+            ]
+        },
+        "264": {
+            "link": {
+                "name": "mesh_jina.001<Buildings_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "263"
+        },
+        "265": {
+            "link": {
+                "name": "mesh_mansardova.001<Buildings_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "263"
+        },
+        "266": {
+            "link": {
+                "name": "mesh_plocha.001<Buildings_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "263"
+        },
+        "267": {
+            "link": {
+                "name": "mesh_pultova.001<Buildings_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "263"
+        },
+        "268": {
+            "link": {
+                "name": "mesh_sedlova.001<Buildings_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "263"
+        },
+        "269": {
+            "link": {
+                "name": "mesh_stanova.001<Buildings_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "263"
+        },
+        "270": {
+            "link": {
+                "name": "mesh_valbova.001<Buildings_separated.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "parent": "263"
+        },
+        "272": {
+            "name": "Map",
+            "parent": "273",
+            "translation": [
+                0.0,
+                0.1391723,
+                1.2711467
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                0.2,
+                1.0
+            ]
+        },
+        "273": {
+            "name": "Table",
+            "parent": "171",
+            "components": [
+                {
+                    "type": "cursor-target",
+                    "active": false
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.2,
+                                1.0
+                            ]
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.2,
+                                1.0
+                            ]
+                        },
+                        "static": true,
+                        "groups": 255,
+                        "block": 255,
+                        "allowQuery": false,
+                        "trigger": false,
+                        "allowSimulation": true
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.3888723,
+                0.5676033
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "286": {
+            "link": {
+                "name": "jina",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "296",
+            "translation": [
+                -0.8554391,
+                0.0602844,
+                0.0508394
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                6.482018761744257e-7
+            ],
+            "scaling": [
+                0.9999978,
+                1.0,
+                0.9999978
+            ],
+            "components": [
+                {
+                    "mesh": {
+                        "material": "221"
+                    }
+                }
+            ]
+        },
+        "287": {
+            "link": {
+                "name": "mansardova",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "299",
+            "translation": [
+                -0.0312538,
+                -1.0890426,
+                0.0145282
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                4.21347522205906e-7
+            ],
+            "scaling": [
+                14.2856826,
+                10.5018262,
+                9.2860536
+            ],
+            "components": [
+                {
+                    "mesh": {
+                        "material": "248"
+                    }
+                }
+            ]
+        },
+        "288": {
+            "link": {
+                "name": "plocha",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "296",
+            "translation": [
+                -0.0208201,
+                0.082308,
+                0.0521454
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                6.482018761744257e-7
+            ],
+            "scaling": [
+                0.9999978,
+                1.0,
+                0.9999978
+            ],
+            "components": [
+                {
+                    "mesh": {
+                        "material": "223"
+                    }
+                }
+            ]
+        },
+        "289": {
+            "link": {
+                "name": "podstava",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "296",
+            "translation": [
+                -0.0201169,
+                0.0311715,
+                0.0045339
+            ],
+            "rotation": [
+                0.0,
+                -0.7071086,
+                0.0,
+                0.7071049
+            ],
+            "scaling": [
+                0.9999939,
+                1.0,
+                0.9999939
+            ],
+            "components": [
+                {
+                    "active": false
+                }
+            ]
+        },
+        "290": {
+            "link": {
+                "name": "pultova",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "296",
+            "translation": [
+                -0.5918525,
+                0.0801489,
+                0.0537223
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                6.482018761744257e-7
+            ],
+            "scaling": [
+                0.9999978,
+                1.0,
+                0.9999978
+            ],
+            "components": [
+                {
+                    "mesh": {
+                        "material": "224"
+                    }
+                }
+            ]
+        },
+        "291": {
+            "link": {
+                "name": "sedlova",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "298",
+            "translation": [
+                -0.0003223,
+                -1.1238174,
+                0.0145311
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                4.21347522205906e-7
+            ],
+            "scaling": [
+                14.2856826,
+                10.5018262,
+                9.2860536
+            ],
+            "components": [
+                {
+                    "mesh": {
+                        "material": "225"
+                    },
+                    "active": true
+                }
+            ]
+        },
+        "292": {
+            "link": {
+                "name": "stanova",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "296",
+            "translation": [
+                -0.3009491,
+                0.0811185,
+                0.0537223
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                6.482018761744257e-7
+            ],
+            "scaling": [
+                0.9999978,
+                1.0,
+                0.9999978
+            ],
+            "components": [
+                {
+                    "mesh": {
+                        "material": "226"
+                    }
+                }
+            ]
+        },
+        "293": {
+            "link": {
+                "name": "text_mesh_merged",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "296",
+            "components": [
+                {
+                    "active": false
+                }
+            ],
+            "translation": [
+                -0.8199173,
+                0.020069,
+                -0.1487491
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                6.482018761744257e-7
+            ],
+            "scaling": [
+                0.9999978,
+                1.0,
+                0.9999978
+            ]
+        },
+        "294": {
+            "link": {
+                "name": "valbova",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            },
+            "parent": "296",
+            "translation": [
+                0.2611207,
+                0.1324612,
+                0.0521454
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                6.482018761744257e-7
+            ],
+            "scaling": [
+                0.9999978,
+                1.0,
+                0.9999978
+            ],
+            "components": [
+                {
+                    "mesh": {
+                        "material": "227"
+                    }
+                }
+            ]
+        },
+        "296": {
+            "name": "Legenda",
+            "parent": "190",
+            "translation": [
+                0.1385394,
+                -0.0233466,
+                -0.0503835
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.8199999,
+                0.8199999,
+                0.8199999
+            ]
+        },
+        "297": {
+            "name": "seldovaP",
+            "parent": "296",
+            "translation": [
+                0.8301558,
+                0.1010789,
+                0.0504102
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "298": {
+            "name": "SedlovaParent",
+            "parent": "296",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "32"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0599999,
+                                0.0799999,
+                                0.09
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "toggle-active",
+                    "toggle-active": {
+                        "buttonMeshObject": "291",
+                        "hoverMaterial": "198",
+                        "targetObject": "268",
+                        "toggleMaterial": "197"
+                    }
+                }
+            ],
+            "translation": [
+                0.8301559,
+                0.1087412,
+                0.0504102
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.07,
+                0.0952215,
+                0.1076881
+            ]
+        },
+        "299": {
+            "name": "MansardovaParent",
+            "parent": "296",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "32"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0599999,
+                                0.0799999,
+                                0.09
+                            ]
+                        }
+                    }
+                }
+            ],
+            "translation": [
+                0.5503461,
+                0.1087489,
+                0.0504102
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.07,
+                0.0952215,
+                0.1076881
             ]
         }
     },
@@ -1411,6 +1913,156 @@
             "link": {
                 "name": "CursorRay",
                 "file": "assets\\models\\mine\\CursorRayScaled.glb"
+            }
+        },
+        "228": {
+            "link": {
+                "name": "mesh_CityEngineTerrainMaterial.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "229": {
+            "link": {
+                "name": "mesh_jina.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "230": {
+            "link": {
+                "name": "mesh_mansardova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "231": {
+            "link": {
+                "name": "mesh_plocha.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "232": {
+            "link": {
+                "name": "mesh_pultova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "233": {
+            "link": {
+                "name": "mesh_sedlova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "234": {
+            "link": {
+                "name": "mesh_stanova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "235": {
+            "link": {
+                "name": "mesh_valbova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "254": {
+            "link": {
+                "name": "mesh_CityEngineTerrainMaterial.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "255": {
+            "link": {
+                "name": "mesh_jina.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "256": {
+            "link": {
+                "name": "mesh_mansardova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "257": {
+            "link": {
+                "name": "mesh_plocha.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "258": {
+            "link": {
+                "name": "mesh_pultova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "259": {
+            "link": {
+                "name": "mesh_sedlova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "260": {
+            "link": {
+                "name": "mesh_stanova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "261": {
+            "link": {
+                "name": "mesh_valbova.001",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "277": {
+            "link": {
+                "name": "Cube.015",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        },
+        "278": {
+            "link": {
+                "name": "Cube.009",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        },
+        "279": {
+            "link": {
+                "name": "Cube.011",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        },
+        "280": {
+            "link": {
+                "name": "Plane.001",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        },
+        "281": {
+            "link": {
+                "name": "Cube.013",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        },
+        "282": {
+            "link": {
+                "name": "Cube.003",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        },
+        "283": {
+            "link": {
+                "name": "Cube.012",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        },
+        "284": {
+            "link": {
+                "name": "Sedlová.007",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        },
+        "285": {
+            "link": {
+                "name": "Plane",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
         }
     },
@@ -1675,6 +2327,108 @@
                     0.1764705,
                     1.0
                 ]
+            }
+        },
+        "220": {
+            "link": {
+                "name": "terrain",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "221": {
+            "link": {
+                "name": "jina_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "222": {
+            "link": {
+                "name": "mansardova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "223": {
+            "link": {
+                "name": "plocha_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "224": {
+            "link": {
+                "name": "pultova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "225": {
+            "link": {
+                "name": "sedlova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "226": {
+            "link": {
+                "name": "stanova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "227": {
+            "link": {
+                "name": "valbova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            }
+        },
+        "246": {
+            "link": {
+                "name": "terrain",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "247": {
+            "link": {
+                "name": "jina_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "248": {
+            "link": {
+                "name": "mansardova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "249": {
+            "link": {
+                "name": "plocha_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "250": {
+            "link": {
+                "name": "pultova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "251": {
+            "link": {
+                "name": "sedlova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "252": {
+            "link": {
+                "name": "stanova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "253": {
+            "link": {
+                "name": "valbova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            }
+        },
+        "276": {
+            "link": {
+                "name": "TextureAtlasColors",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
         }
     },
@@ -2067,9 +2821,22 @@
     "textures": {
         "181": {
             "name": "texture"
+        },
+        "275": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
         }
     },
-    "images": {},
+    "images": {
+        "274": {
+            "link": {
+                "name": "texture_atlas_modified",
+                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
+            }
+        }
+    },
     "files": {
         "164": {
             "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
@@ -2085,6 +2852,18 @@
         },
         "219": {
             "fileName": "assets/models/mine/CursorRayScaled.glb",
+            "importerName": ""
+        },
+        "245": {
+            "fileName": "assets/models/mine/blender_tematicka_separated_scaled_v1.glb",
+            "importerName": ""
+        },
+        "271": {
+            "fileName": "assets/models/mine/blender_tematicka_separated_scaled_v2.glb",
+            "importerName": ""
+        },
+        "295": {
+            "fileName": "assets/models/mine/legenda_scaled_v1.glb",
             "importerName": ""
         }
     },
