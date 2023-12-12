@@ -57327,7 +57327,7 @@ var Constants = {
   ProjectName: "006_physics",
   RuntimeBaseName: "WonderlandRuntime",
   WebXRRequiredFeatures: ["local"],
-  WebXROptionalFeatures: ["local", "hand-tracking", "hit-test"]
+  WebXROptionalFeatures: ["local", "local-floor", "hand-tracking", "hit-test"]
 };
 var engine = await loadRuntime(Constants.RuntimeBaseName, RuntimeOptions);
 engine.onSceneLoaded.once(() => {

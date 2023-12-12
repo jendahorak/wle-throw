@@ -46,9 +46,9 @@
                         "_myRightThumbstickButtonVisible": true,
                         "_myRightTopButtonVisible": false,
                         "_myRightBottomButtonVisible": false,
-                        "_myShowOnDesktop": true,
+                        "_myShowOnDesktop": false,
                         "_myShowOnMobile": true,
-                        "_myShowOnHeadset": true
+                        "_myShowOnHeadset": false
                     },
                     "active": true
                 }
@@ -76,7 +76,7 @@
             "translation": [
                 0.0,
                 0.0,
-                0.0
+                -0.3077533
             ],
             "rotation": [
                 0.0,
@@ -119,10 +119,20 @@
             "name": "Reference Space",
             "parent": "19",
             "rotation": [
-                4.3711388286737935e-8,
-                -1.0,
-                7.549790126404332e-8,
-                -0.0
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ],
+            "translation": [
+                0.0,
+                -2.5556529337222855e-8,
+                -3.075579968481179e-8
+            ],
+            "scaling": [
+                0.9999983,
+                0.9999964,
+                0.9999968
             ]
         },
         "21": {
@@ -293,7 +303,7 @@
             "rotation": [
                 0.0,
                 0.0,
-                -0.0,
+                0.0,
                 1.0
             ],
             "scaling": [
@@ -328,6 +338,20 @@
                         "_myBottomButton": "130",
                         "_myUsePressForSqueeze": true
                     }
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "ray left"
+                    }
+                },
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "cursorRayObject": "304",
+                        "cursorRayScalingAxis": "y",
+                        "cursorObject": "306"
+                    }
                 }
             ],
             "translation": [
@@ -338,7 +362,7 @@
         },
         "104": {
             "name": "Tool Hand Left",
-            "parent": "23",
+            "parent": "302",
             "components": [
                 {
                     "type": "pp-set-hand-local-transform"
@@ -355,11 +379,27 @@
                         "_myHandedness": "Left"
                     }
                 }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "105": {
             "name": "Tracked Hand Left",
-            "parent": "23",
+            "parent": "302",
             "components": [
                 {
                     "type": "pp-tracked-hand-draw-all-joints",
@@ -368,6 +408,22 @@
                         "_myJointMaterial": "144"
                     }
                 }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "106": {
@@ -418,7 +474,7 @@
         },
         "109": {
             "name": "Tool Hand Right",
-            "parent": "24",
+            "parent": "303",
             "components": [
                 {
                     "type": "pp-set-hand-local-transform",
@@ -426,6 +482,22 @@
                         "_myHandedness": "Right"
                     }
                 }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "128": {
@@ -457,49 +529,98 @@
                 "name": "Gamepad Body Left<Gamepad Left<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "128"
+            "parent": "128",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "307"
+                    }
+                }
+            ]
         },
         "130": {
             "link": {
                 "name": "Gamepad Bottom Button Left<Gamepad Left<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "128"
+            "parent": "128",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "167"
+                    }
+                }
+            ]
         },
         "131": {
             "link": {
                 "name": "Gamepad Option Button Left<Gamepad Left<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "128"
+            "parent": "128",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "167"
+                    }
+                }
+            ]
         },
         "132": {
             "link": {
                 "name": "Gamepad Select Left<Gamepad Left<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "128"
+            "parent": "128",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "167"
+                    }
+                }
+            ]
         },
         "133": {
             "link": {
                 "name": "Gamepad Squeeze Left<Gamepad Left<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "128"
+            "parent": "128",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "167"
+                    }
+                }
+            ]
         },
         "134": {
             "link": {
                 "name": "Gamepad Thumbstick Left<Gamepad Left<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "128"
+            "parent": "128",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "167"
+                    }
+                }
+            ]
         },
         "135": {
             "link": {
                 "name": "Gamepad Top Button Left<Gamepad Left<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "128"
+            "parent": "128",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "167"
+                    }
+                }
+            ]
         },
         "136": {
             "link": {
@@ -530,49 +651,98 @@
                 "name": "Gamepad Body Right<Gamepad Right<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "136"
+            "parent": "136",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "307"
+                    }
+                }
+            ]
         },
         "138": {
             "link": {
                 "name": "Gamepad Bottom Button Right<Gamepad Right<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "136"
+            "parent": "136",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "308"
+                    }
+                }
+            ]
         },
         "139": {
             "link": {
                 "name": "Gamepad Option Button Right<Gamepad Right<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "136"
+            "parent": "136",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "308"
+                    }
+                }
+            ]
         },
         "140": {
             "link": {
                 "name": "Gamepad Select Right<Gamepad Right<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "136"
+            "parent": "136",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "308"
+                    }
+                }
+            ]
         },
         "141": {
             "link": {
                 "name": "Gamepad Squeeze Right<Gamepad Right<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "136"
+            "parent": "136",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "308"
+                    }
+                }
+            ]
         },
         "142": {
             "link": {
                 "name": "Gamepad Thumbstick Right<Gamepad Right<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "136"
+            "parent": "136",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "308"
+                    }
+                }
+            ]
         },
         "143": {
             "link": {
                 "name": "Gamepad Top Button Right<Gamepad Right<Gamepads",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "parent": "136"
+            "parent": "136",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "308"
+                    }
+                }
+            ]
         },
         "165": {
             "name": "Ground",
@@ -914,7 +1084,7 @@
         },
         "108": {
             "name": "Tracked Hand Right",
-            "parent": "24",
+            "parent": "303",
             "components": [
                 {
                     "type": "pp-tracked-hand-draw-all-joints",
@@ -924,6 +1094,22 @@
                         "_myHandedness": "Right"
                     }
                 }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "107": {
@@ -935,27 +1121,23 @@
                     "pp-set-hand-local-transform": {
                         "_myHandedness": "Right"
                     }
-                },
-                {
-                    "type": "physx",
-                    "physx": {
-                        "static": false,
-                        "trigger": true,
-                        "allowSimulation": false,
-                        "kinematic": true,
-                        "sphere": {
-                            "radius": 0.1
-                        }
-                    },
-                    "active": false
-                },
-                {
-                    "type": "pp-grabber-hand",
-                    "pp-grabber-hand": {
-                        "_myHandedness": "Right",
-                        "_myGrabButton": "Squeeze"
-                    }
                 }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "203": {
@@ -1136,8 +1318,8 @@
             ]
         },
         "209": {
-            "name": "Cursor_mesh",
-            "parent": "75",
+            "name": "Cursor_mesh_right",
+            "parent": "24",
             "components": [
                 {
                     "type": "mesh",
@@ -1151,10 +1333,10 @@
             "translation": [
                 2.8814220343065244e-8,
                 0.0,
-                4.9767646004283974e-8
+                5.960464477539063e-8
             ],
             "rotation": [
-                -4.3711388286737935e-8,
+                -4.371138473402425e-8,
                 1.0,
                 -7.549790126404332e-8,
                 -0.0
@@ -1197,7 +1379,7 @@
                     "mesh": {
                         "material": "211"
                     },
-                    "active": true
+                    "active": false
                 }
             ],
             "translation": [
@@ -1792,6 +1974,145 @@
                 0.07,
                 0.0952215,
                 0.1076881
+            ]
+        },
+        "300": {
+            "name": "Grabber",
+            "parent": "99",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "kinematic": true,
+                        "gravity": false,
+                        "simulate": false,
+                        "trigger": true,
+                        "allowSimulation": false,
+                        "groups": 4
+                    }
+                },
+                {
+                    "type": "pp-grabber-hand"
+                }
+            ]
+        },
+        "301": {
+            "name": "Grabber",
+            "parent": "107",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "kinematic": true,
+                        "gravity": false,
+                        "simulate": false,
+                        "trigger": true,
+                        "allowSimulation": false,
+                        "groups": 4
+                    }
+                },
+                {
+                    "type": "pp-grabber-hand",
+                    "pp-grabber-hand": {
+                        "_myHandedness": "Right"
+                    }
+                }
+            ]
+        },
+        "302": {
+            "name": "Hands_misc",
+            "parent": "23"
+        },
+        "303": {
+            "name": "Hands_misc",
+            "parent": "24"
+        },
+        "304": {
+            "name": "CursorRayLeft",
+            "parent": "102",
+            "translation": [
+                0.0,
+                -0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "305": {
+            "link": {
+                "name": "CursorRay",
+                "file": "assets\\models\\mine\\CursorRayScaled.glb"
+            },
+            "parent": "304",
+            "name": "CursorRayScaled",
+            "components": [
+                {
+                    "mesh": {
+                        "material": "211"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                -0.0003324,
+                -6.705522537231445e-8,
+                0.0649764
+            ],
+            "rotation": [
+                0.7071079,
+                6.181728906540229e-8,
+                -0.0,
+                0.7071055
+            ],
+            "scaling": [
+                1.0,
+                0.9999547,
+                0.9999547
+            ]
+        },
+        "306": {
+            "name": "Cursor_mesh_left",
+            "parent": "23",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "211"
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                2.8814220343065244e-8,
+                0.0,
+                5.960464477539064e-8
+            ],
+            "rotation": [
+                -4.3711384734024257e-8,
+                1.0,
+                -7.549790126404332e-8,
+                -0.0
+            ],
+            "scaling": [
+                0.008,
+                0.008,
+                0.008
             ]
         }
     },
@@ -2449,6 +2770,40 @@
                 "name": "TextureAtlasColors",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
+        },
+        "307": {
+            "name": "charcoal-bright",
+            "Phong": {
+                "diffuseColor": [
+                    0.1372549,
+                    0.2392156,
+                    0.3019607,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ]
+            }
+        },
+        "308": {
+            "name": "pumpkin-gamepads",
+            "Phong": {
+                "diffuseColor": [
+                    0.9960784,
+                    0.4980392,
+                    0.1764705,
+                    1.0
+                ]
+            }
         }
     },
     "shaders": {
@@ -2670,7 +3025,9 @@
             "xrButtonColor": "black",
             "webxr": {
                 "optionalFeatures": {
-                    "hand-tracking": true
+                    "hand-tracking": true,
+                    "local-floor": true,
+                    "bounded-floor": false
                 }
             },
             "viewObject": "21"
