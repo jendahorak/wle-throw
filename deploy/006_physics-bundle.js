@@ -57373,6 +57373,7 @@ engine.registerComponent(ShowFPSComponent);
 engine.registerComponent(SpatialAudioListenerComponent);
 engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
+engine.registerComponent(VirtualGamepadComponent);
 engine.registerComponent(Documentation);
 engine.registerComponent(ButtonComponentActive);
 engine.registerComponent(ButtonComponentToggle);

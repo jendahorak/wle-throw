@@ -32,6 +32,25 @@
                 {
                     "type": "pp-show-fps",
                     "active": true
+                },
+                {
+                    "type": "pp-virtual-gamepad",
+                    "pp-virtual-gamepad": {
+                        "_myLeftSelectButtonVisible": false,
+                        "_myLeftSqueezeButtonVisible": false,
+                        "_myLeftThumbstickButtonVisible": true,
+                        "_myLeftTopButtonVisible": false,
+                        "_myLeftBottomButtonVisible": false,
+                        "_myRightSelectButtonVisible": false,
+                        "_myRightSqueezeButtonVisible": false,
+                        "_myRightThumbstickButtonVisible": true,
+                        "_myRightTopButtonVisible": false,
+                        "_myRightBottomButtonVisible": false,
+                        "_myShowOnDesktop": true,
+                        "_myShowOnMobile": true,
+                        "_myShowOnHeadset": true
+                    },
+                    "active": true
                 }
             ],
             "translation": [
@@ -85,7 +104,7 @@
                 {
                     "type": "pp-player-locomotion",
                     "pp-player-locomotion": {
-                        "_myPhysicsBlockLayerFlags": "1, 2, 3, 4, 5, 6, 0, 0",
+                        "_myPhysicsBlockLayerFlags": "0, 1, 0, 0, 0, 0, 0, 0",
                         "_myFlyEnabled": false,
                         "_myStartFlying": false,
                         "_mySwitchLocomotionTypeShortcutEnabled": true,
@@ -386,7 +405,7 @@
                     "cursor": {
                         "cursorObject": "209",
                         "cursorRayObject": "213",
-                        "cursorRayScalingAxis": "z",
+                        "cursorRayScalingAxis": "y",
                         "handedness": "input component"
                     }
                 }
