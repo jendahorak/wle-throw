@@ -34,6 +34,7 @@ import {VirtualGamepadComponent} from 'wle-pp';
 import {Documentation} from './my-src/rotate.js';
 import {ButtonComponentActive} from './my-src/toggle-active.js';
 import {ButtonComponentToggle} from './my-src/toggle-button.js';
+import {ToggleLegendHighlight} from './my-src/toggle-legend-highlight.js';
 /* wle:auto-imports:end */
 
 import { loadRuntime } from '@wonderlandengine/api';
@@ -111,6 +112,7 @@ engine.registerComponent(VirtualGamepadComponent);
 engine.registerComponent(Documentation);
 engine.registerComponent(ButtonComponentActive);
 engine.registerComponent(ButtonComponentToggle);
+engine.registerComponent(ToggleLegendHighlight);
 /* wle:auto-register:end */
 
 let loadDelaySeconds = 0;

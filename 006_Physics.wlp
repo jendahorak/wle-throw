@@ -76,7 +76,7 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.3077533
+                -0.0958757
             ],
             "rotation": [
                 0.0,
@@ -111,7 +111,8 @@
                         "_myDefaultHeight": 1.75,
                         "_myMaxSpeed": 3.0,
                         "_myVRDirectionReferenceObject": null
-                    }
+                    },
+                    "active": true
                 }
             ]
         },
@@ -746,7 +747,7 @@
         },
         "165": {
             "name": "Ground",
-            "parent": "171",
+            "parent": "309",
             "components": [
                 {
                     "type": "mesh",
@@ -762,9 +763,9 @@
                         "shape": "box",
                         "box": {
                             "extents": [
-                                12.1999988,
+                                12.0,
                                 1.0,
-                                12.1999988
+                                12.0
                             ]
                         },
                         "static": true,
@@ -775,14 +776,14 @@
                 }
             ],
             "scaling": [
-                12.1999988,
+                12.0,
                 1.0,
-                12.1999988
+                12.0
             ],
             "translation": [
-                -0.0005546,
+                0.0,
                 -1.0,
-                -0.0000722
+                0.0
             ],
             "rotation": [
                 0.0,
@@ -958,9 +959,9 @@
                 }
             ],
             "translation": [
-                1.7159252,
+                1.7794508,
                 -0.0227607,
-                -0.0500243
+                -0.1202295
             ],
             "rotation": [
                 0.0,
@@ -970,7 +971,7 @@
             ],
             "scaling": [
                 0.5264644,
-                0.0307839,
+                0.0307838,
                 0.1258676
             ]
         },
@@ -1141,7 +1142,7 @@
             ]
         },
         "203": {
-            "name": "Light",
+            "name": "Sun1",
             "parent": "28",
             "components": [
                 {
@@ -1153,7 +1154,12 @@
                         "shadowRange": 20.0,
                         "cascadeCount": 4,
                         "shadowBias": 0.001,
-                        "shadowNormalBias": 0.035
+                        "shadowNormalBias": 0.035,
+                        "color": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
                     }
                 }
             ],
@@ -1175,7 +1181,7 @@
             ]
         },
         "204": {
-            "name": "Light",
+            "name": "Sun2",
             "parent": "28",
             "components": [
                 {
@@ -1186,9 +1192,9 @@
                         "intensity": 0.5,
                         "shadowRange": 20.0,
                         "color": [
-                            1.0,
-                            0.9547511,
-                            0.8352941
+                            0.9803921,
+                            0.8409696,
+                            0.472895
                         ]
                     }
                 }
@@ -1579,22 +1585,22 @@
                 "name": "jina",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             },
-            "parent": "296",
+            "parent": "317",
             "translation": [
-                -0.8554391,
-                0.0602844,
-                0.0508394
+                -0.0142703,
+                -0.5088167,
+                0.0039939
             ],
             "rotation": [
                 0.0,
                 1.0,
                 0.0,
-                6.482018761744257e-7
+                4.213476358927437e-7
             ],
             "scaling": [
-                0.9999978,
-                1.0,
-                0.9999978
+                14.2856836,
+                10.501831,
+                9.2860574
             ],
             "components": [
                 {
@@ -1611,18 +1617,18 @@
             },
             "parent": "299",
             "translation": [
-                -0.0312538,
-                -1.0890426,
+                -0.0312557,
+                -1.0890417,
                 0.0145282
             ],
             "rotation": [
                 0.0,
                 1.0,
                 0.0,
-                4.21347522205906e-7
+                2.738866271556617e-7
             ],
             "scaling": [
-                14.2856826,
+                14.2856836,
                 10.5018262,
                 9.2860536
             ],
@@ -1639,22 +1645,22 @@
                 "name": "plocha",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             },
-            "parent": "296",
+            "parent": "314",
             "translation": [
-                -0.0208201,
-                0.082308,
-                0.0521454
+                0.0000247,
+                -0.2775812,
+                0.016118
             ],
             "rotation": [
                 0.0,
                 1.0,
                 0.0,
-                6.482018761744257e-7
+                4.213476358927437e-7
             ],
             "scaling": [
-                0.9999978,
-                1.0,
-                0.9999978
+                14.2856836,
+                10.501831,
+                9.2860574
             ],
             "components": [
                 {
@@ -1664,55 +1670,27 @@
                 }
             ]
         },
-        "289": {
-            "link": {
-                "name": "podstava",
-                "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
-            },
-            "parent": "296",
-            "translation": [
-                -0.0201169,
-                0.0311715,
-                0.0045339
-            ],
-            "rotation": [
-                0.0,
-                -0.7071086,
-                0.0,
-                0.7071049
-            ],
-            "scaling": [
-                0.9999939,
-                1.0,
-                0.9999939
-            ],
-            "components": [
-                {
-                    "active": false
-                }
-            ]
-        },
         "290": {
             "link": {
                 "name": "pultova",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             },
-            "parent": "296",
+            "parent": "316",
             "translation": [
-                -0.5918525,
-                0.0801489,
-                0.0537223
+                -0.0132436,
+                -0.3001918,
+                0.0307655
             ],
             "rotation": [
                 0.0,
                 1.0,
                 0.0,
-                6.482018761744257e-7
+                4.213476358927437e-7
             ],
             "scaling": [
-                0.9999978,
-                1.0,
-                0.9999978
+                14.2856836,
+                10.501831,
+                9.2860574
             ],
             "components": [
                 {
@@ -1758,22 +1736,22 @@
                 "name": "stanova",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             },
-            "parent": "296",
+            "parent": "315",
             "translation": [
-                -0.3009491,
-                0.0811185,
-                0.0537223
+                0.0085916,
+                -0.2900505,
+                0.0307636
             ],
             "rotation": [
                 0.0,
                 1.0,
                 0.0,
-                6.482018761744257e-7
+                4.213476358927437e-7
             ],
             "scaling": [
-                0.9999978,
-                1.0,
-                0.9999978
+                14.2856836,
+                10.501831,
+                9.2860574
             ],
             "components": [
                 {
@@ -1788,16 +1766,16 @@
                 "name": "text_mesh_merged",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             },
-            "parent": "296",
+            "parent": "318",
             "components": [
                 {
-                    "active": false
+                    "active": true
                 }
             ],
             "translation": [
-                -0.8199173,
+                -0.8199172,
                 0.020069,
-                -0.1487491
+                -0.148749
             ],
             "rotation": [
                 0.0,
@@ -1806,9 +1784,9 @@
                 6.482018761744257e-7
             ],
             "scaling": [
-                0.9999978,
-                1.0,
-                0.9999978
+                0.9999977,
+                0.9999999,
+                0.9999977
             ]
         },
         "294": {
@@ -1816,22 +1794,22 @@
                 "name": "valbova",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             },
-            "parent": "296",
+            "parent": "313",
             "translation": [
-                0.2611207,
-                0.1324612,
-                0.0521454
+                0.0158805,
+                0.2490816,
+                0.0161161
             ],
             "rotation": [
                 0.0,
                 1.0,
                 0.0,
-                6.482018761744257e-7
+                4.213476358927437e-7
             ],
             "scaling": [
-                0.9999978,
-                1.0,
-                0.9999978
+                14.2856836,
+                10.501831,
+                9.2860574
             ],
             "components": [
                 {
@@ -1861,38 +1839,10 @@
                 0.8199999
             ]
         },
-        "297": {
-            "name": "seldovaP",
-            "parent": "296",
-            "translation": [
-                0.8301558,
-                0.1010789,
-                0.0504102
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
-            ]
-        },
         "298": {
-            "name": "SedlovaParent",
+            "name": "LegendEntry_Sedlova",
             "parent": "296",
             "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p1",
-                        "material": "32"
-                    },
-                    "active": false
-                },
                 {
                     "type": "collision",
                     "collision": {
@@ -1913,12 +1863,22 @@
                         "hoverMaterial": "198",
                         "targetObject": "268",
                         "toggleMaterial": "197"
+                    },
+                    "active": false
+                },
+                {
+                    "type": "toggle-legend-highlight",
+                    "toggle-legend-highlight": {
+                        "buttonMeshObject": "291",
+                        "hoverMaterial": "31",
+                        "targetObject": "268",
+                        "toggleMaterial": "312"
                     }
                 }
             ],
             "translation": [
                 0.8301559,
-                0.1087412,
+                0.1087411,
                 0.0504102
             ],
             "rotation": [
@@ -1929,22 +1889,14 @@
             ],
             "scaling": [
                 0.07,
-                0.0952215,
-                0.1076881
+                0.0952214,
+                0.107688
             ]
         },
         "299": {
-            "name": "MansardovaParent",
+            "name": "LegendEntry_X",
             "parent": "296",
             "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p1",
-                        "material": "32"
-                    },
-                    "active": false
-                },
                 {
                     "type": "collision",
                     "collision": {
@@ -1956,6 +1908,14 @@
                                 0.09
                             ]
                         }
+                    }
+                },
+                {
+                    "type": "toggle-legend-highlight",
+                    "toggle-legend-highlight": {
+                        "buttonMeshObject": "287",
+                        "targetObject": "265",
+                        "toggleMaterial": "319"
                     }
                 }
             ],
@@ -2114,6 +2074,238 @@
                 0.008,
                 0.008
             ]
+        },
+        "309": {
+            "name": "Navigation",
+            "parent": "171"
+        },
+        "310": {
+            "name": "NavigationPanel1",
+            "parent": "311",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "168"
+                    }
+                }
+            ],
+            "translation": [
+                0.05,
+                -0.0029336,
+                -3.7642509
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                0.0196344,
+                3.7025015
+            ]
+        },
+        "311": {
+            "name": "Navigation",
+            "parent": "309",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                0.8221276
+            ]
+        },
+        "313": {
+            "name": "LegendEntry_X",
+            "parent": "296",
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0599999,
+                                0.0799999,
+                                0.09
+                            ]
+                        }
+                    }
+                }
+            ],
+            "translation": [
+                0.2600089,
+                0.1087432,
+                0.0504098
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.07,
+                0.0952214,
+                0.107688
+            ]
+        },
+        "314": {
+            "name": "LegendEntry_X",
+            "parent": "296",
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0599999,
+                                0.0799999,
+                                0.09
+                            ]
+                        }
+                    }
+                }
+            ],
+            "translation": [
+                -0.0208217,
+                0.1087397,
+                0.0504096
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.07,
+                0.0952214,
+                0.107688
+            ]
+        },
+        "315": {
+            "name": "LegendEntry_X",
+            "parent": "296",
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0599999,
+                                0.0799999,
+                                0.09
+                            ]
+                        }
+                    }
+                }
+            ],
+            "translation": [
+                -0.3015503,
+                0.1087375,
+                0.0504095
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.07,
+                0.0952214,
+                0.107688
+            ]
+        },
+        "316": {
+            "name": "LegendEntry_X",
+            "parent": "296",
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0599999,
+                                0.0799999,
+                                0.09
+                            ]
+                        }
+                    }
+                }
+            ],
+            "translation": [
+                -0.5909253,
+                0.1087336,
+                0.0504093
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.07,
+                0.0952214,
+                0.107688
+            ]
+        },
+        "317": {
+            "name": "LegendEntry_X",
+            "parent": "296",
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0599999,
+                                0.0799999,
+                                0.09
+                            ]
+                        }
+                    }
+                }
+            ],
+            "translation": [
+                -0.8544402,
+                0.1087346,
+                0.0504094
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.07,
+                0.0952214,
+                0.107688
+            ]
+        },
+        "318": {
+            "name": "misc",
+            "parent": "296"
         }
     },
     "meshes": {
@@ -2802,6 +2994,49 @@
                     0.4980392,
                     0.1764705,
                     1.0
+                ]
+            }
+        },
+        "312": {
+            "link": {
+                "name": "sedlova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            },
+            "name": "sedlova-highligh",
+            "Phong": {
+                "ambientColor": [
+                    0.7488789,
+                    0.7488789,
+                    0.7488789,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.6999999
+                ],
+                "shininess": 0
+            }
+        },
+        "319": {
+            "link": {
+                "name": "mansardova_copy",
+                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
+            },
+            "name": "mansardova-highlight",
+            "Phong": {
+                "ambientColor": [
+                    0.7488789,
+                    0.7488789,
+                    0.7488789,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.6999999
                 ]
             }
         }
