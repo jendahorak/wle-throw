@@ -34,7 +34,7 @@ export class ToggleLegendHighlight extends Component {
     /** Object that has the button's mesh attached */
     buttonMeshObject: Property.object(),
     /** Material to apply when the user hovers the button */
-    hoverMaterial: Property.material(),
+    // hoverMaterial: Property.material(),
 
     // Target object
     targetObject: Property.object(),

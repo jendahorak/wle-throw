@@ -131,7 +131,7 @@ export class ButtonComponentActive extends Component {
 
       // button object changes
       this.soundClick.play();
-      this.buttonMeshObject.translate([0.0, -0.01, 0.0]);
+      this.buttonMeshObject.translate([0.0, -0.007, 0.0]);
       hapticFeedback(cursor.object, 1.0, 20);
       this.mesh.material = this.toggleMaterial;
 
