@@ -298,8 +298,8 @@
             "parent": "20",
             "translation": [
                 -2.8814220343065244e-8,
-                0.0,
-                -0.000002
+                0.2199009,
+                -0.000003
             ],
             "rotation": [
                 0.0,
@@ -1231,22 +1231,22 @@
         },
         "213": {
             "name": "CursorRayRight",
-            "parent": "106",
+            "parent": "348",
             "translation": [
-                -0.0000015,
-                -0.0,
-                0.0
+                -6.25848997515277e-7,
+                0.0,
+                0.0638995
             ],
             "rotation": [
-                0.0,
-                -2.32962804602721e-7,
-                3.326212265619688e-7,
+                1.4901161193847656e-8,
+                3.534352543965724e-8,
+                4.045440959998814e-7,
                 1.0
             ],
             "scaling": [
-                1.0,
-                1.0,
-                1.0
+                1.0000082,
+                1.0000033,
+                1.0000047
             ]
         },
         "218": {
@@ -2845,39 +2845,19 @@
             "parent": "106",
             "translation": [
                 0.0,
-                -1.3380193308876187e-7,
-                -6.281560160914523e-8
+                -1.1864883475709576e-7,
+                -9.949926749186488e-8
             ],
             "rotation": [
-                0.7071068,
+                0.3007058,
                 0.0,
                 0.0,
-                0.7071068
+                0.9537169
             ],
             "scaling": [
                 0.9999917,
-                0.999997,
-                0.9999951
-            ]
-        },
-        "349": {
-            "name": "Cursor",
-            "parent": "348",
-            "translation": [
-                2.0861621408130304e-7,
-                0.0,
-                8.251318206475844e-8
-            ],
-            "rotation": [
-                -0.0,
-                -0.0,
-                -0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                0.9999996,
-                0.9999996
+                0.9999969,
+                0.9999948
             ],
             "components": [
                 {
@@ -2891,11 +2871,895 @@
                     }
                 },
                 {
+                    "type": null,
+                    "active": true,
+                    "animation": {
+                        "preview": false,
+                        "autoplay": false,
+                        "playCount": 0,
+                        "speed": 1.0,
+                        "animation": null,
+                        "retarget": false,
+                        "skin": null
+                    },
+                    "light": {
+                        "type": "point",
+                        "color": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "intensity": 1.0,
+                        "outerAngle": 90,
+                        "innerAngle": 45,
+                        "shadows": false,
+                        "shadowRange": 10.0,
+                        "shadowBias": 0.0012,
+                        "shadowNormalBias": 0.001,
+                        "shadowTexelSize": 1.0,
+                        "cascadeCount": 4
+                    },
+                    "view": {
+                        "fov": 90,
+                        "near": 0.01,
+                        "far": 100
+                    },
+                    "input": {
+                        "type": "head"
+                    },
+                    "collision": {
+                        "collider": "sphere",
+                        "sphere": {
+                            "radius": 1.0
+                        },
+                        "aabb": {
+                            "extents": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ]
+                        },
+                        "box": {
+                            "extents": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 255
+                    },
+                    "physx": {
+                        "static": false,
+                        "kinematic": false,
+                        "simulate": true,
+                        "allowQuery": true,
+                        "allowSimulation": true,
+                        "mass": 1.0,
+                        "shape": "sphere",
+                        "sphere": {
+                            "radius": 0.25
+                        },
+                        "box": {
+                            "extents": [
+                                0.25,
+                                0.25,
+                                0.25
+                            ]
+                        },
+                        "capsule": {
+                            "radius": 0.15,
+                            "halfHeight": 0.25
+                        },
+                        "triangleMesh": {
+                            "mesh": null,
+                            "scaling": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "convexMesh": {
+                            "mesh": null,
+                            "scaling": [
+                                1,
+                                1,
+                                1
+                            ]
+                        },
+                        "translationOffset": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "rotationOffset": [
+                            0.0,
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "linearDamping": 0.0,
+                        "angularDamping": 0.05,
+                        "staticFriction": 0.5,
+                        "dynamicFriction": 0.5,
+                        "bounciness": 0.5,
+                        "gravity": true,
+                        "trigger": false,
+                        "block": 255,
+                        "groups": 255,
+                        "lockAxis": 0,
+                        "solverPositionIterations": 4,
+                        "solverVelocityIterations": 1
+                    },
+                    "mesh": {
+                        "static": false,
+                        "material": null,
+                        "mesh": null,
+                        "skin": null
+                    },
+                    "text": {
+                        "alignment": "center",
+                        "justification": "middle",
+                        "characterSpacing": 0.0,
+                        "lineSpacing": 1.2,
+                        "effect": "none",
+                        "text": "Wonderland Engine",
+                        "material": "DefaultFontMaterial"
+                    },
+                    "line-connection": {
+                        "targetA": null,
+                        "targetB": null,
+                        "lengthPercentage": 1,
+                        "thickness": 0.05
+                    },
+                    "smooth-locomotion": {
+                        "handedness": "left",
+                        "controlType": "move",
+                        "controlSource": "thumbstick",
+                        "player": null,
+                        "head": null,
+                        "head2": null,
+                        "moveSpeed": 1,
+                        "allowFly": false,
+                        "rotationType": "snap",
+                        "snapDegrees": 45
+                    },
+                    "waypoint-movement": {
+                        "pathObject": null,
+                        "speed": 1,
+                        "curveDistance": 0.1
+                    },
+                    "8thwall-camera": {
+                        "useCustomUIOverlays": false
+                    },
+                    "anchor": {
+                        "persist": false,
+                        "uuid": ""
+                    },
+                    "cursor": {
+                        "collisionGroup": 1,
+                        "cursorRayObject": null,
+                        "cursorRayScalingAxis": "z",
+                        "cursorObject": null,
+                        "handedness": "input component",
+                        "rayCastMode": "collision",
+                        "maxDistance": 100,
+                        "styleCursor": true,
+                        "useWebXRHitTest": false
+                    },
+                    "cursor-target": {},
+                    "debug-object": {
+                        "obj": null
+                    },
+                    "device-orientation-look": {},
+                    "finger-cursor": {},
+                    "fixed-foveation": {
+                        "fixedFoveation": 0.5
+                    },
+                    "hand-tracking": {
+                        "handedness": "left",
+                        "jointMesh": null,
+                        "jointMaterial": null,
+                        "handSkin": null,
+                        "deactivateChildrenWithoutPose": true,
+                        "controllerToDeactivate": null
+                    },
+                    "hit-test-location": {
+                        "scaleObject": true
+                    },
+                    "howler-audio-listener": {
+                        "spatial": true
+                    },
+                    "howler-audio-source": {
+                        "volume": 1,
+                        "spatial": true,
+                        "loop": false,
+                        "autoplay": false,
+                        "src": ""
+                    },
+                    "image-texture": {
+                        "url": "",
+                        "material": null,
+                        "textureProperty": "auto"
+                    },
+                    "mouse-look": {
+                        "sensitity": 0.25,
+                        "requireMouseDown": true,
+                        "mouseButtonIndex": 0,
+                        "pointerLockOnClick": false
+                    },
+                    "plane-detection": {
+                        "planeMaterial": null,
+                        "collisionMask": 0
+                    },
+                    "player-height": {
+                        "height": 1.75
+                    },
+                    "target-framerate": {
+                        "framerate": 90
+                    },
+                    "teleport": {
+                        "teleportIndicatorMeshObject": null,
+                        "camRoot": null,
+                        "cam": null,
+                        "eyeLeft": null,
+                        "eyeRight": null,
+                        "handedness": "input component",
+                        "floorGroup": 1,
+                        "thumbstickActivationThreshhold": -0.7,
+                        "thumbstickDeactivationThreshhold": 0.3,
+                        "indicatorYOffset": 0.01,
+                        "rayCastMode": "collision",
+                        "maxDistance": 100
+                    },
+                    "trail": {
+                        "material": null,
+                        "segments": 50,
+                        "interval": 0.1,
+                        "width": 1,
+                        "taper": true,
+                        "resetThreshold": 0.5
+                    },
+                    "two-joint-ik-solver": {
+                        "root": null,
+                        "middle": null,
+                        "end": null,
+                        "target": null,
+                        "copyTargetRotation": true,
+                        "helper": null
+                    },
+                    "video-texture": {
+                        "url": "",
+                        "material": null,
+                        "loop": true,
+                        "autoplay": true,
+                        "muted": true,
+                        "textureProperty": "auto"
+                    },
+                    "vr-mode-active-switch": {
+                        "activateComponents": "in VR",
+                        "affectChildren": true
+                    },
+                    "vrm": {
+                        "src": "",
+                        "lookAtTarget": null
+                    },
+                    "wasd-controls": {
+                        "speed": 0.1,
+                        "lockY": false,
+                        "headObject": null
+                    },
+                    "pp-add-pp-to-window": {
+                        "_myAdd": true
+                    },
+                    "pp-add-wl-to-window": {
+                        "_myAdd": true
+                    },
+                    "pp-adjust-hierarchy-physx-scale": {
+                        "_myWhen": "Start"
+                    },
+                    "pp-audio-manager": {
+                        "_myPreloadAudio": true,
+                        "_myCleanUpAudioSourcesOnInit": true
+                    },
+                    "pp-benchmark-max-physx": {
+                        "_myStaticDomeSize": 40,
+                        "_myStaticPhysXCount": 1000,
+                        "_myDynamicDomeSize": 80,
+                        "_myDynamicPhysXCount": 250,
+                        "_myKinematicDomeSize": 120,
+                        "_myKinematicPhysXCount": 250,
+                        "_myRaycastCount": 100,
+                        "_myVisualizeRaycast": false,
+                        "_myVisualizeRaycastDelay": 0.5,
+                        "_myUseConvexMesh": false,
+                        "_myShapeIndex": 0,
+                        "_myShapeScaleMultiplier": 1,
+                        "_myLogEnabled": true,
+                        "_myClearConsoleBeforeLog": true
+                    },
+                    "pp-benchmark-max-visible-triangles": {
+                        "_myTargetFrameRate": -1,
+                        "_myTargetFrameRateThreshold": 3,
+                        "_myStartPlaneCount": 1,
+                        "_myPlaneTriangles": 100,
+                        "_mySecondsBeforeDoubling": 0.5,
+                        "_myDTHistoryToIgnorePercentage": 0.25,
+                        "_myCloneMaterial": false,
+                        "_myCloneMesh": false,
+                        "_myLogEnabled": true,
+                        "_myStartOnXRStart": false,
+                        "_myDisplayInFrontOfPlayer": true,
+                        "_myDisplayInFrontOfPlayerDistance": 10,
+                        "_myPlaneMaterial": null,
+                        "_myBackgroundMaterial": null,
+                        "_myTextMaterial": null
+                    },
+                    "pp-ca-display-leaderboard": {
+                        "_myUsernamesTextObject": null,
+                        "_myScoresTextObject": null,
+                        "_myLeaderboardID": "",
+                        "_myLocal": false,
+                        "_myAscending": false,
+                        "_myScoresAmount": 10,
+                        "_myScoreFormat": "Value",
+                        "_myPositionAndUsernameSeparator": " - ",
+                        "_myNumberOfLinesBetweenScores": 1,
+                        "_myAddDefaultCADummyServer": false
+                    },
+                    "pp-character-collision-system": {},
+                    "pp-clear-console-on-xr-session-start": {
+                        "_myFirstTimeOnly": true
+                    },
+                    "pp-console-vr-tool": {
+                        "_myHandedness": "None",
+                        "_myOverrideBrowserConsole": true,
+                        "_myShowOnStart": false,
+                        "_myShowVisibilityButton": false,
+                        "_myPulseOnNewMessage": "Never"
+                    },
+                    "pp-copy-hand-transform": {
+                        "_myHandedness": "Left"
+                    },
+                    "pp-copy-head-transform": {},
+                    "pp-copy-player-transform": {},
+                    "pp-copy-reference-space-transform": {},
+                    "pp-debug-array-functions-performance-analyzer": {
+                        "_myIncludeOnlyMainArrayTypes": true,
+                        "_myIncludeOnlyArrayExtensionFunctions": false,
+                        "_myDelayStart": 0,
+                        "_myLogFunction": "Log",
+                        "_mySecondsBetweenLogs": 1,
+                        "_myLogMaxResults": false,
+                        "_myLogSortOrder": "None",
+                        "_myLogCallsCountResults": true,
+                        "_myLogTotalExecutionTimeResults": true,
+                        "_myLogTotalExecutionTimePercentageResults": true,
+                        "_myLogAverageExecutionTimeResults": true,
+                        "_myLogMaxAmountOfFunctions": -1,
+                        "_myLogFunctionsWithCallsCountAbove": -1,
+                        "_myLogFunctionsWithTotalExecutionTimePercentageAbove": -1,
+                        "_myFunctionPathsToInclude": "",
+                        "_myFunctionPathsToExclude": "",
+                        "_myExcludeConstructors": false,
+                        "_myClearConsoleBeforeLog": false,
+                        "_myResetMaxResultsShortcutEnabled": false
+                    },
+                    "pp-debug-functions-performance-analyzer": {
+                        "_myObjectsByPath": "",
+                        "_myClassesByPath": "",
+                        "_myFunctionsByPath": "",
+                        "_myDelayStart": 0,
+                        "_myLogTitle": "Functions Performance Analysis Results",
+                        "_myLogFunction": "Log",
+                        "_mySecondsBetweenLogs": 1,
+                        "_myLogMaxResults": false,
+                        "_myLogSortOrder": "None",
+                        "_myLogCallsCountResults": true,
+                        "_myLogTotalExecutionTimeResults": true,
+                        "_myLogTotalExecutionTimePercentageResults": true,
+                        "_myLogAverageExecutionTimeResults": true,
+                        "_myLogMaxAmountOfFunctions": -1,
+                        "_myLogFunctionsWithCallsCountAbove": -1,
+                        "_myLogFunctionsWithTotalExecutionTimePercentageAbove": -1,
+                        "_myFunctionPathsToInclude": "",
+                        "_myFunctionPathsToExclude": "",
+                        "_myExcludeConstructors": false,
+                        "_myExcludeJSObjectFunctions": true,
+                        "_myAddPathPrefixToFunctionID": true,
+                        "_myObjectAddObjectDescendantsDepthLevel": 0,
+                        "_myObjectAddClassDescendantsDepthLevel": 0,
+                        "_myClearConsoleBeforeLog": false,
+                        "_myResetMaxResultsShortcutEnabled": false,
+                        "_myClassesByReference": "Code Driven",
+                        "_myObjectsByReference": "Code Driven"
+                    },
+                    "pp-debug-manager": {},
+                    "pp-debug-pp-array-creation-performance-analyzer": {
+                        "_myDelayStart": 0,
+                        "_myLogFunction": "Log",
+                        "_mySecondsBetweenLogs": 1,
+                        "_myLogMaxResults": false,
+                        "_myLogSortOrder": "None",
+                        "_myLogCallsCountResults": true,
+                        "_myLogTotalExecutionTimeResults": true,
+                        "_myLogTotalExecutionTimePercentageResults": true,
+                        "_myLogAverageExecutionTimeResults": true,
+                        "_myLogMaxAmountOfFunctions": -1,
+                        "_myLogFunctionsWithCallsCountAbove": -1,
+                        "_myLogFunctionsWithTotalExecutionTimePercentageAbove": -1,
+                        "_myClearConsoleBeforeLog": false,
+                        "_myResetMaxResultsShortcutEnabled": false
+                    },
+                    "pp-debug-pp-functions-performance-analyzer": {
+                        "_myDelayStart": 0,
+                        "_myLogFunction": "Log",
+                        "_mySecondsBetweenLogs": 1,
+                        "_myLogMaxResults": false,
+                        "_myLogSortOrder": "None",
+                        "_myLogCallsCountResults": true,
+                        "_myLogTotalExecutionTimeResults": true,
+                        "_myLogTotalExecutionTimePercentageResults": true,
+                        "_myLogAverageExecutionTimeResults": true,
+                        "_myLogMaxAmountOfFunctions": -1,
+                        "_myLogFunctionsWithCallsCountAbove": -1,
+                        "_myLogFunctionsWithTotalExecutionTimePercentageAbove": -1,
+                        "_myFunctionPathsToInclude": "",
+                        "_myFunctionPathsToExclude": "",
+                        "_myExcludeConstructors": false,
+                        "_myClearConsoleBeforeLog": false,
+                        "_myResetMaxResultsShortcutEnabled": false
+                    },
+                    "pp-debug-transform": {
+                        "_myLength": 0.1,
+                        "_myThickness": 0.005
+                    },
+                    "pp-debug-wl-components-functions-performance-analyzer": {
+                        "_myAnalyzeComponentTypes": true,
+                        "_myAnalyzeComponentInstances": false,
+                        "_myComponentInstanceID": "Object ID - Object Name",
+                        "_myDelayStart": 0,
+                        "_myLogFunction": "Log",
+                        "_mySecondsBetweenLogs": 1,
+                        "_myLogMaxResults": false,
+                        "_myLogSortOrder": "None",
+                        "_myLogCallsCountResults": true,
+                        "_myLogTotalExecutionTimeResults": true,
+                        "_myLogTotalExecutionTimePercentageResults": true,
+                        "_myLogAverageExecutionTimeResults": true,
+                        "_myLogMaxAmountOfFunctions": -1,
+                        "_myLogFunctionsWithCallsCountAbove": -1,
+                        "_myLogFunctionsWithTotalExecutionTimePercentageAbove": -1,
+                        "_myFunctionPathsToInclude": "",
+                        "_myFunctionPathsToExclude": "",
+                        "_myExcludeConstructors": false,
+                        "_myClearConsoleBeforeLog": false,
+                        "_myResetMaxResultsShortcutEnabled": false
+                    },
+                    "pp-debug-wl-functions-performance-analyzer": {
+                        "_myDelayStart": 0,
+                        "_myLogFunction": "Log",
+                        "_mySecondsBetweenLogs": 1,
+                        "_myLogMaxResults": false,
+                        "_myLogSortOrder": "None",
+                        "_myLogCallsCountResults": true,
+                        "_myLogTotalExecutionTimeResults": true,
+                        "_myLogTotalExecutionTimePercentageResults": true,
+                        "_myLogAverageExecutionTimeResults": true,
+                        "_myLogMaxAmountOfFunctions": -1,
+                        "_myLogFunctionsWithCallsCountAbove": -1,
+                        "_myLogFunctionsWithTotalExecutionTimePercentageAbove": -1,
+                        "_myFunctionPathsToInclude": "",
+                        "_myFunctionPathsToExclude": "",
+                        "_myExcludeConstructors": false,
+                        "_myClearConsoleBeforeLog": false,
+                        "_myResetMaxResultsShortcutEnabled": false
+                    },
+                    "pp-easy-light-attenuation": {
+                        "_myVariableName": "",
+                        "_mySetAsWidgetCurrentVariable": false,
+                        "_myUseTuneTarget": false
+                    },
+                    "pp-easy-light-color": {
+                        "_myVariableName": "",
+                        "_mySetAsWidgetCurrentVariable": false,
+                        "_myUseTuneTarget": false,
+                        "_myColorModel": "HSV"
+                    },
+                    "pp-easy-mesh-ambient-factor": {
+                        "_myVariableName": "",
+                        "_myUseTuneTarget": false,
+                        "_mySetAsWidgetCurrentVariable": false
+                    },
+                    "pp-easy-mesh-color": {
+                        "_myVariableName": "",
+                        "_myUseTuneTarget": false,
+                        "_mySetAsWidgetCurrentVariable": false,
+                        "_myColorModel": "HSV",
+                        "_myColorType": "Color"
+                    },
+                    "pp-easy-scale": {
+                        "_myVariableName": "",
+                        "_mySetAsWidgetCurrentVariable": false,
+                        "_myUseTuneTarget": false,
+                        "_myLocal": false,
+                        "_myScaleAsOne": true
+                    },
+                    "pp-easy-set-tune-target-grab": {},
+                    "pp-easy-set-tune-target-child-number": {
+                        "_myVariableName": "",
+                        "_mySetAsWidgetCurrentVariable": false
+                    },
+                    "pp-easy-text-color": {
+                        "_myVariableName": "",
+                        "_mySetAsWidgetCurrentVariable": false,
+                        "_myUseTuneTarget": false,
+                        "_myColorModel": "HSV",
+                        "_myColorType": "Color"
+                    },
+                    "pp-easy-transform": {
+                        "_myVariableName": "",
+                        "_mySetAsWidgetCurrentVariable": false,
+                        "_myUseTuneTarget": false,
+                        "_myLocal": true,
+                        "_myScaleAsOne": true
+                    },
+                    "pp-easy-tune-import-variables": {
+                        "_myVariablesImportURL": "",
+                        "_myResetVariablesDefaultValueOnImport": true
+                    },
+                    "pp-easy-tune-tool": {
+                        "_myHandedness": "None",
+                        "_myShowOnStart": false,
+                        "_myShowVisibilityButton": false,
+                        "_myGamepadScrollVariableEnabled": true,
+                        "_myShowVariablesImportExportButtons": false,
+                        "_myVariablesImportURL": "",
+                        "_myVariablesExportURL": "",
+                        "_myImportVariablesOnStart": false,
+                        "_myResetVariablesDefaultValueOnImport": false
+                    },
+                    "pp-enable-debug": {
+                        "_myEnable": true
+                    },
+                    "pp-enable-tools": {
+                        "_myEnable": true
+                    },
+                    "pp-finger-cursor": {
+                        "_myHandedness": "Left",
+                        "_myMultipleClicksEnabled": true,
+                        "_myCollisionGroup": 1,
+                        "_myCollisionSize": 0.0125,
+                        "_myCursorObject": null
+                    },
+                    "pp-gamepad-control-scheme": {
+                        "_myShowOnStart": true,
+                        "_myHandedness": "Left",
+                        "_mySelectText": "",
+                        "_mySqueezeText": "",
+                        "_myThumbstickText": "",
+                        "_myBottomButtonText": "",
+                        "_myTopButtonText": "",
+                        "_mySelect": null,
+                        "_mySqueeze": null,
+                        "_myThumbstick": null,
+                        "_myBottomButton": null,
+                        "_myTopButton": null,
+                        "_myTextScaleMultiplier": 1,
+                        "_myTextOffsetMultiplier": 1,
+                        "_myLineLengthMultiplier": 1,
+                        "_myLineThicknessMultiplier": 1,
+                        "_myDistanceFromButtonsMultiplier": 1,
+                        "_myTextMaterial": null,
+                        "_myLineMaterial": null
+                    },
+                    "pp-gamepad-mesh-animator": {
+                        "_myHandedness": "Left",
+                        "_mySelect": null,
+                        "_mySqueeze": null,
+                        "_myThumbstick": null,
+                        "_myTopButton": null,
+                        "_myBottomButton": null,
+                        "_mySelectRotateAngle": 15,
+                        "_mySqueezeRotateAngle": 11,
+                        "_myThumbstickRotateAngle": 15,
+                        "_myThumbstickPressOffset": 0.000625,
+                        "_myTopButtonPressOffset": 0.0015,
+                        "_myBottomButtonPressOffset": 0.0015,
+                        "_myUsePressForSqueeze": false,
+                        "_mySqueezePressOffset": 0.0015
+                    },
+                    "pp-get-default-resources": {
+                        "_myPlane": null,
+                        "_myCube": null,
+                        "_mySphere": null,
+                        "_myCone": null,
+                        "_myCylinder": null,
+                        "_myCircle": null,
+                        "_myFlatOpaque": null,
+                        "_myFlatTransparentNoDepth": null,
+                        "_myPhongOpaque": null,
+                        "_myText": null
+                    },
+                    "pp-get-scene-objects": {
+                        "_myScene": null,
+                        "_myPlayer": null,
+                        "_myReferenceSpace": null,
+                        "_myCameraNonXR": null,
+                        "_myEyeLeft": null,
+                        "_myEyeRight": null,
+                        "_myHandLeft": null,
+                        "_myHandRight": null,
+                        "_myHead": null
+                    },
+                    "pp-grabbable": {
+                        "_myThrowLinearVelocityMultiplier": 1,
+                        "_myThrowAngularVelocityMultiplier": 1,
+                        "_myKinematicValueOnRelease": "False",
+                        "_myParentOnRelease": "Own"
+                    },
+                    "pp-grabber-hand": {
+                        "_myHandedness": "Left",
+                        "_myGrabButton": "Squeeze",
+                        "_mySnapOnPivot": false,
+                        "_myMaxNumberOfObjects": 1,
+                        "_myThrowVelocitySource": "Hand",
+                        "_myThrowLinearVelocityMultiplier": 1,
+                        "_myThrowMaxLinearSpeed": 15,
+                        "_myThrowAngularVelocityMultiplier": 0.5,
+                        "_myThrowMaxAngularSpeed": 1080,
+                        "_myThrowLinearVelocityBoost": 1.75,
+                        "_myThrowLinearVelocityBoostMinSpeedThreshold": 0.6,
+                        "_myThrowLinearVelocityBoostMaxSpeedThreshold": 2.5
+                    },
+                    "pp-init-console-vr": {
+                        "_myInit": true
+                    },
+                    "pp-init-easy-tune-variables": {
+                        "_myInit": true
+                    },
+                    "pp-input-manager": {
+                        "_myPoseForwardFixed": true,
+                        "_myPreventMouseContextMenu": true,
+                        "_myPreventMouseMiddleButtonScroll": true,
+                        "_myEnableTrackedHandPoses": true
+                    },
+                    "pp-mute-everything": {},
+                    "pp-object-pools-manager": {},
+                    "pp-gateway": {
+                        "_myEnableDebug": true,
+                        "_myEnableTool": true,
+                        "_myAddPPToWindow": true,
+                        "_myAddWLToWindow": true,
+                        "_myPoseForwardFixed": true,
+                        "_myPreventMouseContextMenu": true,
+                        "_myPreventMouseMiddleButtonScroll": true,
+                        "_myEnableTrackedHandPoses": true,
+                        "_myPreloadAudio": true,
+                        "_myCleanUpAudioSourcesOnInit": true,
+                        "_myScene": null,
+                        "_myPlayer": null,
+                        "_myReferenceSpace": null,
+                        "_myCameraNonXR": null,
+                        "_myEyeLeft": null,
+                        "_myEyeRight": null,
+                        "_myHandLeft": null,
+                        "_myHandRight": null,
+                        "_myHead": null,
+                        "_myPlane": null,
+                        "_myCube": null,
+                        "_mySphere": null,
+                        "_myCone": null,
+                        "_myCylinder": null,
+                        "_myCircle": null,
+                        "_myFlatOpaque": null,
+                        "_myFlatTransparentNoDepth": null,
+                        "_myPhongOpaque": null,
+                        "_myText": null
+                    },
+                    "pp-player-locomotion": {
+                        "_myDefaultLocomotionType": "Smooth",
+                        "_mySwitchLocomotionTypeShortcutEnabled": true,
+                        "_myPhysicsBlockLayerFlags": "0, 0, 0, 0, 0, 0, 0, 0",
+                        "_myDefaultHeight": 1.75,
+                        "_myCharacterRadius": 0.3,
+                        "_myMaxSpeed": 2,
+                        "_myMaxRotationSpeed": 100,
+                        "_myGravityAcceleration": -20,
+                        "_myMaxGravitySpeed": -15,
+                        "_mySpeedSlowDownPercentageOnWallSlid": 1,
+                        "_myIsSnapTurn": true,
+                        "_mySnapTurnOnlyVR": true,
+                        "_mySnapTurnAngle": 30,
+                        "_mySnapTurnSpeedDegrees": 0,
+                        "_myFlyEnabled": false,
+                        "_myStartFlying": false,
+                        "_myMinAngleToFlyUpNonVR": 30,
+                        "_myMinAngleToFlyDownNonVR": 50,
+                        "_myMinAngleToFlyUpVR": 60,
+                        "_myMinAngleToFlyDownVR": 1,
+                        "_myMinAngleToFlyRight": 60,
+                        "_myMainHand": "Left",
+                        "_myDirectionInvertForwardWhenUpsideDown": true,
+                        "_myVRDirectionReferenceType": "Head",
+                        "_myVRDirectionReferenceObject": null,
+                        "_myTeleportType": "Shift",
+                        "_myTeleportMaxDistance": 3,
+                        "_myTeleportMaxHeightDifference": 1.25,
+                        "_myTeleportRotationOnUpEnabled": false,
+                        "_myTeleportValidMaterial": null,
+                        "_myTeleportInvalidMaterial": null,
+                        "_myTeleportPositionObject": null,
+                        "_myTeleportPositionObjectRotateWithHead": true,
+                        "_myTeleportParableStartReferenceObject": null,
+                        "_mySyncWithRealWorldPositionOnlyIfValid": true,
+                        "_myViewOcclusionInsideWallsEnabled": true,
+                        "_myColliderAccuracy": "High",
+                        "_myColliderCheckOnlyFeet": false,
+                        "_myColliderSlideAlongWall": true,
+                        "_myColliderMaxWalkableGroundAngle": 30,
+                        "_myColliderSnapOnGround": true,
+                        "_myColliderMaxDistanceToSnapOnGround": 0.1,
+                        "_myColliderMaxWalkableGroundStepHeight": 0.1,
+                        "_myColliderPreventFallingFromEdges": false,
+                        "_myDebugHorizontalEnabled": false,
+                        "_myDebugVerticalEnabled": false,
+                        "_myMoveThroughCollisionShortcutEnabled": false,
+                        "_myMoveHeadShortcutEnabled": false,
+                        "_myTripleSpeedShortcutEnabled": false
+                    },
+                    "pp-set-active": {
+                        "_myActive": true,
+                        "_mySetActiveOn": "Hierarchy",
+                        "_mySetActiveWhen": "Init"
+                    },
+                    "pp-set-hand-local-transform": {
+                        "_myHandedness": "Left"
+                    },
+                    "pp-set-head-local-transform": {},
+                    "pp-set-player-height": {
+                        "_myEyesHeight": 1.65,
+                        "_mySetOnlyOnStart": false
+                    },
+                    "pp-set-tracked-hand-joint-local-transform": {
+                        "_myHandedness": "Left",
+                        "_mySetLocalScaleAsJointRadius": false,
+                        "_myJointID": "Wrist"
+                    },
+                    "pp-show-fps": {
+                        "_myRefreshSeconds": 0.25,
+                        "_myScreenPositionX": 1,
+                        "_myScreenPositionY": -1,
+                        "_myScreenPositionZ": 1,
+                        "_myScale": 1.5,
+                        "_myTextMaterial": null
+                    },
+                    "pp-spatial-audio-listener": {},
+                    "pp-switch-hand-object": {
+                        "_myHandedness": "Left",
+                        "_myGamepad": null,
+                        "_myTrackedHand": null
+                    },
+                    "pp-tool-cursor": {
+                        "_myHandedness": "Left",
+                        "_myApplyDefaultCursorOffset": true,
+                        "_myPulseOnHover": false,
+                        "_myShowFingerCursor": false,
+                        "_myUpdatePointerCursorStyle": true
+                    },
+                    "pp-tracked-hand-draw-all-joints": {
+                        "_myHandedness": "Left",
+                        "_myHideMetacarpals": true,
+                        "_myJointMesh": null,
+                        "_myJointMaterial": null
+                    },
+                    "pp-tracked-hand-draw-joint": {
+                        "_myHandedness": "Left",
+                        "_myJointID": "Wrist",
+                        "_myJointMesh": null,
+                        "_myJointMaterial": null
+                    },
+                    "pp-tracked-hand-draw-skin": {
+                        "_myHandedness": "Left",
+                        "_myHandSkin": null
+                    },
+                    "pp-virtual-gamepad": {
+                        "_myShowOnDesktop": false,
+                        "_myShowOnMobile": true,
+                        "_myShowOnHeadset": false,
+                        "_myAddToUniversalGamepad": true,
+                        "_myOpacity": 0.5,
+                        "_myIconColor": "#e0e0e0",
+                        "_myBackgroundColor": "#616161",
+                        "_myInterfaceScale": 1,
+                        "_myMarginScale": 1,
+                        "ADVANCED_PARAMS_BELOW": "",
+                        "_myLabelFontSize": 2,
+                        "_myLabelFontFamily": "sans-serif",
+                        "_myLabelFontWeight": "bold",
+                        "_myImagePressedBrightness": 0.5,
+                        "_myLeftSelectButtonVisible": true,
+                        "_myLeftSelectButtonOrderIndex": 1,
+                        "_myLeftSelectButtonIconType": "Frame",
+                        "_myLeftSelectButtonIconLabelOrImageUrl": "",
+                        "_myLeftSqueezeButtonVisible": true,
+                        "_myLeftSqueezeButtonOrderIndex": 0,
+                        "_myLeftSqueezeButtonIconType": "Square",
+                        "_myLeftSqueezeButtonIconLabelOrImageUrl": "",
+                        "_myLeftThumbstickButtonVisible": true,
+                        "_myLeftThumbstickButtonOrderIndex": 4,
+                        "_myLeftThumbstickButtonIconType": "Dot",
+                        "_myLeftThumbstickButtonIconLabelOrImageUrl": "",
+                        "_myLeftTopButtonVisible": true,
+                        "_myLeftTopButtonOrderIndex": 2,
+                        "_myLeftTopButtonIconType": "Circle",
+                        "_myLeftTopButtonIconLabelOrImageUrl": "",
+                        "_myLeftBottomButtonVisible": true,
+                        "_myLeftBottomButtonOrderIndex": 3,
+                        "_myLeftBottomButtonIconType": "Ring",
+                        "_myLeftBottomButtonIconLabelOrImageUrl": "",
+                        "_myRightSelectButtonVisible": true,
+                        "_myRightSelectButtonOrderIndex": 1,
+                        "_myRightSelectButtonIconType": "Frame",
+                        "_myRightSelectButtonIconLabelOrImageUrl": "",
+                        "_myRightSqueezeButtonVisible": true,
+                        "_myRightSqueezeButtonOrderIndex": 0,
+                        "_myRightSqueezeButtonIconType": "Square",
+                        "_myRightSqueezeButtonIconLabelOrImageUrl": "",
+                        "_myRightThumbstickButtonVisible": true,
+                        "_myRightThumbstickButtonOrderIndex": 4,
+                        "_myRightThumbstickButtonIconType": "Dot",
+                        "_myRightThumbstickButtonIconLabelOrImageUrl": "",
+                        "_myRightTopButtonVisible": true,
+                        "_myRightTopButtonOrderIndex": 2,
+                        "_myRightTopButtonIconType": "Circle",
+                        "_myRightTopButtonIconLabelOrImageUrl": "",
+                        "_myRightBottomButtonVisible": true,
+                        "_myRightBottomButtonOrderIndex": 3,
+                        "_myRightBottomButtonIconType": "Ring",
+                        "_myRightBottomButtonIconLabelOrImageUrl": ""
+                    },
+                    "pp-visual-manager": {},
+                    "button": {
+                        "buttonMeshObject": null,
+                        "hoverMaterial": null,
+                        "buttonTargetObejct": null
+                    },
+                    "rotate": {
+                        "param": 1
+                    },
+                    "test": {
+                        "param": 1
+                    },
+                    "toggle-active": {
+                        "buttonMeshObject": null,
+                        "hoverMaterial": null,
+                        "targetObject": null,
+                        "toggleMaterial": null
+                    },
+                    "toggle-button": {
+                        "buttonMeshObject": null,
+                        "hoverMaterial": null,
+                        "targetObject": null,
+                        "toggleMaterial": null
+                    },
+                    "toggle-legend-highlight": {
+                        "buttonMeshObject": null,
+                        "targetObject": null,
+                        "toggleMaterial": null
+                    }
+                }
+            ]
+        },
+        "352": {
+            "name": "InputAdjusted",
+            "parent": "348",
+            "components": [
+                {
                     "type": "input",
+                    "active": true,
                     "input": {
                         "type": "ray right"
-                    },
-                    "active": true
+                    }
                 }
             ]
         }

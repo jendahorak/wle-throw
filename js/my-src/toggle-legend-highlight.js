@@ -9,8 +9,17 @@ import { CursorTarget, HowlerAudioSource } from '@wonderlandengine/components';
  * @param {number} duration Duration in milliseconds
  */
 export function hapticFeedback(object, strength, duration) {
-  const input = object.getComponent(InputComponent);
+  let input = object.getComponent(InputComponent);
+
+  // Workaround for Adjusted cursor angle - done by making cursor a child of gamepad and then input child of the curosorparent
+  if (input == null) {
+    // console.log('Input not on same object as cursor.');
+    input = object.findByName('InputAdjusted', true)[0].getComponent(InputComponent);
+
+    console.log(input.xrInputSource);
+  }
   if (input && input.xrInputSource) {
+    // console.log('found gamepad');
     const gamepad = input.xrInputSource.gamepad;
     if (gamepad && gamepad.hapticActuators) gamepad.hapticActuators[0].pulse(strength, duration);
   }
@@ -102,6 +111,10 @@ export class ToggleLegendHighlight extends Component {
   /* Called by 'cursor-target' */
   onHover = (_, cursor) => {
     this.hover = true;
+
+    // console.log('Hovered');
+    // console.log(cursor);
+    // console.log(cursor.object);
     hapticFeedback(cursor.object, 0.5, 50);
 
     // if (this.toggled) {

@@ -57080,7 +57080,11 @@ __publicField(Documentation, "Properties", {
 
 // D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/my-src/toggle-active.js
 function hapticFeedback(object, strength, duration) {
-  const input = object.getComponent(InputComponent);
+  let input = object.getComponent(InputComponent);
+  if (input == null) {
+    input = object.findByName("InputAdjusted", true)[0].getComponent(InputComponent);
+    console.log(input.xrInputSource);
+  }
   if (input && input.xrInputSource) {
     const gamepad = input.xrInputSource.gamepad;
     if (gamepad && gamepad.hapticActuators)
@@ -57199,7 +57203,11 @@ __publicField(ButtonComponentActive, "Properties", {
 
 // D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_Physics/js/my-src/toggle-legend-highlight.js
 function hapticFeedback2(object, strength, duration) {
-  const input = object.getComponent(InputComponent);
+  let input = object.getComponent(InputComponent);
+  if (input == null) {
+    input = object.findByName("InputAdjusted", true)[0].getComponent(InputComponent);
+    console.log(input.xrInputSource);
+  }
   if (input && input.xrInputSource) {
     const gamepad = input.xrInputSource.gamepad;
     if (gamepad && gamepad.hapticActuators)
