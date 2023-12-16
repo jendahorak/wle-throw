@@ -1,18 +1,18 @@
 {
-    "name": "wle-ppefault",
-    "version": "0.5.2",
-    "author": "Pipo",
-    "description": "Default template project for the Wonderland Engine",
-    "homepage": "https://github.com/SignorPipo/wle-ppefault",
+    "name": "dp-main",
+    "version": "0.0.1",
+    "author": "shtrdl",
+    "description": "Wonderland engine scene for the DP project",
+    "homepage": "https://jendahorak.github.io/wle-throw",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SignorPipo/wle-ppefault.git"
+        "url": "git+https://github.com/jendahorak/wle-throw.git"
     },
     "license": "ISC",
     "files": [
         "assets",
         "js",
-        "wle_ppefault.wlp"
+        "dp_main.wlp"
     ],
     "keywords": [
         "pp",
