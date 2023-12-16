@@ -22,7 +22,7 @@ jobs:
 
       - name: Package
 
-        run: /usr/local/bin/entrypoint.sh WonderlandEditor --windowless --package --project 006_Physics.wlp --credentials "$WLE_CREDENTIALS"
+        run: /usr/local/bin/entrypoint.sh WonderlandEditor --windowless --package --project dp_main.wlp --credentials "$WLE_CREDENTIALS"
 
         env:
           WLE_CREDENTIALS: ${{ secrets.WLE_CREDENTIALS }}
