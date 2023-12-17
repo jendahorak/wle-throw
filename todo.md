@@ -13,3 +13,8 @@ Zkusit rychle vyprototypovat "Urban Builder task"
 - checkovat když se overlapujou - když ano a objekt není držen - snapnout ho na místo - drag and drop
 
 Dodělat info k taskům - nazvy, popisy, tutorial.
+
+## Bugs
+
+- crashes when physix
+- cursorMaxDistance doesnt work

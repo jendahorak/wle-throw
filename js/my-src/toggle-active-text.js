@@ -21,8 +21,8 @@ export class ButtonComponentActiveText extends Component {
     sourceObject: Property.object(),
     /** Material to apply when the user hovers the button */
     hoverMaterial: Property.material(),
-
-    targetObject: Property.object(),
+    targetTextObject: Property.object(),
+    targetMeshObject: Property.object(),
 
     toggleMaterial: Property.material(),
   };
@@ -63,8 +63,7 @@ export class ButtonComponentActiveText extends Component {
 
     // Get target object property
 
-    this.targetTextComponent = this.targetObject.getComponent(TextComponent);
-
+    this.targetTextComponent = this.targetTextObject.getComponent(TextComponent);
     this.isTargetActive = this.targetTextComponent.active;
 
     this.labelAttributes = {
@@ -74,6 +73,8 @@ export class ButtonComponentActiveText extends Component {
       stresni: 'Střešní nástavba',
       hlavni: 'Hlavní část objektu',
     };
+
+    this.targetMeshComponent = this.targetMeshObject.getComponent(MeshComponent);
   }
 
   onActivate() {
@@ -100,15 +101,8 @@ export class ButtonComponentActiveText extends Component {
     this.targetTextComponent.text = this.labelAttributes[this.sourceObject.name.split('_')[0]];
 
     this.targetTextComponent.active = true;
+
     this.mesh.material = this.hoverMaterial;
-
-    return;
-
-    if (this.toggled) {
-      this.mesh.material = this.hoveredToggleMaterial;
-    } else {
-      this.mesh.material = this.hoverMaterial;
-    }
 
     if (cursor.type === 'finger-cursor') {
       this.onDown(_, cursor);
@@ -124,39 +118,47 @@ export class ButtonComponentActiveText extends Component {
   onClick = (_, cursor) => {
     // toggles material on given target
 
-    return;
     this.toggled = !this.toggled;
 
     if (this.toggled) {
       console.log('Toggle');
 
-      //   targetObject changes
-      this.targetTextComponent.active = false;
+      //   targetTextObject changes
+      this.targetMeshComponent.material = this.toggleMaterial;
 
       // button object changes
       this.soundClick.play();
-      this.sourceObject.translate([0.0, -0.007, 0.0]);
+
+      if (this.object.name.endsWith('hlavni')) {
+        this.object.scaleLocal([1.1, 1.1, 1.1]);
+      } else {
+        this.object.scaleLocal([1.2, 1.2, 1.2]);
+      }
+
       hapticFeedback(cursor.object, 1.0, 20);
       this.mesh.material = this.toggleMaterial;
 
-      if (this.hover) {
-        this.mesh.material = this.hoveredToggleMaterial;
-      }
+      //   if (this.hover) {
+      //     this.mesh.material = this.hoveredToggleMaterial;
+      //   }
     } else {
       // on up implemented here
       console.log('Untoggle');
 
-      // targetObject changes
-      this.targetTextComponent.active = true;
+      // targetTextObject changes
+      this.targetMeshComponent.material = this.defaultMaterial;
 
       // button object changes
       this.soundUnClick.play();
-      this.sourceObject.setTranslationLocal(this.returnPos);
+      this.object.resetScaling();
+      // this.buttonMeshObject.setTranslationLocal(this.returnPos);
       hapticFeedback(cursor.object, 0.7, 20);
 
-      if (this.hover) {
-        this.mesh.material = this.hoverMaterial;
-      }
+      this.mesh.material = this.defaultMaterial;
+      //   if (this.hover) {
+      //     // this.mesh.material = this.hoverMaterial;
+
+      //   }
     }
   };
 
@@ -170,8 +172,6 @@ export class ButtonComponentActiveText extends Component {
     hapticFeedback(cursor.object, 0.3, 50);
     this.hover = false;
     this.targetTextComponent.active = false;
-    this.mesh.material = this.defaultMaterial;
-    return;
 
     if (this.toggled) {
       this.mesh.material = this.toggleMaterial;

@@ -6,7 +6,7 @@
             "showErrors": true
         },
         "sceneView": {
-            "visualizeObjects": false,
+            "visualizeObjects": true,
             "visualizeCollision": true,
             "visualizeOverdraw": false,
             "visualizePhysics": true
@@ -20,7 +20,7 @@
         "Scene Outline": true,
         "Properties": true,
         "Project Settings": true,
-        "Resources": true,
+        "Resources": false,
         "Project Data": false,
         "Benchmark": false,
         "Profile": false,

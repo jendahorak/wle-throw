@@ -57058,26 +57058,6 @@ __publicField(EasyTransformComponent, "Properties", {
   // Edit all scale values together
 });
 
-// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_dp_main/js/my-src/rotate.js
-var Documentation = class extends Component {
-  static onRegister(engine2) {
-  }
-  init() {
-    console.log("init() with param", this.param);
-  }
-  start() {
-    console.log("start() with param", this.param);
-  }
-  update(dt) {
-    this.object.rotateAxisAngleDegObject([0, 1, 0], dt * this.param);
-  }
-};
-__publicField(Documentation, "TypeName", "rotate");
-/* Properties that are configurable in the editor */
-__publicField(Documentation, "Properties", {
-  param: Property.float(1)
-});
-
 // D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_dp_main/js/my-lib/haptic-feedback.js
 function hapticFeedback(object, strength, duration) {
   if (object.name === "Camera Non XR") {
@@ -57122,7 +57102,7 @@ var ButtonComponentActiveText = class extends Component {
     this.hoveredToggleMaterial = this.toggleMaterial.clone();
     const c = this.hoveredToggleMaterial.diffuseColor;
     this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
-    this.targetTextComponent = this.targetObject.getComponent(TextComponent);
+    this.targetTextComponent = this.targetTextObject.getComponent(TextComponent);
     this.isTargetActive = this.targetTextComponent.active;
     this.labelAttributes = {
       vytahy: "V\xFDtahy a klimatizace",
@@ -57131,6 +57111,7 @@ var ButtonComponentActiveText = class extends Component {
       stresni: "St\u0159e\u0161n\xED n\xE1stavba",
       hlavni: "Hlavn\xED \u010D\xE1st objektu"
     };
+    this.targetMeshComponent = this.targetMeshObject.getComponent(MeshComponent);
   }
   onActivate() {
     this.target.onHover.add(this.onHover);
@@ -57153,12 +57134,6 @@ var ButtonComponentActiveText = class extends Component {
     this.targetTextComponent.text = this.labelAttributes[this.sourceObject.name.split("_")[0]];
     this.targetTextComponent.active = true;
     this.mesh.material = this.hoverMaterial;
-    return;
-    if (this.toggled) {
-      this.mesh.material = this.hoveredToggleMaterial;
-    } else {
-      this.mesh.material = this.hoverMaterial;
-    }
     if (cursor.type === "finger-cursor") {
       this.onDown(_, cursor);
     }
@@ -57168,27 +57143,25 @@ var ButtonComponentActiveText = class extends Component {
     return;
   };
   onClick = (_, cursor) => {
-    return;
     this.toggled = !this.toggled;
     if (this.toggled) {
       console.log("Toggle");
-      this.targetTextComponent.active = false;
+      this.targetMeshComponent.material = this.toggleMaterial;
       this.soundClick.play();
-      this.sourceObject.translate([0, -7e-3, 0]);
+      if (this.object.name.endsWith("hlavni")) {
+        this.object.scaleLocal([1.1, 1.1, 1.1]);
+      } else {
+        this.object.scaleLocal([1.2, 1.2, 1.2]);
+      }
       hapticFeedback(cursor.object, 1, 20);
       this.mesh.material = this.toggleMaterial;
-      if (this.hover) {
-        this.mesh.material = this.hoveredToggleMaterial;
-      }
     } else {
       console.log("Untoggle");
-      this.targetTextComponent.active = true;
+      this.targetMeshComponent.material = this.defaultMaterial;
       this.soundUnClick.play();
-      this.sourceObject.setTranslationLocal(this.returnPos);
+      this.object.resetScaling();
       hapticFeedback(cursor.object, 0.7, 20);
-      if (this.hover) {
-        this.mesh.material = this.hoverMaterial;
-      }
+      this.mesh.material = this.defaultMaterial;
     }
   };
   /* Called by 'cursor-target' */
@@ -57200,8 +57173,6 @@ var ButtonComponentActiveText = class extends Component {
     hapticFeedback(cursor.object, 0.3, 50);
     this.hover = false;
     this.targetTextComponent.active = false;
-    this.mesh.material = this.defaultMaterial;
-    return;
     if (this.toggled) {
       this.mesh.material = this.toggleMaterial;
     } else {
@@ -57218,7 +57189,8 @@ __publicField(ButtonComponentActiveText, "Properties", {
   sourceObject: Property.object(),
   /** Material to apply when the user hovers the button */
   hoverMaterial: Property.material(),
-  targetObject: Property.object(),
+  targetTextObject: Property.object(),
+  targetMeshObject: Property.object(),
   toggleMaterial: Property.material()
 });
 
@@ -57480,8 +57452,6 @@ engine.registerComponent(CursorTarget);
 engine.registerComponent(FixedFoveation);
 engine.registerComponent(MouseLookComponent);
 engine.registerComponent(TargetFramerate);
-engine.registerComponent(ConsoleVRToolComponent);
-engine.registerComponent(EasyTuneToolComponent);
 engine.registerComponent(GamepadMeshAnimatorComponent);
 engine.registerComponent(GrabbableComponent);
 engine.registerComponent(GrabberHandComponent);
@@ -57494,7 +57464,6 @@ engine.registerComponent(SpatialAudioListenerComponent);
 engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(VirtualGamepadComponent);
-engine.registerComponent(Documentation);
 engine.registerComponent(ButtonComponentActiveText);
 engine.registerComponent(ButtonComponentActive);
 engine.registerComponent(ToggleLegendHighlight);
