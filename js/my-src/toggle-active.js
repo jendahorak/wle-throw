@@ -1,29 +1,6 @@
-import { Component, InputComponent, MeshComponent, Property } from '@wonderlandengine/api';
+import { Component, MeshComponent, Property, TextComponent } from '@wonderlandengine/api';
 import { CursorTarget, HowlerAudioSource } from '@wonderlandengine/components';
-
-/**
- * Helper function to trigger haptic feedback pulse.
-
- * @param {Object} object An object with 'input' component attached
- * @param {number} strength Strength from 0.0 - 1.0
- * @param {number} duration Duration in milliseconds
- */
-export function hapticFeedback(object, strength, duration) {
-  let input = object.getComponent(InputComponent);
-
-  // Workaround for Adjusted cursor angle - done by making cursor a child of gamepad and then input child of the curosorparent
-  if (input == null) {
-    // console.log('Input not on same object as cursor.');
-    input = object.findByName('InputAdjusted', true)[0].getComponent(InputComponent);
-
-    console.log(input.xrInputSource);
-  }
-  if (input && input.xrInputSource) {
-    // console.log('found gamepad');
-    const gamepad = input.xrInputSource.gamepad;
-    if (gamepad && gamepad.hapticActuators) gamepad.hapticActuators[0].pulse(strength, duration);
-  }
-}
+import { hapticFeedback } from '../my-lib/haptic-feedback.js';
 
 /**
  * Button component.
@@ -46,6 +23,7 @@ export class ButtonComponentActive extends Component {
     hoverMaterial: Property.material(),
 
     targetObject: Property.object(),
+    targetTextObject: Property.bool(),
 
     toggleMaterial: Property.material(),
   };
@@ -85,7 +63,13 @@ export class ButtonComponentActive extends Component {
     this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
 
     // Get target object property
-    this.targetMesh = this.targetObject.getComponent(MeshComponent);
+
+    if (this.targetTextObject) {
+      this.targetMesh = this.targetObject.getComponent(TextComponent);
+    } else {
+      this.targetMesh = this.targetObject.getComponent(MeshComponent);
+    }
+
     this.isTargetActive = this.targetMesh.active;
   }
 

@@ -57078,8 +57078,12 @@ __publicField(Documentation, "Properties", {
   param: Property.float(1)
 });
 
-// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_dp_main/js/my-src/toggle-active.js
+// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_dp_main/js/my-lib/haptic-feedback.js
 function hapticFeedback(object, strength, duration) {
+  if (object.name === "Camera Non XR") {
+    return;
+  }
+  console.log(object.name);
   let input = object.getComponent(InputComponent);
   if (input == null) {
     input = object.findByName("InputAdjusted", true)[0].getComponent(InputComponent);
@@ -57091,6 +57095,126 @@ function hapticFeedback(object, strength, duration) {
       gamepad.hapticActuators[0].pulse(strength, duration);
   }
 }
+
+// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_dp_main/js/my-src/toggle-active-text.js
+var ButtonComponentActiveText = class extends Component {
+  static onRegister(engine2) {
+    engine2.registerComponent(HowlerAudioSource);
+    engine2.registerComponent(CursorTarget);
+  }
+  /* Position to return to when "unpressing" the button */
+  returnPos = new Float32Array(3);
+  start() {
+    this.mesh = this.buttonMeshObject.getComponent(MeshComponent);
+    this.defaultMaterial = this.mesh.material;
+    this.buttonMeshObject.getTranslationLocal(this.returnPos);
+    this.target = this.object.getComponent(CursorTarget) || this.object.addComponent(CursorTarget);
+    this.soundClick = this.object.addComponent(HowlerAudioSource, {
+      src: "sfx/click.wav",
+      spatial: true
+    });
+    this.soundUnClick = this.object.addComponent(HowlerAudioSource, {
+      src: "sfx/unclick.wav",
+      spatial: true
+    });
+    this.toggled = false;
+    this.hover = false;
+    this.hoveredToggleMaterial = this.toggleMaterial.clone();
+    const c = this.hoveredToggleMaterial.diffuseColor;
+    this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
+    this.targetMesh = this.targetObject.getComponent(TextComponent);
+    this.isTargetActive = this.targetMesh.active;
+  }
+  onActivate() {
+    this.target.onHover.add(this.onHover);
+    this.target.onUnhover.add(this.onUnhover);
+    this.target.onDown.add(this.onDown);
+    this.target.onClick.add(this.onClick);
+    this.target.onUp.add(this.onUp);
+  }
+  onDeactivate() {
+    this.target.onHover.remove(this.onHover);
+    this.target.onUnhover.remove(this.onUnhover);
+    this.target.onDown.remove(this.onDown);
+    this.target.onClick.remove(this.onClick);
+    this.target.onUp.remove(this.onUp);
+  }
+  /* Called by 'cursor-target' */
+  onHover = (_, cursor) => {
+    hapticFeedback(cursor.object, 0.5, 50);
+    this.hover = true;
+    this.targetMesh.active = true;
+    this.mesh.material = this.hoverMaterial;
+    return;
+    if (this.toggled) {
+      this.mesh.material = this.hoveredToggleMaterial;
+    } else {
+      this.mesh.material = this.hoverMaterial;
+    }
+    if (cursor.type === "finger-cursor") {
+      this.onDown(_, cursor);
+    }
+  };
+  /* Called by 'cursor-target' */
+  onDown = (_, cursor) => {
+    return;
+  };
+  onClick = (_, cursor) => {
+    return;
+    this.toggled = !this.toggled;
+    if (this.toggled) {
+      console.log("Toggle");
+      this.targetMesh.active = false;
+      this.soundClick.play();
+      this.buttonMeshObject.translate([0, -7e-3, 0]);
+      hapticFeedback(cursor.object, 1, 20);
+      this.mesh.material = this.toggleMaterial;
+      if (this.hover) {
+        this.mesh.material = this.hoveredToggleMaterial;
+      }
+    } else {
+      console.log("Untoggle");
+      this.targetMesh.active = true;
+      this.soundUnClick.play();
+      this.buttonMeshObject.setTranslationLocal(this.returnPos);
+      hapticFeedback(cursor.object, 0.7, 20);
+      if (this.hover) {
+        this.mesh.material = this.hoverMaterial;
+      }
+    }
+  };
+  /* Called by 'cursor-target' */
+  onUp = (_, cursor) => {
+    return;
+  };
+  /* Called by 'cursor-target' */
+  onUnhover = (_, cursor) => {
+    hapticFeedback(cursor.object, 0.3, 50);
+    this.hover = false;
+    this.targetMesh.active = false;
+    this.mesh.material = this.defaultMaterial;
+    return;
+    if (this.toggled) {
+      this.mesh.material = this.toggleMaterial;
+    } else {
+      this.mesh.material = this.defaultMaterial;
+    }
+    if (cursor.type === "finger-cursor") {
+      this.onUp(_, cursor);
+    }
+  };
+};
+__publicField(ButtonComponentActiveText, "TypeName", "toggle-active-text");
+__publicField(ButtonComponentActiveText, "Properties", {
+  /** Object that has the button's mesh attached */
+  buttonMeshObject: Property.object(),
+  /** Material to apply when the user hovers the button */
+  hoverMaterial: Property.material(),
+  targetObject: Property.object(),
+  toggleMaterial: Property.material()
+});
+
+// D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_dp_main/js/my-src/toggle-active.js
 var ButtonComponentActive = class extends Component {
   static onRegister(engine2) {
     engine2.registerComponent(HowlerAudioSource);
@@ -57116,7 +57240,11 @@ var ButtonComponentActive = class extends Component {
     this.hoveredToggleMaterial = this.toggleMaterial.clone();
     const c = this.hoveredToggleMaterial.diffuseColor;
     this.hoveredToggleMaterial.diffuseColor = [c[0] * 1.2, c[1] * 1.2, c[2] * 1.2, c[3]];
-    this.targetMesh = this.targetObject.getComponent(MeshComponent);
+    if (this.targetTextObject) {
+      this.targetMesh = this.targetObject.getComponent(TextComponent);
+    } else {
+      this.targetMesh = this.targetObject.getComponent(MeshComponent);
+    }
     this.isTargetActive = this.targetMesh.active;
   }
   onActivate() {
@@ -57198,22 +57326,11 @@ __publicField(ButtonComponentActive, "Properties", {
   /** Material to apply when the user hovers the button */
   hoverMaterial: Property.material(),
   targetObject: Property.object(),
+  targetTextObject: Property.bool(),
   toggleMaterial: Property.material()
 });
 
 // D:/005_School/003_Diplomova_prace/005_Projekty/005_wonderland_engine/001_Projects_mine/006_dp_main/js/my-src/toggle-legend-highlight.js
-function hapticFeedback2(object, strength, duration) {
-  let input = object.getComponent(InputComponent);
-  if (input == null) {
-    input = object.findByName("InputAdjusted", true)[0].getComponent(InputComponent);
-    console.log(input.xrInputSource);
-  }
-  if (input && input.xrInputSource) {
-    const gamepad = input.xrInputSource.gamepad;
-    if (gamepad && gamepad.hapticActuators)
-      gamepad.hapticActuators[0].pulse(strength, duration);
-  }
-}
 var ToggleLegendHighlight = class extends Component {
   static onRegister(engine2) {
     engine2.registerComponent(HowlerAudioSource);
@@ -57259,7 +57376,7 @@ var ToggleLegendHighlight = class extends Component {
   /* Called by 'cursor-target' */
   onHover = (_, cursor) => {
     this.hover = true;
-    hapticFeedback2(cursor.object, 0.5, 50);
+    hapticFeedback(cursor.object, 0.5, 50);
     if (cursor.type === "finger-cursor") {
       this.onDown(_, cursor);
     }
@@ -57275,14 +57392,14 @@ var ToggleLegendHighlight = class extends Component {
       this.targetMesh.material = this.toggleMaterial;
       this.soundClick.play();
       this.buttonMeshObject.translate([0, -0.01, 0]);
-      hapticFeedback2(cursor.object, 1, 20);
+      hapticFeedback(cursor.object, 1, 20);
       this.mesh.material = this.toggleMaterial;
     } else {
       console.log("Untoggle");
       this.targetMesh.material = this.defaultMaterial;
       this.soundUnClick.play();
       this.buttonMeshObject.setTranslationLocal(this.returnPos);
-      hapticFeedback2(cursor.object, 0.7, 20);
+      hapticFeedback(cursor.object, 0.7, 20);
       this.mesh.material = this.defaultMaterial;
     }
   };
@@ -57296,7 +57413,7 @@ var ToggleLegendHighlight = class extends Component {
     if (cursor.type === "finger-cursor") {
       this.onUp(_, cursor);
     }
-    hapticFeedback2(cursor.object, 0.3, 50);
+    hapticFeedback(cursor.object, 0.3, 50);
   };
 };
 __publicField(ToggleLegendHighlight, "TypeName", "toggle-legend-highlight");
@@ -57370,6 +57487,7 @@ engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(VirtualGamepadComponent);
 engine.registerComponent(Documentation);
+engine.registerComponent(ButtonComponentActiveText);
 engine.registerComponent(ButtonComponentActive);
 engine.registerComponent(ToggleLegendHighlight);
 var loadDelaySeconds = 0;

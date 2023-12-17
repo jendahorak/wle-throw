@@ -141,7 +141,10 @@
             "parent": "72",
             "components": [
                 {
-                    "type": "view"
+                    "type": "view",
+                    "view": {
+                        "far": 100000.0
+                    }
                 },
                 {
                     "type": "mouse-look",
@@ -150,7 +153,10 @@
                     }
                 },
                 {
-                    "type": "cursor"
+                    "type": "cursor",
+                    "cursor": {
+                        "maxDistance": 30.0
+                    }
                 }
             ],
             "rotation": [
@@ -206,7 +212,10 @@
             "parent": "22",
             "components": [
                 {
-                    "type": "view"
+                    "type": "view",
+                    "view": {
+                        "far": 100000.0
+                    }
                 },
                 {
                     "type": "input",
@@ -226,7 +235,10 @@
             "parent": "22",
             "components": [
                 {
-                    "type": "view"
+                    "type": "view",
+                    "view": {
+                        "far": 10000.0
+                    }
                 },
                 {
                     "type": "input",
@@ -812,7 +824,7 @@
         },
         "178": {
             "name": "Throwing_cube",
-            "parent": "171",
+            "parent": null,
             "components": [
                 {
                     "type": "mesh",
@@ -869,7 +881,7 @@
             ],
             "translation": [
                 0.0,
-                0.6367269,
+                1.5882346,
                 0.9809696
             ],
             "rotation": [
@@ -884,7 +896,7 @@
             "parent": "273",
             "translation": [
                 0.8234624,
-                0.4112767,
+                0.3759946,
                 0.1979817
             ],
             "rotation": [
@@ -924,7 +936,8 @@
                                 0.1508628
                             ]
                         }
-                    }
+                    },
+                    "active": false
                 }
             ],
             "translation": [
@@ -1118,35 +1131,37 @@
                     "type": "light",
                     "light": {
                         "type": "sun",
-                        "shadows": true,
-                        "intensity": 1.0,
+                        "shadows": false,
+                        "intensity": 0.8,
                         "shadowRange": 20.0,
                         "cascadeCount": 4,
                         "shadowBias": 0.001,
-                        "shadowNormalBias": 0.035,
+                        "shadowNormalBias": 0.001,
                         "color": [
                             1.0,
                             1.0,
                             1.0
-                        ]
-                    }
+                        ],
+                        "shadowTexelSize": 1.0
+                    },
+                    "active": true
                 }
             ],
             "translation": [
-                -1.7811043,
-                3.8422122,
-                -3.9442281
+                -1.7811126,
+                1.550199,
+                1.1482124
             ],
             "rotation": [
-                -0.4133322,
-                0.4147682,
-                0.1372853,
-                0.798922
+                -0.39224,
+                -0.5092408,
+                -0.0191303,
+                0.7658038
             ],
             "scaling": [
-                0.9999979,
-                0.999996,
-                0.9999979
+                0.9999915,
+                0.999992,
+                0.9999954
             ]
         },
         "204": {
@@ -1161,28 +1176,29 @@
                         "intensity": 0.5,
                         "shadowRange": 20.0,
                         "color": [
-                            0.9803921,
-                            0.8409696,
-                            0.472895
+                            1.0,
+                            0.9342099,
+                            0.8196078
                         ]
-                    }
+                    },
+                    "active": true
                 }
             ],
             "translation": [
-                -1.2425502,
-                3.8422145,
-                -3.9442305
+                -1.7811105,
+                1.550202,
+                1.1482174
             ],
             "rotation": [
-                0.1358987,
-                0.8003075,
-                0.4138119,
-                -0.4120668
+                -0.2582206,
+                0.8840986,
+                0.3882549,
+                0.0308188
             ],
             "scaling": [
-                0.9999966,
-                0.999994,
-                0.9999955
+                0.9999938,
+                0.9999852,
+                0.9999901
             ]
         },
         "209": {
@@ -1200,7 +1216,7 @@
             ],
             "translation": [
                 -4.077744790720317e-7,
-                -2.977893309719093e-8,
+                -2.9778933097190933e-8,
                 7.450580596923828e-8
             ],
             "rotation": [
@@ -1308,9 +1324,9 @@
                 -0.0217605
             ],
             "scaling": [
-                0.9999996,
+                0.9999995,
                 5.0,
-                0.9999996
+                0.9999995
             ]
         },
         "264": {
@@ -1383,7 +1399,7 @@
             ]
         },
         "273": {
-            "name": "Table",
+            "name": "Table1",
             "parent": "171",
             "components": [
                 {
@@ -1427,8 +1443,8 @@
             ],
             "translation": [
                 0.0,
-                0.3267843,
-                0.5676032
+                0.1606655,
+                0.5676031
             ],
             "rotation": [
                 0.0,
@@ -2276,14 +2292,14 @@
                 0.000003
             ],
             "translation": [
-                -0.00022,
-                1.1429126,
+                -0.0002199,
+                1.1429123,
                 0.0001298
             ],
             "scaling": [
-                3.5115864,
-                29.2531299,
-                2.557867
+                2.6028425,
+                29.2530918,
+                2.5578625
             ]
         },
         "333": {
@@ -2831,7 +2847,7 @@
             "parent": "106",
             "translation": [
                 0.0,
-                -1.1864883475709576e-7,
+                -1.1864883475709577e-7,
                 -9.949926749186488e-8
             ],
             "rotation": [
@@ -2853,7 +2869,8 @@
                         "cursorObject": "209",
                         "cursorRayObject": "213",
                         "cursorRayScalingAxis": "y",
-                        "handedness": "input component"
+                        "handedness": "input component",
+                        "maxDistance": 30.0
                     }
                 },
                 {
@@ -4681,7 +4698,957 @@
                     "cursor": {
                         "cursorRayObject": "304",
                         "cursorRayScalingAxis": "y",
-                        "cursorObject": "306"
+                        "cursorObject": "306",
+                        "maxDistance": 30.0
+                    }
+                }
+            ]
+        },
+        "424": {
+            "name": "TableMesh",
+            "parent": "425",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "170"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.2419784,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.8739682,
+                0.1140177,
+                1.3912979
+            ]
+        },
+        "425": {
+            "name": "Table2",
+            "parent": "171",
+            "components": [
+                {
+                    "type": "cursor-target",
+                    "active": false
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.2,
+                                1.0
+                            ]
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.2,
+                                1.0
+                            ]
+                        },
+                        "static": true,
+                        "groups": 255,
+                        "block": 255,
+                        "allowQuery": false,
+                        "trigger": false,
+                        "allowSimulation": true
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                -4.1586418,
+                0.1606653,
+                1.8138288
+            ],
+            "rotation": [
+                0.0,
+                -0.0001727,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.9999911,
+                1.0,
+                0.9999911
+            ]
+        },
+        "426": {
+            "name": "Map",
+            "parent": "425",
+            "translation": [
+                0.0,
+                0.4865719,
+                0.0
+            ],
+            "rotation": [
+                7.18933748089512e-8,
+                0.9982544,
+                -1.7850176448064303e-7,
+                -0.0590589
+            ],
+            "scaling": [
+                0.0020134,
+                0.0020135,
+                0.0020134
+            ]
+        },
+        "441": {
+            "link": {
+                "name": "empty_pk2",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "parent": "426"
+        },
+        "442": {
+            "link": {
+                "name": "mesh_sikma_strecha.003<empty_pk2",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "parent": "441"
+        },
+        "443": {
+            "link": {
+                "name": "mesh_svisla_stena<empty_pk2",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "parent": "441"
+        },
+        "444": {
+            "link": {
+                "name": "mesh_vodorovna_strecha<empty_pk2",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "parent": "441"
+        },
+        "445": {
+            "link": {
+                "name": "terrain_textured",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "parent": "426"
+        },
+        "446": {
+            "link": {
+                "name": "mesh_CityEngineTerrainMaterial<terrain_textured",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "parent": "445"
+        },
+        "447": {
+            "link": {
+                "name": "vegetation",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "parent": "426"
+        },
+        "448": {
+            "link": {
+                "name": "vegetation_mesh<vegetation",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "parent": "447",
+            "components": [
+                null,
+                {
+                    "active": true
+                }
+            ]
+        },
+        "466": {
+            "name": "Table3",
+            "parent": "171",
+            "components": [
+                {
+                    "type": "cursor-target",
+                    "active": false
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.2,
+                                1.0
+                            ]
+                        }
+                    },
+                    "active": false
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.2,
+                                1.0
+                            ]
+                        },
+                        "static": true,
+                        "groups": 255,
+                        "block": 255,
+                        "allowQuery": false,
+                        "trigger": false,
+                        "allowSimulation": true
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                4.0715575,
+                0.407795,
+                1.9152948
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.9999911,
+                1.0,
+                0.9999911
+            ]
+        },
+        "467": {
+            "name": "TableMesh",
+            "parent": "466",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "170"
+                    }
+                }
+            ],
+            "translation": [
+                0.0000247,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.8739682,
+                0.1140177,
+                1.3912979
+            ]
+        },
+        "478": {
+            "name": "Map",
+            "parent": "466",
+            "translation": [
+                0.0,
+                -0.0911287,
+                0.0000116
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "493": {
+            "link": {
+                "name": "empty_co.001",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "parent": "478",
+            "translation": [
+                -0.0000013,
+                0.3586015,
+                -0.0498366
+            ],
+            "rotation": [
+                -0.0000898,
+                0.9999089,
+                -0.008726,
+                -0.0102895
+            ],
+            "scaling": [
+                0.0019999,
+                0.0019999,
+                0.0019999
+            ]
+        },
+        "494": {
+            "link": {
+                "name": "mesh_hlavni_cast_objektu.002<empty_co.001",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "parent": "493"
+        },
+        "495": {
+            "link": {
+                "name": "mesh_komin.001<empty_co.001",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "parent": "493"
+        },
+        "496": {
+            "link": {
+                "name": "mesh_stresni_nastavba.001<empty_co.001",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "parent": "493"
+        },
+        "497": {
+            "link": {
+                "name": "mesh_vez.001<empty_co.001",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "parent": "493"
+        },
+        "498": {
+            "link": {
+                "name": "mesh_vytahy_klimatizace.001<empty_co.001",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "parent": "493"
+        },
+        "499": {
+            "link": {
+                "name": "terrain_textured_vrstevnice.001<empty_co.001",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "parent": "493"
+        },
+        "501": {
+            "name": "Light",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "type": "spot",
+                        "shadows": false,
+                        "intensity": 1.0
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                3.7571568,
+                1.4868099,
+                0.1165693
+            ],
+            "rotation": [
+                -0.5234023,
+                0.0,
+                0.0,
+                0.8520857
+            ],
+            "scaling": [
+                1.0,
+                1.367356,
+                0.9999997
+            ]
+        },
+        "520": {
+            "name": "UI_Base",
+            "parent": "542",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "168"
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.8032882,
+                                0.0124935,
+                                0.1508628
+                            ]
+                        }
+                    },
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.9520478,
+                0.1185023,
+                -1.1309643
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.224096,
+                0.0124934,
+                0.2131082
+            ]
+        },
+        "521": {
+            "name": "Legenda",
+            "parent": "542",
+            "translation": [
+                0.9915432,
+                0.1417076,
+                -1.1229124
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.8199998,
+                0.8199998,
+                0.8199998
+            ]
+        },
+        "534": {
+            "link": {
+                "name": "hlavni_cast_legenda_obj<legenda_ca_barak",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            },
+            "parent": "554",
+            "translation": [
+                -0.0019779,
+                -0.0806841,
+                -0.0009773
+            ],
+            "rotation": [
+                -1.3301632861839607e-7,
+                -0.0,
+                2.513578678531303e-8,
+                1.0
+            ],
+            "scaling": [
+                1.4299981,
+                1.4299999,
+                1.4299981
+            ]
+        },
+        "535": {
+            "link": {
+                "name": "komin_legenda_mesh<legenda_ca_barak",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            },
+            "parent": "543",
+            "translation": [
+                -0.0306992,
+                -0.2212771,
+                0.0677321
+            ],
+            "rotation": [
+                -1.3301631440754136e-7,
+                -0.0,
+                2.513578678531303e-8,
+                1.0
+            ],
+            "scaling": [
+                1.429998,
+                1.4299998,
+                1.429998
+            ],
+            "components": [
+                null
+            ]
+        },
+        "536": {
+            "link": {
+                "name": "stresni_nastavba_legenda_obj<legenda_ca_barak",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            },
+            "parent": "552",
+            "translation": [
+                0.0509581,
+                -0.205161,
+                -0.0766166
+            ],
+            "rotation": [
+                -1.3301632861839607e-7,
+                -0.0,
+                2.513578678531303e-8,
+                1.0
+            ],
+            "scaling": [
+                1.4299981,
+                1.4299999,
+                1.4299981
+            ]
+        },
+        "537": {
+            "link": {
+                "name": "vez_legenda_obj<legenda_ca_barak",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            },
+            "parent": "553",
+            "translation": [
+                0.0096735,
+                -0.3708223,
+                -0.1967182
+            ],
+            "rotation": [
+                -1.3301632861839607e-7,
+                -0.0,
+                2.513578678531303e-8,
+                1.0
+            ],
+            "scaling": [
+                1.4299981,
+                1.4299999,
+                1.4299981
+            ]
+        },
+        "538": {
+            "link": {
+                "name": "vytahy_klimatizace_obj<legenda_ca_barak",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            },
+            "parent": "550",
+            "translation": [
+                -0.0898547,
+                -0.0956942,
+                -0.0788383
+            ],
+            "rotation": [
+                -1.3301632861839607e-7,
+                -0.0,
+                2.513578678531303e-8,
+                1.0
+            ],
+            "scaling": [
+                1.4299981,
+                1.4299999,
+                1.4299981
+            ]
+        },
+        "541": {
+            "name": "Label",
+            "parent": "521",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "effect": "none",
+                        "material": "110",
+                        "text": "Test text"
+                    },
+                    "active": false
+                }
+            ],
+            "rotation": [
+                0.0000012,
+                0.952956,
+                0.3031086,
+                0.000004
+            ],
+            "translation": [
+                -0.0283627,
+                0.3236836,
+                -0.0235663
+            ],
+            "scaling": [
+                0.9999967,
+                0.9999964,
+                0.9999971
+            ]
+        },
+        "542": {
+            "name": "UI",
+            "parent": "466"
+        },
+        "543": {
+            "name": "LegendEntry_komin",
+            "parent": "521",
+            "translation": [
+                0.0036464,
+                0.2212772,
+                -0.1081228
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0149999,
+                                0.0399999,
+                                0.0149999
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "toggle-active-text",
+                    "toggle-active-text": {
+                        "buttonMeshObject": "535",
+                        "hoverMaterial": "211",
+                        "targetObject": "541",
+                        "toggleMaterial": "32",
+                        "sourceObject": "535"
+                    }
+                }
+            ]
+        },
+        "544": {
+            "name": "Nazev",
+            "parent": "425",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "182",
+                        "material": "170"
+                    }
+                }
+            ],
+            "translation": [
+                0.0005674,
+                1.2331804,
+                1.6421976
+            ],
+            "rotation": [
+                -0.6756529,
+                -0.0,
+                0.0002333,
+                0.7372198
+            ],
+            "scaling": [
+                1.7119761,
+                0.7122605,
+                0.7677416
+            ]
+        },
+        "545": {
+            "name": "Text",
+            "parent": "544",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Brno Topo mapa"
+                    }
+                }
+            ],
+            "translation": [
+                0.0000042,
+                0.1871313,
+                -0.0212914
+            ],
+            "rotation": [
+                0.0002709,
+                0.6755899,
+                0.7372775,
+                -0.0002797
+            ],
+            "scaling": [
+                1.8300116,
+                1.8300061,
+                1.8300074
+            ]
+        },
+        "546": {
+            "name": "Nazev",
+            "parent": "466",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "182",
+                        "material": "170"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0374411,
+                0.9860516,
+                1.5407525
+            ],
+            "rotation": [
+                -0.6756539,
+                -0.0001273,
+                0.0001166,
+                0.7372188
+            ],
+            "scaling": [
+                1.7119913,
+                0.7122667,
+                0.7677422
+            ]
+        },
+        "547": {
+            "name": "Text",
+            "parent": "546",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Topograficka mapa\nBrno - centrum"
+                    }
+                }
+            ],
+            "translation": [
+                0.0000042,
+                0.1871333,
+                -0.0212692
+            ],
+            "rotation": [
+                0.0002709,
+                0.6755897,
+                0.7372776,
+                -0.0002797
+            ],
+            "scaling": [
+                1.8300118,
+                1.8300062,
+                1.8300068
+            ]
+        },
+        "550": {
+            "name": "LegendEntry_vytahy",
+            "parent": "521",
+            "translation": [
+                0.0628016,
+                0.0956942,
+                0.0384477
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.014,
+                                0.0799999,
+                                0.025
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "toggle-active-text",
+                    "toggle-active-text": {
+                        "buttonMeshObject": "535",
+                        "hoverMaterial": "211",
+                        "targetObject": "541",
+                        "toggleMaterial": "32",
+                        "sourceObject": "538"
+                    }
+                }
+            ]
+        },
+        "552": {
+            "name": "LegendEntry_stresni",
+            "parent": "521",
+            "translation": [
+                -0.0780111,
+                0.205161,
+                0.0362259
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.035,
+                                0.0299999,
+                                0.0299999
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "toggle-active-text",
+                    "toggle-active-text": {
+                        "buttonMeshObject": "535",
+                        "hoverMaterial": "211",
+                        "targetObject": "541",
+                        "toggleMaterial": "32",
+                        "sourceObject": "536"
+                    }
+                }
+            ]
+        },
+        "553": {
+            "name": "LegendEntry_vez",
+            "parent": "521",
+            "translation": [
+                -0.0367267,
+                0.3708223,
+                0.1563276
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.046,
+                                0.3,
+                                0.0299999
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "toggle-active-text",
+                    "toggle-active-text": {
+                        "buttonMeshObject": "535",
+                        "hoverMaterial": "211",
+                        "targetObject": "541",
+                        "toggleMaterial": "32",
+                        "sourceObject": "537"
+                    }
+                }
+            ]
+        },
+        "554": {
+            "name": "LegendEntry_hlavni",
+            "parent": "521",
+            "translation": [
+                -0.0250758,
+                0.0806841,
+                -0.0394134
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                0.0599999,
+                                0.07,
+                                0.1199999
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "toggle-active-text",
+                    "toggle-active-text": {
+                        "buttonMeshObject": "535",
+                        "hoverMaterial": "211",
+                        "targetObject": "541",
+                        "toggleMaterial": "32",
+                        "sourceObject": "534"
                     }
                 }
             ]
@@ -4975,6 +5942,268 @@
                 "name": "Plane",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
+        },
+        "380": {
+            "link": {
+                "name": "vegetation_mat",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "381": {
+            "link": {
+                "name": "vegetation_mat.0",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "382": {
+            "link": {
+                "name": "mesh_CityEngineTerrainMaterial",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "383": {
+            "link": {
+                "name": "mesh_hlavni_cast_objektu",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "384": {
+            "link": {
+                "name": "mesh_komin",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "385": {
+            "link": {
+                "name": "mesh_stresni_nastavba",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "386": {
+            "link": {
+                "name": "mesh_vez",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "387": {
+            "link": {
+                "name": "mesh_vytahy_klimatizace",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "388": {
+            "link": {
+                "name": "mesh_sikma_strecha",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "389": {
+            "link": {
+                "name": "mesh_svisla_stena",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "390": {
+            "link": {
+                "name": "mesh_vodorovna_strecha",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "391": {
+            "link": {
+                "name": "mesh_jina",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "392": {
+            "link": {
+                "name": "mesh_mansardova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "393": {
+            "link": {
+                "name": "mesh_plocha",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "394": {
+            "link": {
+                "name": "mesh_pultova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "395": {
+            "link": {
+                "name": "mesh_sedlova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "396": {
+            "link": {
+                "name": "mesh_stanova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "397": {
+            "link": {
+                "name": "mesh_valbova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "398": {
+            "link": {
+                "name": "mesh_terrain",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "435": {
+            "link": {
+                "name": "mesh_sikma_strecha.003",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "436": {
+            "link": {
+                "name": "mesh_svisla_stena",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "437": {
+            "link": {
+                "name": "mesh_vodorovna_strecha.003",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "438": {
+            "link": {
+                "name": "mesh_CityEngineTerrainMaterial",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "439": {
+            "link": {
+                "name": "vegetation_mat",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "simplify": true,
+            "simplifyTarget": 0.2
+        },
+        "440": {
+            "link": {
+                "name": "vegetation_mat.0",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "simplify": true,
+            "simplifyTarget": 0.0199999
+        },
+        "487": {
+            "link": {
+                "name": "mesh_hlavni_cast_objektu.002",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "488": {
+            "link": {
+                "name": "mesh_komin.002",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "489": {
+            "link": {
+                "name": "mesh_stresni_nastavba.002",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "490": {
+            "link": {
+                "name": "mesh_vez.002",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "491": {
+            "link": {
+                "name": "mesh_vytahy_klimatizace.002",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "492": {
+            "link": {
+                "name": "terrain_textured_vrstevnice_mesh.001",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "507": {
+            "link": {
+                "name": "hlavni_cast_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "508": {
+            "link": {
+                "name": "komin_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "509": {
+            "link": {
+                "name": "stresni_nastavba_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "510": {
+            "link": {
+                "name": "stresni_nastavba_legenda_mesh.0",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "511": {
+            "link": {
+                "name": "vez_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "512": {
+            "link": {
+                "name": "vytahy_klimatizace_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "527": {
+            "link": {
+                "name": "hlavni_cast_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "528": {
+            "link": {
+                "name": "komin_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "529": {
+            "link": {
+                "name": "stresni_nastavba_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "530": {
+            "link": {
+                "name": "stresni_nastavba_legenda_mesh.0",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "531": {
+            "link": {
+                "name": "vez_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "532": {
+            "link": {
+                "name": "vytahy_klimatizace_legenda_mesh",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
         }
     },
     "materials": {
@@ -4984,7 +6213,7 @@
                 "file": "default"
             },
             "Text": {
-                "font": "147",
+                "font": "548",
                 "color": [
                     1.0,
                     1.0,
@@ -5023,7 +6252,13 @@
             "name": "Text",
             "pipeline": "82",
             "Text": {
-                "font": "147"
+                "font": "548",
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
             }
         },
         "111": {
@@ -5292,6 +6527,15 @@
             "link": {
                 "name": "terrain",
                 "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v2.glb"
+            },
+            "Phong": {
+                "shininess": 0,
+                "diffuseColor": [
+                    0.618834,
+                    0.618834,
+                    0.618834,
+                    1.0
+                ]
             }
         },
         "247": {
@@ -5493,6 +6737,303 @@
                     1.0
                 ]
             }
+        },
+        "361": {
+            "link": {
+                "name": "Crown",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "362": {
+            "link": {
+                "name": "Trunk",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "363": {
+            "link": {
+                "name": "CityEngineTerrainMaterial.001",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "364": {
+            "link": {
+                "name": "hlavni_cast_objektu",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "365": {
+            "link": {
+                "name": "komin",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "366": {
+            "link": {
+                "name": "stresni_nastavba",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "367": {
+            "link": {
+                "name": "vez",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "368": {
+            "link": {
+                "name": "vytahy_klimatizace",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "369": {
+            "link": {
+                "name": "sikma_strecha",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "370": {
+            "link": {
+                "name": "svisla_stena",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "371": {
+            "link": {
+                "name": "vodorovna_strecha",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "372": {
+            "link": {
+                "name": "jina",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "373": {
+            "link": {
+                "name": "mansardova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "374": {
+            "link": {
+                "name": "plocha",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "375": {
+            "link": {
+                "name": "pultova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "376": {
+            "link": {
+                "name": "sedlova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "377": {
+            "link": {
+                "name": "stanova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "378": {
+            "link": {
+                "name": "valbova",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "379": {
+            "link": {
+                "name": "CityEngineTerrainMaterial",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            }
+        },
+        "429": {
+            "link": {
+                "name": "sikma_strecha.001",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "430": {
+            "link": {
+                "name": "svisla_stena.001",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "Phong": {
+                "ambientColor": [
+                    0.1928251,
+                    0.1928251,
+                    0.1928251,
+                    1.0
+                ]
+            }
+        },
+        "431": {
+            "link": {
+                "name": "vodorovna_strecha.001",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "432": {
+            "link": {
+                "name": "CityEngineTerrainMaterial.001",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "433": {
+            "link": {
+                "name": "Crown",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "434": {
+            "link": {
+                "name": "Trunk",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "481": {
+            "link": {
+                "name": "hlavni_cast_objektu",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "pipeline": "13",
+            "Physical": {
+                "roughnessFactor": 0.0
+            },
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ],
+                "fogColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            }
+        },
+        "482": {
+            "link": {
+                "name": "komin",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "483": {
+            "link": {
+                "name": "stresni_nastavba",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "484": {
+            "link": {
+                "name": "vez",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "485": {
+            "link": {
+                "name": "vytahy_klimatizace",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
+        },
+        "486": {
+            "link": {
+                "name": "terrain_vrstevnice_texture",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "pipeline": "14",
+            "Phong": {
+                "diffuseColor": [
+                    0.9103139,
+                    0.9103139,
+                    0.9103139,
+                    1.0
+                ]
+            },
+            "Physical": {
+                "roughnessFactor": 1.0,
+                "metallicFactor": 1.0
+            }
+        },
+        "502": {
+            "link": {
+                "name": "hlavni_cast_objektu",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "503": {
+            "link": {
+                "name": "komin_legenda",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "504": {
+            "link": {
+                "name": "stresni_nastavba_legenda",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "505": {
+            "link": {
+                "name": "vez",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "506": {
+            "link": {
+                "name": "vytahy_klimatizace",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
+            }
+        },
+        "522": {
+            "link": {
+                "name": "hlavni_cast_objektu",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "523": {
+            "link": {
+                "name": "komin_legenda",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "524": {
+            "link": {
+                "name": "stresni_nastavba_legenda",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "525": {
+            "link": {
+                "name": "vez",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
+        },
+        "526": {
+            "link": {
+                "name": "vytahy_klimatizace",
+                "file": "assets\\models\\mine\\co_legenda_custom_props_v2.glb"
+            }
         }
     },
     "shaders": {
@@ -5685,7 +7226,7 @@
     },
     "settings": {
         "project": {
-            "name": "006_physics",
+            "name": "dp_main",
             "version": [
                 1,
                 1,
@@ -5719,13 +7260,15 @@
                     "bounded-floor": false
                 }
             },
-            "viewObject": "21"
+            "viewObject": "21",
+            "visualizeColliders": false
         },
         "scripting": {
             "sourcePaths": [
                 "js",
                 "node_modules/@wonderlandengine/community-components/dist/components",
-                "js/my-src"
+                "js/my-src",
+                "js/my-lib"
             ],
             "bundlingType": "esbuild",
             "libraryPaths": [
@@ -5892,6 +7435,25 @@
                 "name": "texture_0",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
+        },
+        "360": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            },
+            "image": null
+        },
+        "428": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            }
+        },
+        "480": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            }
         }
     },
     "images": {
@@ -5900,6 +7462,28 @@
                 "name": "texture_atlas_modified",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
+        },
+        "359": {
+            "link": {
+                "name": "Orotofot_4k",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
+            },
+            "stream": false,
+            "compression": "none"
+        },
+        "427": {
+            "link": {
+                "name": "Orotofot_4k",
+                "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "compression": "uastc"
+        },
+        "479": {
+            "link": {
+                "name": "vrstevnice_topo_podklad_5000_4k_v1",
+                "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
+            },
+            "compression": "uastc"
         }
     },
     "files": {
@@ -5930,6 +7514,30 @@
         "295": {
             "fileName": "assets/models/mine/legenda_scaled_v1.glb",
             "importerName": ""
+        },
+        "422": {
+            "fileName": "assets/models/mine/pk_orotofoto4k_v1.glb",
+            "importerName": ""
+        },
+        "449": {
+            "fileName": "assets/models/mine/pk_orotofoto4k_v2.glb",
+            "importerName": ""
+        },
+        "500": {
+            "fileName": "assets/models/mine/co_podklmapa4k_v2_5000.glb",
+            "importerName": ""
+        },
+        "519": {
+            "fileName": "assets/models/mine/co_legenda_custom_props_v1.glb",
+            "importerName": ""
+        },
+        "539": {
+            "fileName": "assets/models/mine/co_legenda_custom_props_v2.glb",
+            "importerName": ""
+        },
+        "549": {
+            "fileName": "fonts/JetBrainsMono-Medium.ttf",
+            "importerName": ""
         }
     },
     "fonts": {
@@ -5938,6 +7546,13 @@
                 "name": "DejaVuSans.ttf",
                 "file": "default"
             }
+        },
+        "548": {
+            "link": {
+                "name": "font_0",
+                "file": "fonts\\JetBrainsMono-Medium.ttf"
+            },
+            "characters": "abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n0123456789\n:-_+*,.!`\"'?°=\\/\n()[]<>{}$&%@|’‘ \nč,ř,ě,š,ž,ý,á,í "
         }
     },
     "languages": {}

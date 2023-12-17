@@ -32,6 +32,7 @@ import {SwitchHandObjectComponent} from 'wle-pp';
 import {TrackedHandDrawAllJointsComponent} from 'wle-pp';
 import {VirtualGamepadComponent} from 'wle-pp';
 import {Documentation} from './my-src/rotate.js';
+import {ButtonComponentActiveText} from './my-src/toggle-active-text.js';
 import {ButtonComponentActive} from './my-src/toggle-active.js';
 import {ToggleLegendHighlight} from './my-src/toggle-legend-highlight.js';
 /* wle:auto-imports:end */
@@ -46,7 +47,7 @@ const RuntimeOptions = {
     canvas: 'canvas',
 };
 const Constants = {
-    ProjectName: '006_physics',
+    ProjectName: 'dp_main',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
     WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
@@ -109,6 +110,7 @@ engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(VirtualGamepadComponent);
 engine.registerComponent(Documentation);
+engine.registerComponent(ButtonComponentActiveText);
 engine.registerComponent(ButtonComponentActive);
 engine.registerComponent(ToggleLegendHighlight);
 /* wle:auto-register:end */
