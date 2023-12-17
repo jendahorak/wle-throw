@@ -1,6 +1,6 @@
 # What needs to be done
 
-1. Cursors have to be shorter.
+1. Cursors have to be shorter. - Cursor max lenght does not work.
 
 ## Big plans
 

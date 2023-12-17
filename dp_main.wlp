@@ -110,7 +110,8 @@
                         "_mySwitchLocomotionTypeShortcutEnabled": true,
                         "_myDefaultHeight": 1.75,
                         "_myMaxSpeed": 3.0,
-                        "_myVRDirectionReferenceObject": null
+                        "_myVRDirectionReferenceObject": null,
+                        "_myDefaultLocomotionType": "Smooth"
                     },
                     "active": true
                 }
@@ -1639,7 +1640,7 @@
                         "shape": "box",
                         "box": {
                             "extents": [
-                                1.0,
+                                12.0,
                                 1.0,
                                 12.0
                             ]
@@ -5684,7 +5685,12 @@
                 "name": "mesh_sikma_strecha.003<empty_pk2",
                 "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
             },
-            "parent": "441"
+            "parent": "441",
+            "components": [
+                {
+                    "active": true
+                }
+            ]
         },
         "443": {
             "link": {
@@ -6592,60 +6598,20 @@
                 3.7025017
             ]
         },
-        "558": {
-            "name": "Grabbable",
-            "parent": "171",
-            "components": [
-                {
-                    "type": "pp-grabbable"
-                },
-                {
-                    "type": "physx",
-                    "physx": {
-                        "kinematic": false,
-                        "sphere": {
-                            "radius": 0.4
-                        },
-                        "simulate": true,
-                        "trigger": true,
-                        "allowSimulation": false,
-                        "gravity": false
-                    },
-                    "active": true
-                }
-            ],
-            "translation": [
-                0.2490518,
-                0.5451861,
-                -1.7578303
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
-            ]
-        },
-        "559": {
+        "594": {
             "name": "Mesh",
-            "parent": "558",
             "components": [
                 {
                     "type": "mesh",
                     "mesh": {
-                        "mesh": "p2",
-                        "material": "248"
+                        "mesh": "p1",
+                        "material": "167"
                     }
                 }
             ],
             "translation": [
-                0.0,
-                0.0,
+                -7.3571224,
+                1.4237322,
                 0.0
             ],
             "rotation": [
@@ -6655,9 +6621,9 @@
                 1.0
             ],
             "scaling": [
-                0.33,
-                0.33,
-                0.33
+                1.0,
+                1.0,
+                1.0
             ]
         }
     },
@@ -6800,54 +6766,6 @@
                 "file": "assets\\models\\mine\\CursorRayScaled.glb"
             }
         },
-        "228": {
-            "link": {
-                "name": "mesh_CityEngineTerrainMaterial.001",
-                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
-            }
-        },
-        "229": {
-            "link": {
-                "name": "mesh_jina.001",
-                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
-            }
-        },
-        "230": {
-            "link": {
-                "name": "mesh_mansardova.001",
-                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
-            }
-        },
-        "231": {
-            "link": {
-                "name": "mesh_plocha.001",
-                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
-            }
-        },
-        "232": {
-            "link": {
-                "name": "mesh_pultova.001",
-                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
-            }
-        },
-        "233": {
-            "link": {
-                "name": "mesh_sedlova.001",
-                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
-            }
-        },
-        "234": {
-            "link": {
-                "name": "mesh_stanova.001",
-                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
-            }
-        },
-        "235": {
-            "link": {
-                "name": "mesh_valbova.001",
-                "file": "assets\\models\\mine\\blender_tematicka_separated_scaled_v1.glb"
-            }
-        },
         "254": {
             "link": {
                 "name": "mesh_CityEngineTerrainMaterial.001",
@@ -6950,120 +6868,6 @@
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
         },
-        "380": {
-            "link": {
-                "name": "vegetation_mat",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "381": {
-            "link": {
-                "name": "vegetation_mat.0",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "382": {
-            "link": {
-                "name": "mesh_CityEngineTerrainMaterial",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "383": {
-            "link": {
-                "name": "mesh_hlavni_cast_objektu",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "384": {
-            "link": {
-                "name": "mesh_komin",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "385": {
-            "link": {
-                "name": "mesh_stresni_nastavba",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "386": {
-            "link": {
-                "name": "mesh_vez",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "387": {
-            "link": {
-                "name": "mesh_vytahy_klimatizace",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "388": {
-            "link": {
-                "name": "mesh_sikma_strecha",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "389": {
-            "link": {
-                "name": "mesh_svisla_stena",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "390": {
-            "link": {
-                "name": "mesh_vodorovna_strecha",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "391": {
-            "link": {
-                "name": "mesh_jina",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "392": {
-            "link": {
-                "name": "mesh_mansardova",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "393": {
-            "link": {
-                "name": "mesh_plocha",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "394": {
-            "link": {
-                "name": "mesh_pultova",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "395": {
-            "link": {
-                "name": "mesh_sedlova",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "396": {
-            "link": {
-                "name": "mesh_stanova",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "397": {
-            "link": {
-                "name": "mesh_valbova",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
-        "398": {
-            "link": {
-                "name": "mesh_terrain",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            }
-        },
         "435": {
             "link": {
                 "name": "mesh_sikma_strecha.003",
@@ -7102,7 +6906,7 @@
                 "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
             },
             "simplify": true,
-            "simplifyTarget": 0.0199999
+            "simplifyTarget": 0.2
         },
         "487": {
             "link": {
@@ -7138,42 +6942,6 @@
             "link": {
                 "name": "terrain_textured_vrstevnice_mesh.001",
                 "file": "assets\\models\\mine\\co_podklmapa4k_v2_5000.glb"
-            }
-        },
-        "507": {
-            "link": {
-                "name": "hlavni_cast_legenda_mesh",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "508": {
-            "link": {
-                "name": "komin_legenda_mesh",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "509": {
-            "link": {
-                "name": "stresni_nastavba_legenda_mesh",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "510": {
-            "link": {
-                "name": "stresni_nastavba_legenda_mesh.0",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "511": {
-            "link": {
-                "name": "vez_legenda_mesh",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "512": {
-            "link": {
-                "name": "vytahy_klimatizace_legenda_mesh",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
             }
         },
         "527": {
@@ -7863,6 +7631,14 @@
             "link": {
                 "name": "sikma_strecha.001",
                 "file": "assets\\models\\mine\\pk_orotofoto4k_v2.glb"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.8385649,
+                    0.39312,
+                    0.0564057,
+                    1.0
+                ]
             }
         },
         "430": {
@@ -7982,36 +7758,6 @@
                 "metallicFactor": 1.0
             }
         },
-        "502": {
-            "link": {
-                "name": "hlavni_cast_objektu",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "503": {
-            "link": {
-                "name": "komin_legenda",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "504": {
-            "link": {
-                "name": "stresni_nastavba_legenda",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "505": {
-            "link": {
-                "name": "vez",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
-        "506": {
-            "link": {
-                "name": "vytahy_klimatizace",
-                "file": "assets\\models\\mine\\co_legenda_custom_props_v1.glb"
-            }
-        },
         "522": {
             "link": {
                 "name": "hlavni_cast_objektu",
@@ -8073,16 +7819,22 @@
             }
         },
         "557": {
-            "link": {
-                "name": "hlavni_cast_objektu",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            },
             "name": "hlavni_cast_objektu_highlight",
             "Phong": {
                 "ambientColor": [
                     0.7488789,
                     0.7488789,
                     0.7488789,
+                    1.0
+                ]
+            }
+        },
+        "611": {
+            "Phong": {
+                "ambientColor": [
+                    0.3901345,
+                    0.3901345,
+                    0.3901345,
                     1.0
                 ]
             }
@@ -8313,8 +8065,8 @@
                 }
             },
             "viewObject": "21",
-            "visualizeColliders": true,
-            "visualizePhysX": true,
+            "visualizeColliders": false,
+            "visualizePhysX": false,
             "visualizeOverdraw": false
         },
         "scripting": {
@@ -8481,21 +8233,11 @@
         }
     },
     "textures": {
-        "181": {
-            "name": "texture"
-        },
         "275": {
             "link": {
                 "name": "texture_0",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
-        },
-        "360": {
-            "link": {
-                "name": "texture_0",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            },
-            "image": null
         },
         "428": {
             "link": {
@@ -8516,14 +8258,6 @@
                 "name": "texture_atlas_modified",
                 "file": "assets\\models\\mine\\legenda_scaled_v1.glb"
             }
-        },
-        "359": {
-            "link": {
-                "name": "Orotofot_4k",
-                "file": "assets\\models\\mine\\pk_orotofoto4k_v1.glb"
-            },
-            "stream": false,
-            "compression": "none"
         },
         "427": {
             "link": {
@@ -8591,6 +8325,30 @@
         },
         "549": {
             "fileName": "fonts/JetBrainsMono-Medium.ttf",
+            "importerName": ""
+        },
+        "578": {
+            "fileName": "assets/models/ternius/1Story_GableRoof_Mat.fbx",
+            "importerName": ""
+        },
+        "592": {
+            "fileName": "assets/models/ternius/building_test.glb",
+            "importerName": ""
+        },
+        "601": {
+            "fileName": "assets/models/ternius/1Story_RoundRoof_Cube_149.glb",
+            "importerName": ""
+        },
+        "607": {
+            "fileName": "assets/models/ternius/1Story_GableRoof_Cube_062.glb",
+            "importerName": ""
+        },
+        "614": {
+            "fileName": "assets/models/ternius/1Story_Cube_093.glb",
+            "importerName": ""
+        },
+        "622": {
+            "fileName": "assets/models/ternius/2Story_Wide_2Doors_Cube_037.glb",
             "importerName": ""
         }
     },

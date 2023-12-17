@@ -3,10 +3,10 @@
         "console": {
             "showInfo": true,
             "showWarnings": true,
-            "showErrors": true
+            "showErrors": false
         },
         "sceneView": {
-            "visualizeObjects": true,
+            "visualizeObjects": false,
             "visualizeCollision": true,
             "visualizeOverdraw": false,
             "visualizePhysics": true
@@ -19,8 +19,8 @@
         "Console": true,
         "Scene Outline": true,
         "Properties": true,
-        "Project Settings": true,
-        "Resources": false,
+        "Project Settings": false,
+        "Resources": true,
         "Project Data": false,
         "Benchmark": false,
         "Profile": false,
