@@ -3,7 +3,7 @@
         "console": {
             "showInfo": true,
             "showWarnings": true,
-            "showErrors": false
+            "showErrors": true
         },
         "sceneView": {
             "visualizeObjects": false,
@@ -20,7 +20,7 @@
         "Scene Outline": true,
         "Properties": true,
         "Project Settings": false,
-        "Resources": true,
+        "Resources": false,
         "Project Data": false,
         "Benchmark": false,
         "Profile": false,

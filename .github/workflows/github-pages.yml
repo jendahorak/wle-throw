@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: wonderlandengine/editor:latest
+      image: wonderlandengine/editor:1.1.4
 
     steps:
       - name: Install Git
