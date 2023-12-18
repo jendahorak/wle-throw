@@ -57409,17 +57409,22 @@ __publicField(ToggleLegendHighlight, "Properties", {
 });
 
 // js/index.js
-var RuntimeOptions = {
-  physx: true,
-  loader: false,
-  xrFramebufferScaleFactor: 1,
-  canvas: "canvas"
-};
 var Constants = {
   ProjectName: "dp_main",
   RuntimeBaseName: "WonderlandRuntime",
   WebXRRequiredFeatures: ["local"],
   WebXROptionalFeatures: ["local", "local-floor", "hand-tracking", "hit-test"]
+};
+var RuntimeOptions = {
+  physx: true,
+  loader: false,
+  xrFramebufferScaleFactor: 1,
+  xrOfferSession: {
+    mode: "auto",
+    features: Constants.WebXRRequiredFeatures,
+    optionalFeatures: Constants.WebXROptionalFeatures
+  },
+  canvas: "canvas"
 };
 var engine = await loadRuntime(Constants.RuntimeBaseName, RuntimeOptions);
 engine.onSceneLoaded.once(() => {

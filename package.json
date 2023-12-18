@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "author": "shtrdl",
     "description": "Wonderland engine scene for the DP project",
-    "homepage": "https://jendahorak.github.io/wle-throw",
+    "homepage": "https://github.com/jendahorak/wle-throw",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jendahorak/wle-throw.git"
